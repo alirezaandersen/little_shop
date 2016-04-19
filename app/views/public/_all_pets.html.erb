@@ -10,15 +10,20 @@
     <a id="show-link" class="right blue-text text-darken-2" href="#">Show Page</a>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4"><%= element.name %><i class="material-icons right">close</i></span>
-      <p>Here is some more information about this element.</p>
+      <p>Here is some more information about this animal.</p>
       <div class="pad-top-50">
-        <span class="pad-right-small"><a class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="Meet me!" href="#"><i class="material-icons">pets</i></a></span>
+        <!-- <span class="pad-right-small"><a class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="Meet me!" href="#"><i class="material-icons">pets</i></a></span> -->
         <!-- <span class="pad-left-small"><a class="btn-floating green tooltipped" data-position="top" data-delay="50" data-tooltip="Adopt me!" href="<%= cart_animals_path %>" method="post"><i class="material-icons">favorite</i></a></span> -->
-        <span class="pad-left-small">
-          <%= link_to cart_animals_path, method: :post, :class => "btn-floating green tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Adopt me!" do %>
+        <div class="pad-left-small inline">
+          <%= button_to cart_animals_path(animal_id: element.id), method: :post, :class => "btn-floating green tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Adopt me!" do %>
             <i class="material-icons">favorite</i>
           <% end %>
-        </a></span>
+        </div>
+          <div class="pad-left-small inline">
+          <%= button_to "#", :class => "btn-floating blue tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Meet me!" do %>
+            <i class="material-icons">pets</i>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
