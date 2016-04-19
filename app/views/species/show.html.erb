@@ -1,5 +1,5 @@
 <div class="container center">
-  <h1><%= @species.capitalize %></h1>
+  <h1><%= @species.name.capitalize %></h1>
 <div class="row">
     <% @animals.each do |animal| %>
       <%= render partial: "public/all_pets", locals: { element: animal } %>

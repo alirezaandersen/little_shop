@@ -7,25 +7,26 @@ class Cart
   end
 
   def add_animal(animal_id)
-    # contents["animals"] ||= {}
     contents[animal_id.to_s] ||= 0
-    contents[animal_id.to_s] += 1
-    # contents["accessories"] ||= {}
+    if total < 2
+      if contents[animal_id.to_s] != 1
+      contents[animal_id.to_s] += 1
+      "You're about to adopt #{ Animal.find(animal_id).name}"
+      else
+        "You can't adopt the same pet twice"
+      end
+    else
+      "You can't adopt more than 2 pets"
+    end
   end
-  #
-  # def add_accessory(accessory_id)
-  #   contents["accessories"] ||= {}
-  #   contents["accessories"][accessory_id.to_s] ||= 0
-  #   contents["accessories"][accessory_id.to_s] += 1
-  #   contents["animals"] ||= {}
-  # end
+
 
   def total
-    contents["animals"].values.sum
+    contents.values.sum
   end
 
   def remove_item(animal_id)
-    contents[item.id.to_s] -= 1
+    contents.delete(animal_id.to_s)
   end
 
 end
