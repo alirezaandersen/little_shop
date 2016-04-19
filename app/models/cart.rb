@@ -25,7 +25,7 @@ class Cart
   end
 
   def remove_item(animal_id)
-    contents[item.id.to_s] -= 1
+    contents[animal_id.to_s] -= 1
   end
 
 end

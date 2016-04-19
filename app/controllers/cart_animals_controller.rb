@@ -17,5 +17,9 @@ class CartAnimalsController < ApplicationController
     @animals = Animal.where(:id == @cart.contents.keys)
   end
 
+  def destroy
+
+  end
+
 
 end
