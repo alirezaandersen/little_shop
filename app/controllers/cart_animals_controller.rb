@@ -8,6 +8,6 @@ class CartAnimalsController < ApplicationController
     session[:cart] = @cart.contents
     flash[:notice] = "You're about to adopt #{ animal.name}"
 
-    redirect_to root_path
+    redirect_to :back
   end
 end
