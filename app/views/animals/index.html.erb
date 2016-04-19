@@ -1,7 +1,9 @@
-<h1>Animals</h1>
+<div class="container center">
+  <h1>All Pets</h1>
 
-<% @animals.each do |animal| %>
-  <%= animal.name %>
-  <%= button_to "Adopt!", cart_animals_path(animal_id: animal.id), class: "btn btn-danger" %>
-
-<% end %>
+  <div class="row">
+    <% @animals.each do |animals| %>
+      <%= render partial: "public/all_pets", locals: { element: animals } %>
+    <% end %>
+  </div>
+</div>

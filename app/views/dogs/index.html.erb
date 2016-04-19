@@ -1,6 +1,9 @@
-<h1>Dogs</h1>
+<div class="container center">
+  <h1>Dogs</h1>
 
-<% @dogs.each do |dog| %>
-  <%= dog.name %>
-
-<% end %>
+  <div class="row">
+    <% @dogs.each do |dog| %>
+      <%= render partial: "public/all_pets", locals: { element: dog } %>
+    <% end %>
+  </div>
+</div>
