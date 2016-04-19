@@ -6,11 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
 
   def set_cart
-    if session[:cart]
-      @cart = Cart.new(session[:cart])
-    else
-      @cart = Cart.new({"animals" => {}, "accessories" => {}})
-    end
+    @cart = Cart.new(session[:cart])
   end
 
 end
