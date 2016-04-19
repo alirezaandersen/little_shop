@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :cats, only: [:index, :show]
   resources :dogs, only: [:index, :show]
+  # resources :animals, only: [:index, :show]
+  resources :accessories, only: [:index, :show]
+  get '/animals' => 'animals#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
