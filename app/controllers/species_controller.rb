@@ -1,10 +1,9 @@
 class SpeciesController < ApplicationController
 
-  def index
-    binding.pry
+  def show
     @species = Species.find_by(name: params[:type])
-    @animals = @species.animals
-    render :species_index
+    @animals = @species.animals    
+
   end
 
 

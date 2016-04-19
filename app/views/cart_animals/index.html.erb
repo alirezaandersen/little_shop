@@ -22,6 +22,7 @@
             <p>Breed: <%= animal.breed %> <br>
                Age: <%= animal.age %>
             </p>
+            <%= button_to "Remove Pet", cart_animal_path(animal), method: :delete, :class => "btn tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Remove Pet" %>
             <a href="#!" class="secondary-content"><i class="material-icons">pets</i></a>
           </li>
       <% end %>
