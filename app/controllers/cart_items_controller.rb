@@ -22,5 +22,10 @@ class CartItemsController < ApplicationController
 
   end
 
-  
+  def index
+    @animals = Animal.find(@cart.contents["animals"].keys)
+    @accessories = @cart.contents["accessories"]
+  end
+
+
 end
