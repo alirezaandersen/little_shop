@@ -21,6 +21,7 @@ class Cart
   end
 
   def total
+
     animal_total = contents["animals"] ? contents["animals"].values.sum : 0
     accessories_total = contents["accessories"] ? contents["accessories"].values.sum : 0
     animal_total + accessories_total
@@ -32,7 +33,6 @@ class Cart
     elsif item.class == Accessory
       contents["accessories"][item.id.to_s] -= quantity
     end
-
   end
 
 end
