@@ -4,5 +4,6 @@
 
   <h3><%= accessory.name %></h3>
   <%= accessory.description %>
+  <%= button_to "Add to Cart", cart_accessories_path(accessory_id: accessory.id), class: "btn btn-danger" %>
 
 <% end %>
