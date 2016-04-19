@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Cart, type: :model do
   it "adds animal to contents" do
-    cart = Cart.new(nil)
+    cart = Cart.new({"animals" => {}, "accessories" => {}})
     Animal.create(species:"cat",
                   name:"Paul",
                   breed: "siamese",
@@ -17,19 +17,18 @@ RSpec.describe Cart, type: :model do
                   image_path: "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"
                   )
 
-    expect(cart.contents).to eq({animals: {}, accessories: {}})
     cart.add_animal(1)
-    expect(cart.contents).to eq({animals: {1 => 1}, accessories: {}})
+    expect(cart.contents).to eq({"animals" => {"1" => 1}, "accessories" => {}})
   end
 
   it "adds accessory to contents" do
-    cart = Cart.new(nil)
+    cart = Cart.new({"animals" => {}, "accessories" => {}})
     Accessory.create(
           name: "Accessory"
     )
-    
+
     cart.add_accessory(1)
-    expect(cart.contents).to eq({animals: {}, accessories: {1 => 1}})
+    expect(cart.contents).to eq({"animals" => {}, "accessories" => {"1" => 1}})
   end
 
 end

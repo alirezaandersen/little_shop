@@ -3668,3 +3668,815 @@ Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
   [1m[35m (0.8ms)[0m  ROLLBACK
 >>>>>>> master
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (24.6ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:30:28.345722"], ["updated_at", "2016-04-19 17:30:28.345722"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:30:28 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered public/_all_pets.html.erb (1.2ms)
+  Rendered animals/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 277ms (Views: 268.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (23.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (4.8ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("category", "species", "description", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", 1], ["species", "dog"], ["description", "The most awesome accessory"], ["name", "Awesome Accessory"], ["created_at", "2016-04-19 17:30:28.690845"], ["updated_at", "2016-04-19 17:30:28.690845"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/accessories" for 127.0.0.1 at 2016-04-19 11:30:28 -0600
+Processing by AccessoriesController#index as HTML
+  [1m[36mAccessory Load (0.3ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:30:28.715718"], ["updated_at", "2016-04-19 17:30:28.715718"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:30:28.717931"], ["updated_at", "2016-04-19 17:30:28.717931"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:30:28 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered public/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (27.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.5ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:30:28.779760"], ["updated_at", "2016-04-19 17:30:28.779760"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/cats" for 127.0.0.1 at 2016-04-19 11:30:28 -0600
+Processing by CatsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species" = $1  [["species", "cat"]]
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered cats/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (16.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.2ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:30:28.830040"], ["updated_at", "2016-04-19 17:30:28.830040"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/dogs" for 127.0.0.1 at 2016-04-19 11:30:28 -0600
+Processing by DogsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species" = $1[0m  [["species", "dog"]]
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered dogs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.0ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:30:28.863312"], ["updated_at", "2016-04-19 17:30:28.863312"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (23.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.6ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Accessory"], ["created_at", "2016-04-19 17:30:28.897167"], ["updated_at", "2016-04-19 17:30:28.897167"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (5.8ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:31:33.755532"], ["updated_at", "2016-04-19 17:31:33.755532"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:31:33 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered public/_all_pets.html.erb (0.9ms)
+  Rendered animals/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 146ms (Views: 138.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (2.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("category", "species", "description", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", 1], ["species", "dog"], ["description", "The most awesome accessory"], ["name", "Awesome Accessory"], ["created_at", "2016-04-19 17:31:33.965161"], ["updated_at", "2016-04-19 17:31:33.965161"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/accessories" for 127.0.0.1 at 2016-04-19 11:31:33 -0600
+Processing by AccessoriesController#index as HTML
+  [1m[36mAccessory Load (0.4ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:31:33.988903"], ["updated_at", "2016-04-19 17:31:33.988903"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:31:33.991428"], ["updated_at", "2016-04-19 17:31:33.991428"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:31:33 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (0.6ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:31:34.017794"], ["updated_at", "2016-04-19 17:31:34.017794"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/cats" for 127.0.0.1 at 2016-04-19 11:31:34 -0600
+Processing by CatsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species" = $1  [["species", "cat"]]
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.9ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:31:34.045338"], ["updated_at", "2016-04-19 17:31:34.045338"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/dogs" for 127.0.0.1 at 2016-04-19 11:31:34 -0600
+Processing by DogsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species" = $1[0m  [["species", "dog"]]
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered dogs/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:31:34.076836"], ["updated_at", "2016-04-19 17:31:34.076836"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Accessory"], ["created_at", "2016-04-19 17:31:34.086818"], ["updated_at", "2016-04-19 17:31:34.086818"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (2.7ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:08.534239"], ["updated_at", "2016-04-19 17:35:08.534239"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:35:08 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered public/_all_pets.html.erb (1.2ms)
+  Rendered animals/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 145ms (Views: 137.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (2.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accessories" ("category", "species", "description", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", 1], ["species", "dog"], ["description", "The most awesome accessory"], ["name", "Awesome Accessory"], ["created_at", "2016-04-19 17:35:08.737594"], ["updated_at", "2016-04-19 17:35:08.737594"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/accessories" for 127.0.0.1 at 2016-04-19 11:35:08 -0600
+Processing by AccessoriesController#index as HTML
+  [1m[36mAccessory Load (0.3ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:08.758577"], ["updated_at", "2016-04-19 17:35:08.758577"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:08.760463"], ["updated_at", "2016-04-19 17:35:08.760463"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:35:08 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:08.787258"], ["updated_at", "2016-04-19 17:35:08.787258"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/cats" for 127.0.0.1 at 2016-04-19 11:35:08 -0600
+Processing by CatsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species" = $1  [["species", "cat"]]
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered cats/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.2ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:08.818329"], ["updated_at", "2016-04-19 17:35:08.818329"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/dogs" for 127.0.0.1 at 2016-04-19 11:35:08 -0600
+Processing by DogsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species" = $1[0m  [["species", "dog"]]
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered dogs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:08.849714"], ["updated_at", "2016-04-19 17:35:08.849714"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accessories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Accessory"], ["created_at", "2016-04-19 17:35:08.858698"], ["updated_at", "2016-04-19 17:35:08.858698"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (5.1ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:56.687656"], ["updated_at", "2016-04-19 17:35:56.687656"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:35:56 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.5ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered public/_all_pets.html.erb (1.0ms)
+  Rendered animals/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 146ms (Views: 138.7ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (2.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("category", "species", "description", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", 1], ["species", "dog"], ["description", "The most awesome accessory"], ["name", "Awesome Accessory"], ["created_at", "2016-04-19 17:35:56.896237"], ["updated_at", "2016-04-19 17:35:56.896237"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/accessories" for 127.0.0.1 at 2016-04-19 11:35:56 -0600
+Processing by AccessoriesController#index as HTML
+  [1m[36mAccessory Load (0.3ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:56.919035"], ["updated_at", "2016-04-19 17:35:56.919035"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:56.921817"], ["updated_at", "2016-04-19 17:35:56.921817"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:35:56 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:56.941640"], ["updated_at", "2016-04-19 17:35:56.941640"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/cats" for 127.0.0.1 at 2016-04-19 11:35:56 -0600
+Processing by CatsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species" = $1  [["species", "cat"]]
+  Rendered public/_all_pets.html.erb (0.6ms)
+  Rendered cats/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:56.974768"], ["updated_at", "2016-04-19 17:35:56.974768"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/dogs" for 127.0.0.1 at 2016-04-19 11:35:56 -0600
+Processing by DogsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species" = $1[0m  [["species", "dog"]]
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered dogs/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:35:57.006445"], ["updated_at", "2016-04-19 17:35:57.006445"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accessories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Accessory"], ["created_at", "2016-04-19 17:35:57.014729"], ["updated_at", "2016-04-19 17:35:57.014729"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (5.1ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:36:39.003012"], ["updated_at", "2016-04-19 17:36:39.003012"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:36:39 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered public/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 139ms (Views: 131.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (2.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("category", "species", "description", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", 1], ["species", "dog"], ["description", "The most awesome accessory"], ["name", "Awesome Accessory"], ["created_at", "2016-04-19 17:36:39.201816"], ["updated_at", "2016-04-19 17:36:39.201816"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/accessories" for 127.0.0.1 at 2016-04-19 11:36:39 -0600
+Processing by AccessoriesController#index as HTML
+  [1m[36mAccessory Load (0.2ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:36:39.224569"], ["updated_at", "2016-04-19 17:36:39.224569"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:36:39.226585"], ["updated_at", "2016-04-19 17:36:39.226585"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:36:39 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.8ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:36:39.246601"], ["updated_at", "2016-04-19 17:36:39.246601"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/cats" for 127.0.0.1 at 2016-04-19 11:36:39 -0600
+Processing by CatsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species" = $1  [["species", "cat"]]
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered cats/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.9ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:36:39.277623"], ["updated_at", "2016-04-19 17:36:39.277623"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/dogs" for 127.0.0.1 at 2016-04-19 11:36:39 -0600
+Processing by DogsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species" = $1[0m  [["species", "dog"]]
+  Rendered public/_all_pets.html.erb (0.5ms)
+  Rendered dogs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:36:39.309612"], ["updated_at", "2016-04-19 17:36:39.309612"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (3.3ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Accessory"], ["created_at", "2016-04-19 17:36:39.319340"], ["updated_at", "2016-04-19 17:36:39.319340"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.0ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (5.6ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:37:55.197583"], ["updated_at", "2016-04-19 17:37:55.197583"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:37:55 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered public/_all_pets.html.erb (1.3ms)
+  Rendered animals/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 147ms (Views: 138.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (2.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("category", "species", "description", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["category", 1], ["species", "dog"], ["description", "The most awesome accessory"], ["name", "Awesome Accessory"], ["created_at", "2016-04-19 17:37:55.398738"], ["updated_at", "2016-04-19 17:37:55.398738"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/accessories" for 127.0.0.1 at 2016-04-19 11:37:55 -0600
+Processing by AccessoriesController#index as HTML
+  [1m[36mAccessory Load (0.3ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:37:55.420507"], ["updated_at", "2016-04-19 17:37:55.420507"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:37:55.422506"], ["updated_at", "2016-04-19 17:37:55.422506"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 11:37:55 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.1ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:37:55.440432"], ["updated_at", "2016-04-19 17:37:55.440432"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/cats" for 127.0.0.1 at 2016-04-19 11:37:55 -0600
+Processing by CatsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species" = $1  [["species", "cat"]]
+  Rendered public/_all_pets.html.erb (1.0ms)
+  Rendered cats/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (1.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "dog"], ["name", "Ziba"], ["breed", "lab"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:37:55.470812"], ["updated_at", "2016-04-19 17:37:55.470812"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+Started GET "/dogs" for 127.0.0.1 at 2016-04-19 11:37:55 -0600
+Processing by DogsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species" = $1[0m  [["species", "dog"]]
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered dogs/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  TRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species", "name", "breed", "sex", "activity_level", "house_trained", "spayed_neutered", "available", "size", "special_needs", "age", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species", "cat"], ["name", "Paul"], ["breed", "siamese"], ["sex", 0], ["activity_level", 0], ["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["size", 3], ["special_needs", "f"], ["age", 1], ["image_path", "http://media4.giphy.com/media/5lAtcHWPAYFdS/giphy.gif"], ["created_at", "2016-04-19 17:37:55.504506"], ["updated_at", "2016-04-19 17:37:55.504506"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "accessories" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1mTRUNCATE TABLE "public"."accessories", "public"."animals" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "accessories" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accessories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Accessory"], ["created_at", "2016-04-19 17:37:55.514063"], ["updated_at", "2016-04-19 17:37:55.514063"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK

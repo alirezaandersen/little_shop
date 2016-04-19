@@ -32,7 +32,7 @@ RSpec.feature "User can see all animals in index" do
 
     visit animals_path
 
-    expect(page).to have_content("Animals")
+    expect(page).to have_content("All Pets")
     expect(page).to have_content("Paul")
     expect(page).to have_content("Ziba")
 

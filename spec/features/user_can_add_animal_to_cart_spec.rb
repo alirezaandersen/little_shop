@@ -17,8 +17,9 @@ RSpec.feature "User can add animal to cart" do
                   )
 
     visit animals_path
-
-    click_button "Adopt!"
+    click_on
+    find()
+    click_button "Adopt me!"
 
     expect(page).to have_content("You're about to adopt Paul")
   end
