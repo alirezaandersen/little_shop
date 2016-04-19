@@ -21,9 +21,18 @@ class Cart
   end
 
   def total
-    animals_total = contents["animals"] ? contents["animals"].values.sum : 0
+
+    animal_total = contents["animals"] ? contents["animals"].values.sum : 0
     accessories_total = contents["accessories"] ? contents["accessories"].values.sum : 0
-    animals_total + accessories_total
+    animal_total + accessories_total
+  end
+
+  def remove_item(item, quantity = 1)
+    if item.class == Animal
+      contents["animals"][item.id.to_s] -= quantity
+    elsif item.class == Accessory
+      contents["accessories"][item.id.to_s] -= quantity
+    end
   end
 
 end

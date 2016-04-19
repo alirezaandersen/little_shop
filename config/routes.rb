@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get '/animals' => 'animals#index'
   root "animals#index"
 
-  resources :cart_accessories, only: [:create]
-  resources :cart_animals, only: [:create]
+  # resources :cart_accessories, only: [:create]
+  # resources :cart_animals, only: [:create]
+  resources :cart_items, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
