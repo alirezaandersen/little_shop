@@ -11,22 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419003231) do
+ActiveRecord::Schema.define(version: 20160419203406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accessories", force: :cascade do |t|
-    t.integer  "category"
-    t.string   "species"
-    t.text     "description"
-    t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "animals", force: :cascade do |t|
-    t.string   "species"
     t.string   "name"
     t.string   "breed"
     t.integer  "sex"
@@ -41,6 +31,16 @@ ActiveRecord::Schema.define(version: 20160419003231) do
     t.datetime "updated_at",      null: false
     t.text     "image_path"
     t.text     "description"
+    t.integer  "species_id"
   end
 
+  add_index "animals", ["species_id"], name: "index_animals_on_species_id", using: :btree
+
+  create_table "species", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "animals", "species"
 end

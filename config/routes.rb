@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :cats, only: [:index, :show]
-  resources :dogs, only: [:index, :show]
+  # resources :cats, only: [:index, :show]
+  # resources :dogs, only: [:index, :show]
   # resources :animals, only: [:index, :show]
-  resources :accessories, only: [:index, :show]
+  # resources :accessories, only: [:index, :show]
   get '/animals' => 'animals#index'
   root "animals#index"
 
+
   # resources :cart_accessories, only: [:create]
-  # resources :cart_animals, only: [:create]
-  resources :cart_items, only: [:create]
-  get '/cart', to: "cart_items#index"
+  get '/', to: "animals#index"
+  resources :cart_animals, only: [:create]
+  get '/cart', to: "cart_animals#index"
+  get '/animals/:type', to: "animals#species_index"
+  get '/animals/:type/:id', to: "animals#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
