@@ -1,0 +1,9 @@
+<div class="container center">
+  <h1>All Pets</h1>
+
+  <div class="row">
+    <% @animals.each do |animals| %>
+      <%= render partial: "public/all_pets", locals: { element: animals } %>
+    <% end %>
+  </div>
+</div>
