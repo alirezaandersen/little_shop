@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if session[:cart]
       @cart = Cart.new(session[:cart])
     else
-      @cart = Cart.new({animals: {}, accessories: {}})
+      @cart = Cart.new({"animals" => {}, "accessories" => {}})
     end
   end
 

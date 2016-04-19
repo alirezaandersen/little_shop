@@ -2,6 +2,6 @@
 
 <% @animals.each do |animal| %>
   <%= animal.name %>
-  <%= button_to "Adopt!", cart_animals_path(animal_id: animal.id), class: "btn btn-danger" %>
+  <%= button_to "Adopt!", cart_items_path(animal_id: animal.id), class: "btn btn-danger" %>
 
 <% end %>
