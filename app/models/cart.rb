@@ -7,19 +7,19 @@ class Cart
   end
 
   def add_animal(animal_id)
-    contents["animals"][animal_id] ||= 0
-    contents["animals"][animal_id] += 1
-    contents["accessories"] ||= {}
+    contents[:animals][animal_id] ||= 0
+    contents[:animals][animal_id] += 1
+    contents[:accessories] ||= {}
   end
 
   def add_accessory(accessory_id)
-    contents["accessories"][accessory_id] ||= 0
-    contents["accessories"][accessory_id] += 1
-    contents["animals"] ||= {}
+    contents[:accessories][accessory_id] ||= 0
+    contents[:accessories][accessory_id] += 1
+    contents[:animals] ||= {}
   end
 
   def total
-    contents["animals"].values.sum + contents["accessories"].values.sum
+    @cart ? contents[:animals].values.sum + contents[:accessories].values.sum : 0
   end
 
 end
