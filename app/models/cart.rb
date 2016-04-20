@@ -8,21 +8,15 @@ class Cart
 
   def add_animal(animal_id)
     contents[animal_id.to_s] ||= 0
-    if total < 2
-      if contents[animal_id.to_s] != 1
-      contents[animal_id.to_s] += 1
-      "You're about to adopt #{ Animal.find(animal_id).name}"
-      else
-        "You can't adopt the same pet twice"
-      end
+    if contents[animal_id.to_s] != 1
+    contents[animal_id.to_s] += 1
+    "#{ Animal.find(animal_id).name} added to favorites!"
     else
-      "You can't adopt more than 2 pets"
+      "You can't favorite the same pet twice"
     end
   end
 
-
   def total
-    binding.pry
     contents.values.sum
   end
 

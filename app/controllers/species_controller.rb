@@ -2,8 +2,7 @@ class SpeciesController < ApplicationController
 
   def show
     @species = Species.find_by(name: params[:type])
-    @animals = @species.animals    
-
+    @animals = @species.animals
   end
 
 

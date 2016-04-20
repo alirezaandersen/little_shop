@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do |i|
-  Animal.create(species: "cat",
+  Animal.create(species: Species.new(name: "cats"),
                 name: "cat #{i + 1}",
                 age: "#{i % 5}",
                 breed: "breed #{i}",
@@ -24,7 +24,7 @@
 end
 
 10.times do |i|
-  Animal.create(species: "dog",
+  Animal.create(species: Species.new(name: "dogs"),
                 name: "dog #{i+ 1}",
                 age: "#{i % 5}",
                 breed: "breed #{i}",

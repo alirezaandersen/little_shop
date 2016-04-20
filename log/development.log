@@ -5784,3 +5784,1860 @@ Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.3ms)
   Rendered /Users/alirezaandersen/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/alirezaandersen/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.3ms)
 >>>>>>> factory_girl
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:09:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jdliss/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/jdliss/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/jdliss/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.8ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:09:35 -0600
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jdliss/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/jdliss/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/jdliss/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.6ms)
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAnimals (20160418233505)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (22.0ms)[0m  [1mCREATE TABLE "animals" ("id" serial primary key, "species" character varying, "name" character varying, "breed" character varying, "sex" integer, "size" integer, "age" integer, "activity_level" integer, "house_trained" boolean, "spayed_neutered" boolean, "special_needs" boolean, "available" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418233505"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddImagePathColumntoAnimal (20160418234905)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ADD "image_path" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418234905"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAccessories (20160419003101)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "accessories" ("id" serial primary key, "category" integer, "species" character varying, "description" text, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003101"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToAnimal (20160419003231)
+  [1m[35m (6.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "animals" ADD "description" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003231"]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSpecies (20160419202650)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "species" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202650"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveColumnFromAnimals (20160419202816)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "animals" DROP "species"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202816"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddSpeciesColumnToAnimal (20160419203107)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ADD "species_id" integer[0m
+  [1m[35m (0.7ms)[0m  CREATE  INDEX  "index_animals_on_species_id" ON "animals"  ("species_id")
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "animals" ADD CONSTRAINT "fk_rails_8c21b45993"
+FOREIGN KEY ("species_id")
+  REFERENCES "species" ("id")
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203107"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to DropAccessoriesTable (20160419203406)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "accessories"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203406"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'animals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'species'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAnimals (20160418233505)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "animals" ("id" serial primary key, "species" character varying, "name" character varying, "breed" character varying, "sex" integer, "size" integer, "age" integer, "activity_level" integer, "house_trained" boolean, "spayed_neutered" boolean, "special_needs" boolean, "available" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418233505"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddImagePathColumntoAnimal (20160418234905)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ADD "image_path" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418234905"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAccessories (20160419003101)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "accessories" ("id" serial primary key, "category" integer, "species" character varying, "description" text, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003101"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToAnimal (20160419003231)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "animals" ADD "description" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003231"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSpecies (20160419202650)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "species" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202650"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveColumnFromAnimals (20160419202816)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "animals" DROP "species"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202816"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddSpeciesColumnToAnimal (20160419203107)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "animals" ADD "species_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_animals_on_species_id" ON "animals"  ("species_id")
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "animals" ADD CONSTRAINT "fk_rails_8c21b45993"
+FOREIGN KEY ("species_id")
+  REFERENCES "species" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203107"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to DropAccessoriesTable (20160419203406)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "accessories"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203406"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'animals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'species'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.595811"], ["updated_at", "2016-04-20 17:10:31.595811"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 1], ["created_at", "2016-04-20 17:10:31.597530"], ["updated_at", "2016-04-20 17:10:31.597530"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.601093"], ["updated_at", "2016-04-20 17:10:31.601093"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 2], ["created_at", "2016-04-20 17:10:31.602272"], ["updated_at", "2016-04-20 17:10:31.602272"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.605100"], ["updated_at", "2016-04-20 17:10:31.605100"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 3], ["created_at", "2016-04-20 17:10:31.606150"], ["updated_at", "2016-04-20 17:10:31.606150"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.609015"], ["updated_at", "2016-04-20 17:10:31.609015"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 4], ["created_at", "2016-04-20 17:10:31.610110"], ["updated_at", "2016-04-20 17:10:31.610110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.617633"], ["updated_at", "2016-04-20 17:10:31.617633"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 5"], ["age", 4], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 5], ["created_at", "2016-04-20 17:10:31.618807"], ["updated_at", "2016-04-20 17:10:31.618807"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.621545"], ["updated_at", "2016-04-20 17:10:31.621545"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 6"], ["age", 0], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 6], ["created_at", "2016-04-20 17:10:31.622555"], ["updated_at", "2016-04-20 17:10:31.622555"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.625286"], ["updated_at", "2016-04-20 17:10:31.625286"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 7"], ["age", 1], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 7], ["created_at", "2016-04-20 17:10:31.626269"], ["updated_at", "2016-04-20 17:10:31.626269"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.628866"], ["updated_at", "2016-04-20 17:10:31.628866"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 8"], ["age", 2], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 8], ["created_at", "2016-04-20 17:10:31.629934"], ["updated_at", "2016-04-20 17:10:31.629934"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.632560"], ["updated_at", "2016-04-20 17:10:31.632560"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 9"], ["age", 3], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 9], ["created_at", "2016-04-20 17:10:31.633508"], ["updated_at", "2016-04-20 17:10:31.633508"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.636700"], ["updated_at", "2016-04-20 17:10:31.636700"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 10"], ["age", 4], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 10], ["created_at", "2016-04-20 17:10:31.638388"], ["updated_at", "2016-04-20 17:10:31.638388"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.641108"], ["updated_at", "2016-04-20 17:10:31.641108"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 11], ["created_at", "2016-04-20 17:10:31.642083"], ["updated_at", "2016-04-20 17:10:31.642083"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.644876"], ["updated_at", "2016-04-20 17:10:31.644876"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 12], ["created_at", "2016-04-20 17:10:31.647477"], ["updated_at", "2016-04-20 17:10:31.647477"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.652764"], ["updated_at", "2016-04-20 17:10:31.652764"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 13], ["created_at", "2016-04-20 17:10:31.654291"], ["updated_at", "2016-04-20 17:10:31.654291"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.656834"], ["updated_at", "2016-04-20 17:10:31.656834"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 14], ["created_at", "2016-04-20 17:10:31.657810"], ["updated_at", "2016-04-20 17:10:31.657810"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.660503"], ["updated_at", "2016-04-20 17:10:31.660503"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 5"], ["age", 4], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 15], ["created_at", "2016-04-20 17:10:31.661756"], ["updated_at", "2016-04-20 17:10:31.661756"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.664442"], ["updated_at", "2016-04-20 17:10:31.664442"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 6"], ["age", 0], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 16], ["created_at", "2016-04-20 17:10:31.665408"], ["updated_at", "2016-04-20 17:10:31.665408"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.667917"], ["updated_at", "2016-04-20 17:10:31.667917"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 7"], ["age", 1], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 17], ["created_at", "2016-04-20 17:10:31.668939"], ["updated_at", "2016-04-20 17:10:31.668939"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.671519"], ["updated_at", "2016-04-20 17:10:31.671519"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 8"], ["age", 2], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 18], ["created_at", "2016-04-20 17:10:31.672882"], ["updated_at", "2016-04-20 17:10:31.672882"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.676651"], ["updated_at", "2016-04-20 17:10:31.676651"]]
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 9"], ["age", 3], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 19], ["created_at", "2016-04-20 17:10:31.677869"], ["updated_at", "2016-04-20 17:10:31.677869"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 17:10:31.683853"], ["updated_at", "2016-04-20 17:10:31.683853"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 10"], ["age", 4], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 20], ["created_at", "2016-04-20 17:10:31.685310"], ["updated_at", "2016-04-20 17:10:31.685310"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:10:40 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.4ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.9ms)
+
+NoMethodError (undefined method `animals' for nil:NilClass):
+  app/controllers/species_controller.rb:5:in `show'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.9ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:11:47 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+Completed 500 Internal Server Error in 21063ms (ActiveRecord: 0.0ms)
+
+SystemExit (exit):
+  app/controllers/species_controller.rb:5:in `show'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (128.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (39.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (226.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (87.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (177.4ms)
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAnimals (20160418233505)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "animals" ("id" serial primary key, "species" character varying, "name" character varying, "breed" character varying, "sex" integer, "size" integer, "age" integer, "activity_level" integer, "house_trained" boolean, "spayed_neutered" boolean, "special_needs" boolean, "available" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418233505"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddImagePathColumntoAnimal (20160418234905)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ADD "image_path" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418234905"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAccessories (20160419003101)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "accessories" ("id" serial primary key, "category" integer, "species" character varying, "description" text, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003101"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToAnimal (20160419003231)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "animals" ADD "description" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003231"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSpecies (20160419202650)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "species" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202650"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveColumnFromAnimals (20160419202816)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "animals" DROP "species"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202816"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddSpeciesColumnToAnimal (20160419203107)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ADD "species_id" integer[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX  "index_animals_on_species_id" ON "animals"  ("species_id")
+  [1m[36m (2.0ms)[0m  [1mALTER TABLE "animals" ADD CONSTRAINT "fk_rails_8c21b45993"
+FOREIGN KEY ("species_id")
+  REFERENCES "species" ("id")
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203107"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to DropAccessoriesTable (20160419203406)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mDROP TABLE "accessories"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203406"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'animals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'species'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.900085"], ["updated_at", "2016-04-20 17:12:30.900085"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 1], ["created_at", "2016-04-20 17:12:30.902119"], ["updated_at", "2016-04-20 17:12:30.902119"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.905384"], ["updated_at", "2016-04-20 17:12:30.905384"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 2], ["created_at", "2016-04-20 17:12:30.906462"], ["updated_at", "2016-04-20 17:12:30.906462"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.909183"], ["updated_at", "2016-04-20 17:12:30.909183"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 3], ["created_at", "2016-04-20 17:12:30.910220"], ["updated_at", "2016-04-20 17:12:30.910220"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.912869"], ["updated_at", "2016-04-20 17:12:30.912869"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 4], ["created_at", "2016-04-20 17:12:30.913930"], ["updated_at", "2016-04-20 17:12:30.913930"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.920994"], ["updated_at", "2016-04-20 17:12:30.920994"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 5"], ["age", 4], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 5], ["created_at", "2016-04-20 17:12:30.922297"], ["updated_at", "2016-04-20 17:12:30.922297"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.927045"], ["updated_at", "2016-04-20 17:12:30.927045"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 6"], ["age", 0], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 6], ["created_at", "2016-04-20 17:12:30.928099"], ["updated_at", "2016-04-20 17:12:30.928099"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.931458"], ["updated_at", "2016-04-20 17:12:30.931458"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 7"], ["age", 1], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 7], ["created_at", "2016-04-20 17:12:30.932454"], ["updated_at", "2016-04-20 17:12:30.932454"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.934915"], ["updated_at", "2016-04-20 17:12:30.934915"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 8"], ["age", 2], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 8], ["created_at", "2016-04-20 17:12:30.936102"], ["updated_at", "2016-04-20 17:12:30.936102"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.940295"], ["updated_at", "2016-04-20 17:12:30.940295"]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 9"], ["age", 3], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 9], ["created_at", "2016-04-20 17:12:30.941712"], ["updated_at", "2016-04-20 17:12:30.941712"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-20 17:12:30.945081"], ["updated_at", "2016-04-20 17:12:30.945081"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "cat 10"], ["age", 4], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.medhatspca.ca/sites/default/files/news_photos/2014-Apr-15/node-147/cute-little-cat.jpg"], ["species_id", 10], ["created_at", "2016-04-20 17:12:30.946091"], ["updated_at", "2016-04-20 17:12:30.946091"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.948463"], ["updated_at", "2016-04-20 17:12:30.948463"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 11], ["created_at", "2016-04-20 17:12:30.949421"], ["updated_at", "2016-04-20 17:12:30.949421"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.951962"], ["updated_at", "2016-04-20 17:12:30.951962"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 12], ["created_at", "2016-04-20 17:12:30.953058"], ["updated_at", "2016-04-20 17:12:30.953058"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.956747"], ["updated_at", "2016-04-20 17:12:30.956747"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 13], ["created_at", "2016-04-20 17:12:30.958819"], ["updated_at", "2016-04-20 17:12:30.958819"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.963900"], ["updated_at", "2016-04-20 17:12:30.963900"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 14], ["created_at", "2016-04-20 17:12:30.964894"], ["updated_at", "2016-04-20 17:12:30.964894"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.967371"], ["updated_at", "2016-04-20 17:12:30.967371"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 5"], ["age", 4], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 15], ["created_at", "2016-04-20 17:12:30.968388"], ["updated_at", "2016-04-20 17:12:30.968388"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.971027"], ["updated_at", "2016-04-20 17:12:30.971027"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 6"], ["age", 0], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 16], ["created_at", "2016-04-20 17:12:30.972157"], ["updated_at", "2016-04-20 17:12:30.972157"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.975752"], ["updated_at", "2016-04-20 17:12:30.975752"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 7"], ["age", 1], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 17], ["created_at", "2016-04-20 17:12:30.976747"], ["updated_at", "2016-04-20 17:12:30.976747"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.980049"], ["updated_at", "2016-04-20 17:12:30.980049"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 8"], ["age", 2], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 18], ["created_at", "2016-04-20 17:12:30.981204"], ["updated_at", "2016-04-20 17:12:30.981204"]]
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.989351"], ["updated_at", "2016-04-20 17:12:30.989351"]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 9"], ["age", 3], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 19], ["created_at", "2016-04-20 17:12:30.991772"], ["updated_at", "2016-04-20 17:12:30.991772"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-20 17:12:30.996650"], ["updated_at", "2016-04-20 17:12:30.996650"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("name", "age", "breed", "size", "sex", "special_needs", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["name", "dog 10"], ["age", 4], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["special_needs", "f"], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["species_id", 20], ["created_at", "2016-04-20 17:12:30.997940"], ["updated_at", "2016-04-20 17:12:30.997940"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:12:43 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.5ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered species/show.html.erb within layouts/application (25.9ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+Completed 500 Internal Server Error in 356ms (ActiveRecord: 4.5ms)
+
+ActionView::Template::Error (undefined method `+' for {"2"=>5, "3"=>1, "1"=>1, "5"=>1, "6"=>1, "4"=>1}:Hash):
+    16:     <%= render partial: "shared/navbar" %>
+    17:     <%= render partial: "shared/sidebar" %>
+    18:   </header>
+    19:   Cart: <%= @cart.total %>
+    20:   <% flash.each do |type, message| %>
+    21:     <script>
+    22:       $(function() {
+  app/models/cart.rb:26:in `total'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__3625831829976196720_70246782385520'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.5ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:13:25 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.2ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered species/show.html.erb within layouts/application (11.7ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 500 Internal Server Error in 56417ms (ActiveRecord: 2.8ms)
+
+SystemExit (exit):
+  app/models/cart.rb:26:in `total'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__3625831829976196720_70246782385520'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (199.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (49.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (297.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (7.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.8ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:14:23 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+Completed 500 Internal Server Error in 232596ms (ActiveRecord: 0.0ms)
+
+SystemExit (exit):
+  app/controllers/species_controller.rb:5:in `show'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (172.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (47.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (275.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.8ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (152.4ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:18:18 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+Completed 500 Internal Server Error in 4210ms (ActiveRecord: 0.0ms)
+
+SystemExit (exit):
+  app/controllers/species_controller.rb:5:in `show'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (135.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (35.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (224.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (10.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.7ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:20:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.4ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered species/show.html.erb within layouts/application (25.2ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 4.5ms)
+
+ActionView::Template::Error (undefined method `+' for {"2"=>5, "3"=>1, "1"=>1, "5"=>1, "6"=>1, "4"=>1}:Hash):
+    16:     <%= render partial: "shared/navbar" %>
+    17:     <%= render partial: "shared/sidebar" %>
+    18:   </header>
+    19:   Cart: <%= @cart.total %>
+    20:   <% flash.each do |type, message| %>
+    21:     <script>
+    22:       $(function() {
+  app/models/cart.rb:25:in `total'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__3447106337781105563_70131928289200'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (99.9ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:22:08 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.4ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (1.4ms)
+  Rendered species/show.html.erb within layouts/application (25.6ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 4.9ms)
+
+ActionView::Template::Error (undefined method `+' for {"2"=>5, "3"=>1, "1"=>1, "5"=>1, "6"=>1, "4"=>1}:Hash):
+    16:     <%= render partial: "shared/navbar" %>
+    17:     <%= render partial: "shared/sidebar" %>
+    18:   </header>
+    19:   Cart: <%= @cart.total %>
+    20:   <% flash.each do |type, message| %>
+    21:     <script>
+    22:       $(function() {
+  app/models/cart.rb:25:in `total'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__1896979684375968079_70128392441020'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (99.2ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:22:23 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.2ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered species/show.html.erb within layouts/application (12.7ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 500 Internal Server Error in 29315ms (ActiveRecord: 3.2ms)
+
+SystemExit (exit):
+  app/models/cart.rb:26:in `total'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__1896979684375968079_70128392441020'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (171.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (49.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (283.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (8.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.7ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (140.0ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:22:58 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.4ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (6.4ms)
+  Rendered species/show.html.erb within layouts/application (15.1ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+Completed 500 Internal Server Error in 21013ms (ActiveRecord: 0.8ms)
+
+SystemExit (exit):
+  app/models/cart.rb:26:in `total'
+  app/views/layouts/application.html.erb:19:in `_app_views_layouts_application_html_erb__1896979684375968079_70128392441020'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (182.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (42.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (276.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (8.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.7ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 11:23:30 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.3ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.8ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (14.7ms)
+  Rendered species/show.html.erb within layouts/application (82.2ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 255ms (Views: 193.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/dogs" for ::1 at 2016-04-20 11:23:45 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"dogs"}
+  [1m[35mSpecies Load (0.3ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "dogs"]]
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 11]]
+  Rendered shared/_all_pets.html.erb (5.3ms)
+  Rendered species/show.html.erb within layouts/application (14.5ms)
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 146ms (Views: 136.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:27:22 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.7ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (46.8ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 304ms (Views: 287.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:48:47 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (35.7ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cart_animals?animal_id=1" for ::1 at 2016-04-20 11:48:49 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"rognKnoEtce8OznZr0citA67d1kT36oj+85NAp7gqS4EdGgfHTTPJN4FEVnQMNZkvaEPAQ50G3Y450IOmiZKag==", "animal_id"=>"1"}
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:48:49 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered shared/_all_pets.html.erb (1.4ms)
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (1.7ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (2.0ms)
+  Rendered shared/_all_pets.html.erb (1.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (2.0ms)
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (55.7ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 89ms (Views: 87.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=1" for ::1 at 2016-04-20 11:50:13 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"/R5AQ39tQMhAGPsWkcQiUYRWLPxUlqxepLkKGYYFJUxX4g92GF06KyIm05bus9aBN0xUpEk9HQtnkAUVgsPGCA==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:50:13 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (1.5ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (1.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (54.6ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:54:20 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (29.7ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:54:38 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (31.1ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:54:59 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.6ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (31.6ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:57:20 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (31.4ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 45.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/navbar.self-8d73e16b52b55dccdc4f94a52c0376786185b1c64294a9142e01a67d2e1c39ff.css?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-20 11:57:21 -0600
+
+
+Started GET "/" for ::1 at 2016-04-20 11:57:32 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (34.4ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 60.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:58:39 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (34.5ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=1" for ::1 at 2016-04-20 11:59:02 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"CcNDpwKq5tpqIRQshv002A/HjLak3lMl9LYnOiaZp1CjPwySZZqcOQgfPKz5isAIvN307rl14nA3nyg2Il9EFA==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:59:02 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (37.8ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=1" for ::1 at 2016-04-20 11:59:06 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"lfcyTuqKX83kPbJ9Q/1TNMAE22JN6IypQuGfsVVIFhk/C317jbolLoYDmv08iqfkcx6jOlBDPfyByJC9UY71XQ==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.6ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:59:06 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (39.9ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cart_animals?animal_id=2" for ::1 at 2016-04-20 11:59:09 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"W1ET+BRwEeFPGkiRErN2qI/2zFrCNfUNyXDEiiMnUZrxrVzNc0BrAi0kYBFtxIJ4POy0At+eRFgKWcuGJ+Gy3g==", "animal_id"=>"2"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAnimal Load (0.1ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:59:09 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (40.3ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 55.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cart_animals?animal_id=3" for ::1 at 2016-04-20 11:59:11 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"aOgVLbxnBE+dssQ5hQKgnPQnHiWLmSeKR7vp0l72ADDCFFoY21d+rP+M7Ln6dVRMRz1mfZYylt+EkubeWjDjdA==", "animal_id"=>"3"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:59:11 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (1.5ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (37.5ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 51ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/cart_animals?animal_id=3" for ::1 at 2016-04-20 11:59:12 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"iR3vX9T8fzB03kjxawCGRWrBZboL70kNiQqMBxskUo8j4aBqs8wF0xbgYHEUd3KV2dsd4hZE+FhKI4MLH+Kxyw==", "animal_id"=>"3"}
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 11:59:12 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (36.0ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=1" for ::1 at 2016-04-20 12:00:50 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"sWM4etG/q6DZRLavVTsprITaSpfOiEgCCXzv5jA4OdQbn3dPto/RQ7t6ni8qTN18N8Ayz9Mj+VfKVeDqNP7akA==", "animal_id"=>"1"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:00:50 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (39.7ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 61ms (Views: 60.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=5" for ::1 at 2016-04-20 12:00:53 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"63C3H8fFscUmcmbcsiOiizeeoXefN6Yszf+cYib1kAFBjPgqoPXLJkRMTlzNVFZbhITZL4KcF3kO1pNuIjNzRQ==", "animal_id"=>"5"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mAnimal Load (0.1ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:00:53 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (39.8ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/cart_animals?animal_id=6" for ::1 at 2016-04-20 12:00:56 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"z0krUF3Y7L71FDjK9w85R7STUz9/N4mXmXLaEflEt5FltWRlOuiWXZcqEEqIeM2XB4krZ2KcOMJaW9Ud/YJU1Q==", "animal_id"=>"6"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 6]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:00:56 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (39.0ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=3" for ::1 at 2016-04-20 12:01:01 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"eKVCLQDFne0/304zQoKTsYdmpadtxMMD2QXsHsK1PZPSWQ0YZ/XnDl3hZrM99WdhNHzd/3BvclYaLOMSxnPe1w==", "animal_id"=>"3"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:01:01 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (36.8ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:04:40 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."id" IN (1, 2, 3, 5, 6)[0m
+  Rendered cart_animals/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 18.2ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/cart_animals/1" for ::1 at 2016-04-20 12:04:47 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WIAQRbjuGUa3PcSG6F/UTo0nKhBpnMy3UxSELeD08+vyfF9w395jpdUD7AaXKCCePj1SSHQ3feKQPYsh5DIQrw==", "id"=>"1"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:04:47 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."id" IN (2, 3, 5, 6)[0m
+  Rendered cart_animals/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/cart_animals/2" for ::1 at 2016-04-20 12:04:48 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sDWfcylaq8gu5TtD6SjnzcRooqro8tM4txe33nwvYm8aydBGTmrRK0zbE8OWXxMdd3La8vVZYm10PrjSeOmBKw==", "id"=>"2"}
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:04:48 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."id" IN (3, 5, 6)[0m
+  Rendered cart_animals/index.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/cart_animals/3" for ::1 at 2016-04-20 12:04:49 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FfBbLv3DBBjjIeHySO8W8eSpijn1Ay7/0+046y+zVFS/DBQbmvN++4EfyXI3mOIhV7PyYeion6oQxDfnK3W3EA==", "id"=>"3"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:04:49 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.6ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."id" IN (5, 6)[0m
+  Rendered cart_animals/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/cart_animals/5" for ::1 at 2016-04-20 12:04:50 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"c+dTY1G/GYa8jKhtEKN9a7wzdAjToVkyBLi/rdiSnJzZGxxWNo9jZd6ygO1v1Im7DykMUM4K6GfHkbCh3FR/2A==", "id"=>"5"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 5]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:04:50 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/cart_animals/6" for ::1 at 2016-04-20 12:12:45 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"d9IgcVma3qwpOSMk9uyTn7wYxcRYz+CcW7THN5/SFc/dLm9EPqqkT0sHC6SJm2dPDwK9nEVkUcmYncg7mxT2iw==", "id"=>"6"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 6]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:12:45 -0600
+Processing by CartAnimalsController#index as HTML
+  Rendered cart_animals/index.html.erb within layouts/application (0.0ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:14:34 -0600
+Processing by CartAnimalsController#index as HTML
+  Rendered cart_animals/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:14:36 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (34.7ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cart_animals?animal_id=1" for ::1 at 2016-04-20 12:14:38 -0600
+Processing by CartAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"XVMSAWgEpAypSxAfdr38IohqGyy7eh4lzjI9wwYQv373r100DzTe78t1OJ8JygjyO3BjdKbRr3ANGzLPAtZcOg==", "animal_id"=>"1"}
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:14:38 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (33.1ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 12:16:48 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (33.4ms)
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dogs" for ::1 at 2016-04-20 12:16:50 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"dogs"}
+  [1m[35mSpecies Load (0.4ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "dogs"]]
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 11]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered species/show.html.erb within layouts/application (7.9ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 45ms (Views: 24.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 12:16:51 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.2ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered species/show.html.erb within layouts/application (3.4ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:16:53 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:17:14 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:18:49 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `stringify_keys' for "/cart_animals/1":String):
+    22:             <p>Breed: <%= animal.breed %> <br>
+    23:                Age: <%= animal.age %>
+    24:             </p>
+    25:             <%= button_to "Remove Pet", cart_animal_path(animal), method: :delete, :class => "btn-floating tooltipped red", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Remove Pet" do %>
+    26:               <i class="material-icons">delete</i>
+    27:             <% end %>
+    28:             <a href="#!" class="secondary-content"><i class="material-icons">pets</i></a>
+  app/views/cart_animals/index.html.erb:25:in `block in _app_views_cart_animals_index_html_erb___4108891270455976961_70205987155960'
+  app/views/cart_animals/index.html.erb:18:in `each'
+  app/views/cart_animals/index.html.erb:18:in `_app_views_cart_animals_index_html_erb___4108891270455976961_70205987155960'
+
+
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.6ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.9ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jdliss/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (99.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:19:00 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (1.3ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:19:26 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:19:38 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:19:49 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.9ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:20:02 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:21:14 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/navbar.self-8d73e16b52b55dccdc4f94a52c0376786185b1c64294a9142e01a67d2e1c39ff.css?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-20 12:21:14 -0600
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:21:26 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 12:21:48 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.0ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.2ms)
