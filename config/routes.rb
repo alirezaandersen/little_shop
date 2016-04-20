@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/cart', to: "cart_animals#index"
   get '/animals/:id', to: "animals#show"
   get '/:type', to: "species#show"
-
+  get 'animals/cats' =>'animals#index'
+  get 'animals/dogs' =>'animals#index'
 end

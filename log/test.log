@@ -5176,3 +5176,628 @@ Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.5ms)
   [1m[35m (0.1ms)[0m  ROLLBACK
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:01:15.021958"], ["updated_at", "2016-04-20 00:01:15.021958"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:02:28.070955"], ["updated_at", "2016-04-20 00:02:28.070955"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:02:28.091815"], ["updated_at", "2016-04-20 00:02:28.091815"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:02:28.095121"], ["updated_at", "2016-04-20 00:02:28.095121"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:02:28.098224"], ["updated_at", "2016-04-20 00:02:28.098224"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:02:28 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 211ms (Views: 201.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "5"], ["created_at", "2016-04-20 00:02:28.331033"], ["updated_at", "2016-04-20 00:02:28.331033"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:07:32.760082"], ["updated_at", "2016-04-20 00:07:32.760082"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:07:32.777494"], ["updated_at", "2016-04-20 00:07:32.777494"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:07:32.780761"], ["updated_at", "2016-04-20 00:07:32.780761"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:07:32.783177"], ["updated_at", "2016-04-20 00:07:32.783177"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:07:32 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 201ms (Views: 192.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:08:56.074910"], ["updated_at", "2016-04-20 00:08:56.074910"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:08:56.092684"], ["updated_at", "2016-04-20 00:08:56.092684"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:08:56.095843"], ["updated_at", "2016-04-20 00:08:56.095843"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:08:56.098050"], ["updated_at", "2016-04-20 00:08:56.098050"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:08:56 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 212ms (Views: 204.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:09:14.261294"], ["updated_at", "2016-04-20 00:09:14.261294"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:09:14.279326"], ["updated_at", "2016-04-20 00:09:14.279326"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:09:14.282688"], ["updated_at", "2016-04-20 00:09:14.282688"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:09:14.285086"], ["updated_at", "2016-04-20 00:09:14.285086"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:09:14 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.6ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.5ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 199ms (Views: 184.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 00:09:14.507312"], ["updated_at", "2016-04-20 00:09:14.507312"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:09:54.847688"], ["updated_at", "2016-04-20 00:09:54.847688"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:09:54.867440"], ["updated_at", "2016-04-20 00:09:54.867440"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:09:54.871199"], ["updated_at", "2016-04-20 00:09:54.871199"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:09:54.873426"], ["updated_at", "2016-04-20 00:09:54.873426"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:09:54 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 213ms (Views: 203.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 00:09:55.108438"], ["updated_at", "2016-04-20 00:09:55.108438"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:12:05.417102"], ["updated_at", "2016-04-20 00:12:05.417102"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:12:05.434739"], ["updated_at", "2016-04-20 00:12:05.434739"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:12:05.438223"], ["updated_at", "2016-04-20 00:12:05.438223"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:12:05.440486"], ["updated_at", "2016-04-20 00:12:05.440486"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:12:05 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 188ms (Views: 178.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 00:12:05.654802"], ["updated_at", "2016-04-20 00:12:05.654802"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:12:05.666321"], ["updated_at", "2016-04-20 00:12:05.666321"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:13:05.337541"], ["updated_at", "2016-04-20 00:13:05.337541"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 00:13:05.355042"], ["updated_at", "2016-04-20 00:13:05.355042"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:13:05.358440"], ["updated_at", "2016-04-20 00:13:05.358440"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:13:05.360701"], ["updated_at", "2016-04-20 00:13:05.360701"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 18:13:05 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 178ms (Views: 170.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 00:13:05.560601"], ["updated_at", "2016-04-20 00:13:05.560601"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 00:13:05.585101"], ["updated_at", "2016-04-20 00:13:05.585101"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (26.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (6.5ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (13.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:54:31.091217"], ["updated_at", "2016-04-20 03:54:31.091217"]]
+  [1m[36m (2.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 03:54:31.141238"], ["updated_at", "2016-04-20 03:54:31.141238"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:54:31.147386"], ["updated_at", "2016-04-20 03:54:31.147386"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:54:31.151400"], ["updated_at", "2016-04-20 03:54:31.151400"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 21:54:31 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.8ms)
+  Rendered public/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 263ms (Views: 253.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 03:54:31.456369"], ["updated_at", "2016-04-20 03:54:31.456369"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:54:31.488515"], ["updated_at", "2016-04-20 03:54:31.488515"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:01.141452"], ["updated_at", "2016-04-20 03:59:01.141452"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 03:59:01.170371"], ["updated_at", "2016-04-20 03:59:01.170371"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:01.173769"], ["updated_at", "2016-04-20 03:59:01.173769"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:01.177828"], ["updated_at", "2016-04-20 03:59:01.177828"]]
+  [1m[35m (1.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 21:59:01 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (3.4ms)
+  Rendered public/_all_pets.html.erb (3.5ms)
+  Rendered animals/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 354ms (Views: 335.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 03:59:01.577147"], ["updated_at", "2016-04-20 03:59:01.577147"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 03:59:01.581664"], ["updated_at", "2016-04-20 03:59:01.581664"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:01.607750"], ["updated_at", "2016-04-20 03:59:01.607750"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:10.329114"], ["updated_at", "2016-04-20 03:59:10.329114"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 03:59:10.376354"], ["updated_at", "2016-04-20 03:59:10.376354"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:10.380318"], ["updated_at", "2016-04-20 03:59:10.380318"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:10.382969"], ["updated_at", "2016-04-20 03:59:10.382969"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 21:59:10 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (2.5ms)
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 450ms (Views: 424.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (1.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 03:59:10.889293"], ["updated_at", "2016-04-20 03:59:10.889293"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 03:59:10.894205"], ["updated_at", "2016-04-20 03:59:10.894205"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:10.899328"], ["updated_at", "2016-04-20 03:59:10.899328"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:19.730252"], ["updated_at", "2016-04-20 03:59:19.730252"]]
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (8.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 03:59:19.866167"], ["updated_at", "2016-04-20 03:59:19.866167"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:19.917171"], ["updated_at", "2016-04-20 03:59:19.917171"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:19.932050"], ["updated_at", "2016-04-20 03:59:19.932050"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 21:59:19 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (11.7ms)
+  Rendered public/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 521ms (Views: 488.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 03:59:20.570940"], ["updated_at", "2016-04-20 03:59:20.570940"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 03:59:20.579047"], ["updated_at", "2016-04-20 03:59:20.579047"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 03:59:20.588488"], ["updated_at", "2016-04-20 03:59:20.588488"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:02:40.423400"], ["updated_at", "2016-04-20 04:02:40.423400"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 04:02:40.435805"], ["updated_at", "2016-04-20 04:02:40.435805"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:02:40.441573"], ["updated_at", "2016-04-20 04:02:40.441573"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:02:40.444383"], ["updated_at", "2016-04-20 04:02:40.444383"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 22:02:40 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (2.8ms)
+  Rendered public/_all_pets.html.erb (1.0ms)
+  Rendered animals/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 410ms (Views: 400.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 04:02:40.894404"], ["updated_at", "2016-04-20 04:02:40.894404"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals/cats" for 127.0.0.1 at 2016-04-19 22:02:40 -0600
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 04:02:41.000596"], ["updated_at", "2016-04-20 04:02:41.000596"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:02:41.025242"], ["updated_at", "2016-04-20 04:02:41.025242"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:26:14.704106"], ["updated_at", "2016-04-20 04:26:14.704106"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 04:26:14.725425"], ["updated_at", "2016-04-20 04:26:14.725425"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:26:14.729399"], ["updated_at", "2016-04-20 04:26:14.729399"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:26:14.732074"], ["updated_at", "2016-04-20 04:26:14.732074"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 22:26:14 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.1ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 218ms (Views: 209.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 04:26:14.972985"], ["updated_at", "2016-04-20 04:26:14.972985"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals/cats" for 127.0.0.1 at 2016-04-19 22:26:14 -0600
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 04:26:15.010997"], ["updated_at", "2016-04-20 04:26:15.010997"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:26:15.014932"], ["updated_at", "2016-04-20 04:26:15.014932"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:58:02.979858"], ["updated_at", "2016-04-20 04:58:02.979858"]]
+  [1m[36m (1.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 04:58:03.034190"], ["updated_at", "2016-04-20 04:58:03.034190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:58:03.039869"], ["updated_at", "2016-04-20 04:58:03.039869"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:58:03.043281"], ["updated_at", "2016-04-20 04:58:03.043281"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 22:58:03 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.5ms)
+  Rendered public/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 442ms (Views: 421.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 04:58:03.532102"], ["updated_at", "2016-04-20 04:58:03.532102"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals/cats" for 127.0.0.1 at 2016-04-19 22:58:03 -0600
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 04:58:03.644332"], ["updated_at", "2016-04-20 04:58:03.644332"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 04:58:03.652559"], ["updated_at", "2016-04-20 04:58:03.652559"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:00:00.082309"], ["updated_at", "2016-04-20 05:00:00.082309"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 05:00:00.139747"], ["updated_at", "2016-04-20 05:00:00.139747"]]
+  [1m[35m (1.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:00:00.156723"], ["updated_at", "2016-04-20 05:00:00.156723"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:00:00.166054"], ["updated_at", "2016-04-20 05:00:00.166054"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 23:00:00 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (1.6ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (2.3ms)
+  Rendered public/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 42994ms (Views: 42963.0ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 05:00:43.231927"], ["updated_at", "2016-04-20 05:00:43.231927"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals/cats" for 127.0.0.1 at 2016-04-19 23:00:43 -0600
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 05:00:43.295955"], ["updated_at", "2016-04-20 05:00:43.295955"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.9ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:00:43.304948"], ["updated_at", "2016-04-20 05:00:43.304948"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "1"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:01:04.975326"], ["updated_at", "2016-04-20 05:01:04.975326"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "2"], ["created_at", "2016-04-20 05:01:04.998230"], ["updated_at", "2016-04-20 05:01:04.998230"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "3"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:01:05.007308"], ["updated_at", "2016-04-20 05:01:05.007308"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "4"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:01:05.013441"], ["updated_at", "2016-04-20 05:01:05.013441"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-19 23:01:05 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered public/_all_pets.html.erb (1.2ms)
+  Rendered public/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 10908ms (Views: 10900.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cat"], ["created_at", "2016-04-20 05:01:15.959751"], ["updated_at", "2016-04-20 05:01:15.959751"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals/cats" for 127.0.0.1 at 2016-04-19 23:01:15 -0600
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Dog"], ["created_at", "2016-04-20 05:01:16.018925"], ["updated_at", "2016-04-20 05:01:16.018925"]]
+  [1m[36m (0.9ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "special_needs", "available", "name", "breed", "age", "sex", "size", "activity_level", "image_path", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["special_needs", "f"], ["available", "t"], ["name", "5"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 3], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["created_at", "2016-04-20 05:01:16.026579"], ["updated_at", "2016-04-20 05:01:16.026579"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1

@@ -58,5 +58,7 @@ FactoryGirl.define do
 
   end
 
-
+  factory :species do
+    name {generate(:name)}
+  end
 end

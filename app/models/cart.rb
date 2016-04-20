@@ -22,6 +22,7 @@ class Cart
 
 
   def total
+    binding.pry
     contents.values.sum
   end
 
