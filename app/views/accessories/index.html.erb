@@ -4,6 +4,6 @@
 
   <h3><%= accessory.name %></h3>
   <%= accessory.description %>
-  <%= button_to "Add to Cart", cart_items_path(accessory_id: accessory.id), class: "btn btn-danger" %>
+  <%= button_to "Add to Cart", cart_animals_path(accessory_id: accessory.id), class: "btn btn-danger" %>
 
 <% end %>
