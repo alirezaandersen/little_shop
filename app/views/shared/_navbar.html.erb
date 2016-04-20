@@ -1,0 +1,36 @@
+<div class="mobile-collapse">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">MaxFund</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse right pad-right-small"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Adopt a Dog</a></li>
+        <li><a href="#">Adopt a Cat</a></li>
+        <li><a href="#">Volunteers</a></li>
+        <li><a href="#">Location &amp; Hours</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Adopt a Dog</a></li>
+        <li><a href="#">Adopt a Cat</a></li>
+        <li><a href="#">Volunteers</a></li>
+        <li><a href="#">Location &amp; Hours</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<script>
+  $( document ).ready(function(){
+    $('.button-collapse').sideNav({
+      menuWidth: 200,
+      edge: 'right',
+      closeOnClick: true
+    });
+  });
+</script>

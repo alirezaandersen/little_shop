@@ -3,7 +3,7 @@
 
   <div class="row">
     <% @cats.each do |cat| %>
-      <%= render partial: "public/all_pets", locals: { element: cat } %>
+      <%= render partial: "shared/all_pets", locals: { element: cat } %>
     <% end %>
   </div>
 </div>
