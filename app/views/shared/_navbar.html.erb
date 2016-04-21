@@ -5,8 +5,12 @@
       <a id="navbar" href="#" data-activates="navbar-slider" class="button-collapse right pad-right-small"><i class="material-icons">menu</i></a>
       <a id="sidebar" href="#" data-activates="sidebar-slider" class="button-collapse left pad-left-small"><i class="material-icons">menu</i></a>
       <ul class="left hide-on-med-and-down">
+        <% if current_user %>
+          <%= link_to "Log Out", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log In/Create Account", login_path %>
+        <% end %>
         <li><a href="#">About Us</a></li>
-        <li><a href="#">Donate</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
         <li><a href="/dogs">Adopt a Dog</a></li>
