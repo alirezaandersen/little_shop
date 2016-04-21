@@ -3,19 +3,19 @@ class Animal < ActiveRecord::Base
 
   has_many :favorites
   has_many :visits
-  #
-  validates_presence_of :name,
-                        :breed,
-                        :sex,
-                        :size,
-                        :age,
-                        :activity_level,
-                        :house_trained,
-                        :spayed_neutered,
-                        :available,
-                        :description,
-                        :species_id,
-                        :image_path
+
+  # validates_presence_of :name,
+  #                       :breed,
+  #                       :sex,
+  #                       :size,
+  #                       :age,
+  #                       :activity_level,
+  #                       :house_trained,
+  #                       :spayed_neutered,
+  #                       :available,
+  #                       :description,
+  #                       :species_id,
+  #                       :image_path
 
   enum sex: [:male, :female]
   enum size: [:toy, :small, :medium, :large, :extra_large]
