@@ -1,5 +1,11 @@
-<div class="carousel">
-  <% @dogs.each do |dog| %>
-    <%= render partial: "shared/animal_preview", locals: { animal: dog } %>
-  <% end %>
+<div class="container">
+  <div class="card-panel center-align">
+    <div class="carousel">
+      <% @dogs.each do |dog| %>
+        <%= render partial: "shared/animal_preview", locals: { animal: dog } %>
+      <% end %>
+    </div>
+    <span class="left carousel-arrow"><i class="material-icons">keyboard_arrow_left</i></span>
+    <span class="right carousel-arrow"><i class="material-icons">keyboard_arrow_right</i></span>
+  </div>
 </div>

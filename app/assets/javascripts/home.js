@@ -1,4 +1,6 @@
 $(document).ready(function(){
-  $('.carousel').carousel();
-  // $('.materialboxed').materialbox();
+  $('.carousel').carousel({
+    shift: 35,
+    dist: -60
+  });
 });
