@@ -4,18 +4,19 @@
 #
 #   context "user can log out of session if logged in" do
 #     scenario "logged in user sees root page" do
-#       user = FactoryGirl.create(:user)
+#       user = FactoryGirl.create(:user, password:"password")
 #
-#      visit root_path
-#      click_on "Log In/Create Account"
-#      fill_in "Email", with: user.email
-#      fill_in "Password", with: user.password
-#      click_on "Log in"
+#       visit root_path
+#       click_on "Log In/Create Account"
 #
-#      expect(page).to have_content("Welcome, #{user.name}.")
+#       fill_in "Email", with: user.email
+#       fill_in "Password", with: user.password
+#       click_on "Log in"
 #
-#      click_on "Logout"
-#      expect(page).to have_content("Logout")
+#       expect(page).to have_content("Welcome, #{user.first_name}")
+#
+#       click_on "Logout"
+#       expect(page).to have_content("Log In/Create Account")
 #     end
 #   end
 # end

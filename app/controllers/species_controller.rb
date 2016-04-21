@@ -4,6 +4,4 @@ class SpeciesController < ApplicationController
     @species = Species.find_by(name: params[:type])
     @animals = @species.animals
   end
-
-
 end

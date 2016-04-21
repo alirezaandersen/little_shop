@@ -2,7 +2,8 @@
   <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo center">MaxFund</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse right pad-right-small"><i class="material-icons">menu</i></a>
+      <a id="navbar" href="#" data-activates="navbar-slider" class="button-collapse right pad-right-small"><i class="material-icons">menu</i></a>
+      <a id="sidebar" href="#" data-activates="sidebar-slider" class="button-collapse left pad-left-small"><i class="material-icons">menu</i></a>
       <ul class="left hide-on-med-and-down">
         <% if current_user %>
           <%= link_to "Log Out", logout_path, method: :delete %>
@@ -10,6 +11,7 @@
           <%= link_to "Log In/Create Account", login_path %>
         <% end %>
         <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
         <li><a href="/dogs">Adopt a Dog</a></li>
@@ -17,23 +19,13 @@
         <li><a href="/favorites">Favorites</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#">Adopt a Dog</a></li>
-        <li><a href="#">Adopt a Cat</a></li>
-        <li><a href="#">Volunteers</a></li>
-        <li><a href="#">Location &amp; Hours</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Donate</a></li>
-      </ul>
+       <li><a href="#">Adopt a Dog</a></li>
+       <li><a href="#">Adopt a Cat</a></li>
+       <li><a href="#">Volunteers</a></li>
+       <li><a href="#">Location &amp; Hours</a></li>
+       <li><a href="#">About Us</a></li>
+       <li><a href="#">Donate</a></li>
+     </ul>
     </div>
   </nav>
 </div>
-
-<script>
-  $( document ).ready(function(){
-    $('.button-collapse').sideNav({
-      menuWidth: 200,
-      edge: 'right',
-      closeOnClick: true
-    });
-  });
-</script>

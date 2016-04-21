@@ -7,19 +7,13 @@ class VisitAnimalsController < ApplicationController
     if total < 4
       if visit.save
         flash[:notice] = "Added to visit"
-        redirect_to '/favorites'
       else
         flash[:notice] = "Couldn't add #{@animal.name} to Visit"
-        redirect_to '/favorites'
       end
     else
       flash[:notice] = "Can't add more than 3 animals to a visit"
-      redirect_to '/favorites'
     end
-  end
-
-  def show
-
+    redirect_to '/favorites'
   end
 
   def index

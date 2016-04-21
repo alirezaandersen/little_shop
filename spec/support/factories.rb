@@ -89,7 +89,7 @@ FactoryGirl.define do
   end
 
   sequence :password_digest do |pw|
-    "#{pw}"
+    "MyPassword#{pw}"
   end
 
   sequence :phone_number do |pn|
