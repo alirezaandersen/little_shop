@@ -3,36 +3,25 @@ class Cart
   attr_reader :contents
 
   def initialize(initial_contents)
-    @contents = initial_contents
+    @contents = initial_contents || {}
   end
 
   def add_animal(animal_id)
-    contents["animals"] ||= {}
-    contents["animals"][animal_id.to_s] ||= 0
-    contents["animals"][animal_id.to_s] += 1
-    contents["accessories"] ||= {}
-  end
-
-  def add_accessory(accessory_id)
-    contents["accessories"] ||= {}
-    contents["accessories"][accessory_id.to_s] ||= 0
-    contents["accessories"][accessory_id.to_s] += 1
-    contents["animals"] ||= {}
+    contents[animal_id.to_s] ||= 0
+    if contents[animal_id.to_s] != 1
+    contents[animal_id.to_s] += 1
+    "#{ Animal.find(animal_id).name} added to favorites!"
+    else
+      "You can't favorite the same pet twice"
+    end
   end
 
   def total
-
-    animal_total = contents["animals"] ? contents["animals"].values.sum : 0
-    accessories_total = contents["accessories"] ? contents["accessories"].values.sum : 0
-    animal_total + accessories_total
+    contents.values.sum
   end
 
-  def remove_item(item, quantity = 1)
-    if item.class == Animal
-      contents["animals"][item.id.to_s] -= quantity
-    elsif item.class == Accessory
-      contents["accessories"][item.id.to_s] -= quantity
-    end
+  def remove_item(animal_id)
+    contents.delete(animal_id.to_s)
   end
 
 end

@@ -13,22 +13,3 @@
  *= require_tree .
  *= require_self
  */
-#breed {
-  padding-left: 20px;
-}
-
-#show-link {
-  padding-right: 20px;
-}
-
-.pad-right-small {
-  padding-right: 10px;
-}
-
-.pad-left-small {
-  padding-left: 10px;
-}
-
-.pad-top-50 {
-  padding-top: 50px;
-}

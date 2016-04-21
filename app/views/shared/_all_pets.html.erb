@@ -1,0 +1,28 @@
+<div class="col s6 m4 l4">
+  <div class="card small">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="<%= element.image_path %>">
+    </div>
+    <div class="card-content center activator">
+      <span class="activator grey-text text-darken-4 left"><%= element.name %></span><span class="activator grey-text text-darken-4 right">Age: <%= element.age %></span>
+    </div>
+    <span id="breed" class="left"><%= element.breed %></span>
+    <a id="show-link" class="right blue-text text-darken-2" href="#">Show Page</a>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= element.name %><i class="material-icons right">close</i></span>
+      <p>Here is some more information about this animal.</p>
+      <div class="pad-top-50">
+        <div id="<%= element.id %>" class="pad-left-small inline">
+          <%= button_to cart_animals_path(animal_id: element.id), method: :post, :class => "btn-floating green tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Add to Favorites" do %>
+            <i class="material-icons">favorite</i>
+          <% end %>
+        </div>
+          <div class="pad-left-small inline">
+          <%= button_to "#", :class => "btn-floating blue tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Meet me!" do %>
+            <i class="material-icons">pets</i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

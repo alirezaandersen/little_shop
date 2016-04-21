@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>MaxFund</title>
+  <link rel="stylesheet" media="all" href="/assets/application-ef7bc795ac83082e5484e3b20d940afc43b79a65de16bb5b8ec2ab13bfca5c34.css" />
+  <script src="/assets/application-3d8662a67810220b9b618e747a088b4230083af693dac495f5e21f04e955a64a.js"></script>
+  
+</head>
+<body>
+  <header>
+    <div class="mobile-collapse">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">MaxFund</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse right pad-right-small"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Adopt a Dog</a></li>
+        <li><a href="#">Adopt a Cat</a></li>
+        <li><a href="#">Volunteers</a></li>
+        <li><a href="#">Location &amp; Hours</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Adopt a Dog</a></li>
+        <li><a href="#">Adopt a Cat</a></li>
+        <li><a href="#">Volunteers</a></li>
+        <li><a href="#">Location &amp; Hours</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<script>
+  $( document ).ready(function(){
+    $('.button-collapse').sideNav({
+      menuWidth: 200,
+      edge: 'right',
+      closeOnClick: true
+    });
+  });
+</script>
+
+    <ul class="side-nav fixed sidebar">
+  <li><a href="#!">First Sidebar Link</a></li>
+  <li><a href="#!">Second Sidebar Link</a></li>
+</ul>
+
+<!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a> -->
+<!--
+<script>
+  $( document ).ready(function(){
+    $('.button-collapse').sideNav({
+      menuWidth: 200,
+      edge: 'right',
+      closeOnClick: true
+    });
+  });
+</script> -->
+
+<!-- ################################################## -->
+<!--
+<ul id="slide-out" class="side-nav">
+  <li><a href="#!">First Sidebar Link</a></li>
+  <li><a href="#!">Second Sidebar Link</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a> -->
+
+  </header>
+  Cart: 1
+    <script>
+      $(function() {
+        Materialize.toast('You&#39;re about to adopt 3', 2500);
+      });
+    </script>
+
+  <main>
+    <h1 class="center">All Pets</h1>
+<div class="row">
+  <div class="container">
+      <div class="col s6 m4 l4">
+  <div class="card small">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg">
+    </div>
+    <div class="card-content center activator">
+      <span class="card-title activator grey-text text-darken-4 left">3</span><span class="card-title activator grey-text text-darken-4 right">Age: 1</span>
+    </div>
+    <span id="breed" class="left">2</span>
+    <a id="show-link" class="right blue-text text-darken-2" href="#">Show Page</a>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">3<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this animal.</p>
+      <div class="pad-top-50">
+        <div id="1" class="pad-left-small inline">
+          <form class="button_to" method="post" action="/cart_animals?animal_id=1"><button class="btn-floating green tooltipped" data-position="top" data-delay="50" data-tooltip="Adopt me!" type="submit">
+            <i class="material-icons">favorite</i>
+</button></form>        </div>
+          <div class="pad-left-small inline">
+          <form class="button_to" method="post" action="#"><button class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="Meet me!" type="submit">
+            <i class="material-icons">pets</i>
+</button></form>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+</div>
+
+  </main>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+</body>
+</html>
