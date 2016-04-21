@@ -22,7 +22,7 @@ FactoryGirl.define do
     "#{b}"
   end
 
-  sequence :age, [0,1,2,3,4].cycle do |a|
+  sequence :age, [0,1,2,3].cycle do |a|
     "#{a}"
   end
 
@@ -61,4 +61,38 @@ FactoryGirl.define do
   factory :species do
     name {generate(:name)}
   end
+
+  factory :user do
+    first_name
+    last_name
+    email
+    password_digest
+    phone_number
+    role
+  end
+
+  sequence :first_name do |fn|
+    "#{fn}"
+  end
+
+  sequence :last_name do |ln|
+    "#{ln}"
+  end
+
+  sequence :email do |e|
+    "#{e}"
+  end
+
+  sequence :password_digest do |pw|
+    "#{pw}"
+  end
+
+  sequence :phone_number do |pn|
+    "#{pn}"
+  end
+
+  sequence :role do |r|
+    r = 0
+  end
+
 end
