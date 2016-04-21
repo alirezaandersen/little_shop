@@ -17254,3 +17254,233 @@ Processing by SpeciesController#show as HTML
   Rendered shared/_navbar.html.erb (0.2ms)
   Rendered shared/_sidebar.html.erb (0.1ms)
 Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 20:58:24 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.7ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (5.3ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (54.7ms)
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 337ms (Views: 316.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/login" for ::1 at 2016-04-20 20:58:27 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.6ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-04-20 20:58:30 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 85ms (Views: 53.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users" for ::1 at 2016-04-20 20:58:45 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gcopDRdnNZM0HyS1jeOi0WzDnUtjErzI91KFd1m/ROMrNmY4cFdPcFYhDDXylFYB39nlE365DZ00e4p7XXmnpw==", "user"=>{"first_name"=>"Jon", "last_name"=>"LIss", "email"=>"jliss@example.com", "phone_number"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jliss@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jon"], ["last_name", "LIss"], ["email", "jliss@example.com"], ["password_digest", "$2a$10$oWy7w23nXd1VgZ/TWSElAumbsEoZO3z1.41cSgLTz5WyAWtSyNDVK"], ["phone_number", ""], ["created_at", "2016-04-21 02:58:45.207951"], ["updated_at", "2016-04-21 02:58:45.207951"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 102ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 20:58:45 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (1.8ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (36.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (10.8ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dogs" for ::1 at 2016-04-20 20:58:52 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"dogs"}
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1  [["species_id", 2]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered species/show.html.erb within layouts/application (25.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 74ms (Views: 54.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/cats" for ::1 at 2016-04-20 20:58:53 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[35mSpecies Load (0.2ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1[0m  [["species_id", 1]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered species/show.html.erb within layouts/application (17.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 20:58:54 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."id" IN (1, 13, 12)[0m
+  Rendered cart_animals/index.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 25ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/cart_animals/1" for ::1 at 2016-04-20 20:58:56 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3DTuQBKrDklBauvGu7Jn/lVSVel/TJtvuLCuE9EF8Ad2yKF1dZt0qiNUw0bExZMu5kgtsWLnKjp7maEf1cMTQw==", "id"=>"1"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 20:58:56 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."id" IN (13, 12)
+  Rendered cart_animals/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/cart_animals/12" for ::1 at 2016-04-20 20:58:57 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KLJrU/y5bfEwKHUPf0JPTfDjcrlpYO2OH1ZM1jDWy5mCTiRmm4kXElIWXY8ANbudQ/kK4XTLXNvcf0PaNBAo3Q==", "id"=>"12"}
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 12]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 20:58:57 -0600
+Processing by CartAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered cart_animals/index.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/cart_animals/13" for ::1 at 2016-04-20 20:58:58 -0600
+Processing by CartAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NpOlmaWNHQS/DwL6rd73cPBIBDRGFN+rpVsnkQcwKjCcb+qswr1n590xKnrSqQOgQ1J8bFu/bv5mciidA/bJdA==", "id"=>"13"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-20 20:58:58 -0600
+Processing by CartAnimalsController#index as HTML
+  Rendered cart_animals/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for ::1 at 2016-04-20 20:58:59 -0600
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mLhaK8rufebSyCPzu8Qdqemlgw52AGteAx5BKBrEy4oyRBUerd4HBbD2C3PEs+l5Wr/7Vmur2gvAN04kHgIozg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-20 20:58:59 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals"[0m
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered animals/index.html.erb within layouts/application (35.5ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.3ms)
