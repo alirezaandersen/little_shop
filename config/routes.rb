@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/', to: "animals#index"
-  resources :cart_animals, only: [:create, :destroy]
-  get '/favorites', to: "cart_animals#index"
+  resources :favorite_animals, only: [:create, :destroy]
+  resources :visit_animals, only: [:create, :destroy]
+
+  get '/favorites', to: "favorite_animals#index"
   get '/animals/:id', to: "animals#show"
   get '/:type', to: "species#show"
-  
+
 end

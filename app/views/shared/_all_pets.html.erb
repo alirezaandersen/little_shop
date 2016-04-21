@@ -13,7 +13,7 @@
       <p>Here is some more information about this animal.</p>
       <div class="pad-top-50">
         <div id="<%= element.id %>" class="pad-left-small inline">
-          <%= button_to cart_animals_path(animal_id: element.id), method: :post, :class => "btn-floating green tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Add to Favorites" do %>
+          <%= button_to favorite_animals_path(animal_id: element.id), method: :post, :class => "btn-floating green tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Add to Favorites" do %>
             <i class="material-icons">favorite</i>
           <% end %>
         </div>

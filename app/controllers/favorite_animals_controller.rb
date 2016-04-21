@@ -1,10 +1,10 @@
-class CartAnimalsController < ApplicationController
+class FavoriteAnimalsController < ApplicationController
   include ActionView::Helpers::TextHelper
 
   def create
     animal = Animal.find(params[:animal_id])
-    message = @cart.add_animal(animal.id)
-    session[:cart] = @cart.contents
+    message = @favorite.add_animal(animal.id)
+    session[:favorite] = @favorite.contents
     flash[:notice] = message
     redirect_to :back
   end
@@ -14,12 +14,13 @@ class CartAnimalsController < ApplicationController
   end
 
   def index
-    @animals = Animal.find(@cart.contents.keys)
+    @animals = Animal.find(@favorite.contents.keys)
   end
 
   def destroy
     animal = Animal.find(params[:id])
-    @cart.remove_item(animal.id)
+    @favorite.remove_item(animal.id)
+    flash[:notice] = "Removed #{animal.name}"
     redirect_to :back
   end
 

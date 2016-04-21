@@ -4,10 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
-  before_action :set_cart
+  before_action :set_favorite
+  before_action :set_visit
 
-  def set_cart
-    @cart = Cart.new(session[:cart])
+  def set_favorite
+    @favorite = Favorite.new(session[:favorite])
+  end
+
+  def set_visit
+    @visit = Visit.new(session[:visit])
   end
 
   def current_user

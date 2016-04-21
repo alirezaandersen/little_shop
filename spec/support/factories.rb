@@ -1,4 +1,9 @@
 FactoryGirl.define do
+
+  factory :species do
+    name {generate(:name)}
+  end
+
   factory :animal do
     name
     breed
@@ -60,10 +65,6 @@ FactoryGirl.define do
 
   sequence :species do
     FactoryGirl.create(:species)
-  end
-
-  factory :species do
-    name {generate(:name)}
   end
 
   factory :user do
