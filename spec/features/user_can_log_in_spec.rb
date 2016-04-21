@@ -8,6 +8,7 @@ RSpec.feature "user logs in" do
 
      visit root_path
      click_on "Log In/Create Account"
+    
      fill_in "Email", with: user.email
      fill_in "Password", with: user.password
      click_on "Log in"
