@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :password_digest, presence: true
-  validates :role, presence: true
   has_many :favorites
   has_many :visits
   has_many :visit_animals, through: :visits, source: :animal

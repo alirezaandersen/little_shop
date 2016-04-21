@@ -10,19 +10,22 @@
             <p>Breed: <%= animal.breed %> <br>
                Age: <%= animal.age %>
             </p><br />
-            <%= button_to "Remove Pet", favorite_animal_path(animal), method: :delete, :class => "btn tooltipped red", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Remove Pet" %>
+            <%= link_to "Remove Favorite", favorite_animal_path(animal), method: :delete, :class => "btn red", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Remove Pet" %>
             <a href="#!" class="secondary-content"><i class="material-icons">pets</i></a>
             <% if current_user && current_user.visit_animals.include?(animal)  %>
-              <%= button_to "Remove Visit", visit_animal_path(animal), method: :delete %>
+              <%= link_to "Remove Visit", visit_animal_path(animal), method: :delete, :class => "btn red" %>
             <% elsif current_user %>
-              <%= button_to "Add to Visit", visit_animals_path(animal_id: animal.id, method: :post) %>
+              <%= link_to "Add to Visit", visit_animals_path(animal_id: animal.id), method: :post, :class => "btn red" %>
             <% end %><br><br>
           </li>
         <% end %>
       </ul>
     </table>
     <% if current_user && current_user.visit_animals.any? %>
-      <%= button_to "Schedule Visit", '/favorites' %>
+      <%= link_to "Schedule Visit", new_visit_path, :class => "btn tooltipped red" %>
+    <% elsif current_user %>
+      <a class="btn disabled">Schedule Visit</a>
+      Add some animals to your visit.
     <% else %>
       <%= link_to "Log In or Create Account to schedule visit", login_path %>
     <% end %>

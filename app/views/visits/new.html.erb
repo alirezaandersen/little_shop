@@ -1,0 +1,7 @@
+<div class="container">
+  <h1> Set an Appointment </h1>
+  <%= form_for(@visit, :html => {:class => "datepicker"}) do |f| %>
+    <%= f.datetime_field(:date) %>
+    <%= f.submit %>
+  <% end %>
+</div>

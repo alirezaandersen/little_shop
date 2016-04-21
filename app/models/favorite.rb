@@ -23,7 +23,7 @@ class Favorite < ActiveRecord::Base
   end
 
   def total
-    contents.values.sum
+    contents.count
   end
 
   def remove_item(animal_id)
