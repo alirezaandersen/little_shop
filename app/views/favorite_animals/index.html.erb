@@ -10,7 +10,7 @@
             <p>Breed: <%= animal.breed %> <br>
                Age: <%= animal.age %>
             </p><br />
-            <%= button_to "Remove Pet", favorite_animal_path(animal), method: :delete, :class => "btn tooltipped red", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Remove Pet" %>
+            <%= button_to "Remove Pet", favorite_animal_path(animal), method: :delete, class: "btn red " %>
             <a href="#!" class="secondary-content"><i class="material-icons">pets</i></a>
             <% if current_user && current_user.visit_animals.include?(animal)  %>
               <%= button_to "Remove Visit", visit_animal_path(animal), method: :delete %>

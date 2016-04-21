@@ -4,7 +4,7 @@ class VisitAnimalsController < ApplicationController
 
   def create
     visit = Visit.new(animal: @animal, user: current_user)
-    if total < 3
+    if total < 4
       if visit.save
         flash[:notice] = "Added to visit"
         redirect_to '/favorites'

@@ -18,11 +18,10 @@ class FavoriteAnimalsController < ApplicationController
   end
 
   def destroy
+    byebug
     animal = Animal.find(params[:id])
     @favorite.remove_item(animal.id)
     flash[:notice] = "Removed #{animal.name}"
     redirect_to :back
   end
-
-
 end
