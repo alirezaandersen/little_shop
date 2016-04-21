@@ -3,10 +3,10 @@ class AnimalsController < ApplicationController
   def index
     @animals = Animal.all
   end
-  
+
   def home
-    @dogs = Animal.all.where(species: "dog").take(4)
-    @cats = Animal.all.where(species: "cat").take(4)
+    @dogs = Animal.where(species: Species.where(name: "dogs")).take(5)
+    @cats = Animal.where(species: Species.where(name: "cats")).take(5)
   end
 
 end

@@ -1,9 +1,0 @@
-<h1>Accessories</h1>
-
-<% @accessories.each do |accessory| %>
-
-  <h3><%= accessory.name %></h3>
-  <%= accessory.description %>
-  <%= button_to "Add to Cart", cart_animals_path(accessory_id: accessory.id), class: "btn btn-danger" %>
-
-<% end %>
