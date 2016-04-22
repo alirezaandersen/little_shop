@@ -1,12 +1,12 @@
 class AnimalsController < ApplicationController
 
   def index
-    @animals = Animal.all
+    @animals = Animal.where(available: true)
   end
-  
+
   def home
-    @dogs = Animal.all.where(species: "dog").take(4)
-    @cats = Animal.all.where(species: "cat").take(4)
+    @dogs = Animal.where(species: "dogs").take(4)
+    @cats = Animal.where(species: "cats").take(4)
   end
 
 end
