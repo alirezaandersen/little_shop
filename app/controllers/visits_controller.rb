@@ -9,7 +9,6 @@ class VisitsController < ApplicationController
   end
 
   def index
-    binding.pry
     @visits = current_user.visits
   end
 

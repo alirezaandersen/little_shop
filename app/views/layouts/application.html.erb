@@ -16,11 +16,11 @@
     <%= render partial: "shared/navbar" %>
     <%= render partial: "shared/sidebar" %>
   </header>
-  Favorites: <%= @favorite.total %>
+  <!-- Favorites: <%= @favorite.total %> -->
   <% flash.each do |type, message| %>
     <script>
       $(function() {
-        Materialize.toast('<%= message %>', 3000);
+        Materialize.toast("<%= message %>", 3000);
       });
     </script>
   <% end %>

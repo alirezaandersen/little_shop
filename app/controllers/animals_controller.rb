@@ -1,7 +1,7 @@
 class AnimalsController < ApplicationController
 
   def index
-    @animals = Animal.all
+    @animals = Animal.where(available: true)
   end
 
   def home

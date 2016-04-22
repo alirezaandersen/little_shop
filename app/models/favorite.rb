@@ -26,8 +26,11 @@ class Favorite < ActiveRecord::Base
     contents.count
   end
 
-  def remove_item(animal_id)
+  def remove_item(animal_id, user = nil)
     contents.delete(animal_id.to_s)
+    if user
+      user.visits.find_by(animal: animal_id).destroy
+    end
   end
 
 
