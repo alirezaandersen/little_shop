@@ -12,11 +12,11 @@ class Favorite < ActiveRecord::Base
     @contents = initial_contents || {}
   end
 
-  def add_animal(animal_id)
+  def add_animal(animal_id, user = nil)
     contents[animal_id.to_s] ||= 0
-    if contents[animal_id.to_s] != 1
-    contents[animal_id.to_s] += 1
-    "#{ Animal.find(animal_id).name} added to favorites!"
+    if contents[animal_id.to_s] == 0
+      contents[animal_id.to_s] += 1
+      "#{ Animal.find(animal_id).name} added to favorites!"
     else
       "You can't favorite the same pet twice"
     end
@@ -28,8 +28,9 @@ class Favorite < ActiveRecord::Base
 
   def remove_item(animal_id, user = nil)
     contents.delete(animal_id.to_s)
-    if user
+    if user && user.visits.find_by(animal: animal_id)
       user.visits.find_by(animal: animal_id).destroy
+      user.favorites.find_by(animal: animal_id).destroy
     end
   end
 

@@ -23459,3 +23459,1212 @@ SyntaxError (/Users/jdliss/turing/2module/projects/little_shop/app/controllers/v
   Rendered /Users/jdliss/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/jdliss/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
   Rendered /Users/jdliss/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (116.4ms)
+  [1m[36mVisit Load (0.5ms)[0m  [1mSELECT "visits".* FROM "visits"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'animals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'species'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'visits'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSpecies Load (0.3ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (23.7ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "https://www.petfinder.com/wp-content/uploads/2013/09/cat-black-superstitious-fcs-cat-myths-162286659.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.616518"], ["updated_at", "2016-04-22 14:46:43.616518"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.3ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpegx"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.645615"], ["updated_at", "2016-04-22 14:46:43.645615"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://media4.popsugar-assets.com/files/2014/08/08/878/n/1922507/caef16ec354ca23b_thumb_temp_cover_file32304521407524949.xxxlarge/i/Funny-Cat-GIFs.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.650237"], ["updated_at", "2016-04-22 14:46:43.650237"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://boredomtherapy.com/wp-content/uploads/2014/05/cat-fur-markings-1.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.653311"], ["updated_at", "2016-04-22 14:46:43.653311"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 5"], ["age", 0], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://cbsnews1.cbsistatic.com/hub/i/r/2016/03/23/38e32f54-b910-4612-8852-be9e0fbdbf73/thumbnail/620x350/440a1273973991f75a0ac768f554e37c/cat-istock.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.656755"], ["updated_at", "2016-04-22 14:46:43.656755"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 6"], ["age", 1], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://cdn1.theodysseyonline.com/files/2015/11/19/635835725242453246248519616_cat_1-jpg.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.667875"], ["updated_at", "2016-04-22 14:46:43.667875"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 7"], ["age", 2], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://homepages.uc.edu/~burgesmr/catanddog/Cats/2.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.677227"], ["updated_at", "2016-04-22 14:46:43.677227"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 8"], ["age", 3], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.686872"], ["updated_at", "2016-04-22 14:46:43.686872"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 9"], ["age", 0], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.689668"], ["updated_at", "2016-04-22 14:46:43.689668"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 1], ["name", "cat 10"], ["age", 1], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "https://upload.wikimedia.org/wikipedia/en/3/3a/Freddie4.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.692993"], ["updated_at", "2016-04-22 14:46:43.692993"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.695750"], ["updated_at", "2016-04-22 14:46:43.695750"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.698469"], ["updated_at", "2016-04-22 14:46:43.698469"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://goldenstateservicedogs.com/wp-content/uploads/2015/04/c50bdb2e-95bc-4423-862f-83e949001fbf.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.700935"], ["updated_at", "2016-04-22 14:46:43.700935"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "https://www.purina.com/media/629192/seo-article-14-list-grid.jpg/372/299/center/middle"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.704206"], ["updated_at", "2016-04-22 14:46:43.704206"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 5"], ["age", 0], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "https://www.petfinder.com/images/breeds/dog/2330.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.706691"], ["updated_at", "2016-04-22 14:46:43.706691"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 6"], ["age", 1], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://barkpost.com/wp-content/uploads/2014/07/Emotion-motion-by-Jelly-Dude-via-Flickr.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.709368"], ["updated_at", "2016-04-22 14:46:43.709368"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 7"], ["age", 2], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.pedigree.com/All-Things-Dog/Images/article_img/do-dogs-dream.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.712097"], ["updated_at", "2016-04-22 14:46:43.712097"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 8"], ["age", 3], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.petwave.com/~/media/Images/Center/Health/Dog/Oral/oral2/Dog-Close-Up-Mouth.ashx"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.715111"], ["updated_at", "2016-04-22 14:46:43.715111"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 9"], ["age", 0], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://blog.petmeds.com/wp-content/uploads/2015/12/Dogs-scoot-for-a-variety-of-reasons.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.718016"], ["updated_at", "2016-04-22 14:46:43.718016"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 10"], ["age", 1], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://a-z-animals.com/media/animals/images/original/dog5.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:46:43.720696"], ["updated_at", "2016-04-22 14:46:43.720696"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (4.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAnimals (20160418233505)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (15.0ms)[0m  [1mCREATE TABLE "animals" ("id" serial primary key, "species" character varying, "name" character varying, "breed" character varying, "sex" integer, "size" integer, "age" integer, "activity_level" integer, "house_trained" boolean, "spayed_neutered" boolean, "special_needs" boolean, "available" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418233505"]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+Migrating to AddImagePathColumntoAnimal (20160418234905)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (12.0ms)[0m  [1mALTER TABLE "animals" ADD "image_path" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160418234905"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAccessories (20160419003101)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (14.6ms)[0m  [1mCREATE TABLE "accessories" ("id" serial primary key, "category" integer, "species" character varying, "description" text, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003101"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToAnimal (20160419003231)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "animals" ADD "description" text[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419003231"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSpecies (20160419202650)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (20.3ms)[0m  [1mCREATE TABLE "species" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202650"]]
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+Migrating to RemoveColumnFromAnimals (20160419202816)
+  [1m[35m (5.8ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "animals" DROP "species"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419202816"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddSpeciesColumnToAnimal (20160419203107)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ADD "species_id" integer[0m
+  [1m[35m (6.3ms)[0m  CREATE  INDEX  "index_animals_on_species_id" ON "animals"  ("species_id")
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "animals" ADD CONSTRAINT "fk_rails_8c21b45993"
+FOREIGN KEY ("species_id")
+  REFERENCES "species" ("id")
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203107"]]
+  [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
+Migrating to DropAccessoriesTable (20160419203406)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "accessories"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160419203406"]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20160420190136)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "password_digest" character varying, "email" character varying, "phone_number" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160420190136"]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFavorites (20160420190232)
+  [1m[35m (5.8ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "favorites" ("id" serial primary key, "user_id" integer, "animal_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (6.1ms)[0m  CREATE  INDEX  "index_favorites_on_user_id" ON "favorites"  ("user_id")
+  [1m[36m (4.8ms)[0m  [1mCREATE  INDEX  "index_favorites_on_animal_id" ON "favorites"  ("animal_id")[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "favorites" ADD CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "favorites" ADD CONSTRAINT "fk_rails_5630e4c196"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160420190232"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVisits (20160420190538)
+  [1m[35m (5.6ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "visits" ("id" serial primary key, "date" date, "time" time, "user_id" integer, "animal_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (6.5ms)[0m  CREATE  INDEX  "index_visits_on_user_id" ON "visits"  ("user_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX  "index_visits_on_animal_id" ON "visits"  ("animal_id")[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "visits" ADD CONSTRAINT "fk_rails_09e5e7c20b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "visits" ADD CONSTRAINT "fk_rails_f241d61bb1"
+FOREIGN KEY ("animal_id")
+  REFERENCES "animals" ("id")
+[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160420190538"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddRoleColumnToUsers (20160420221936)
+  [1m[35m (5.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160420221936"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeColumnRoleDefault (20160420233441)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ALTER COLUMN "role" SET DEFAULT 0[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160420233441"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+Migrating to ChangeSpecialNeedsToDefault (20160420233810)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "animals" ALTER COLUMN "special_needs" SET DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160420233810"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'animals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'species'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'visits'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "cats"], ["created_at", "2016-04-22 14:47:15.459305"], ["updated_at", "2016-04-22 14:47:15.459305"]]
+  [1m[35m (4.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "https://www.petfinder.com/wp-content/uploads/2013/09/cat-black-superstitious-fcs-cat-myths-162286659.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.482221"], ["updated_at", "2016-04-22 14:47:15.482221"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.2ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpegx"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.486275"], ["updated_at", "2016-04-22 14:47:15.486275"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://media4.popsugar-assets.com/files/2014/08/08/878/n/1922507/caef16ec354ca23b_thumb_temp_cover_file32304521407524949.xxxlarge/i/Funny-Cat-GIFs.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.489797"], ["updated_at", "2016-04-22 14:47:15.489797"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://boredomtherapy.com/wp-content/uploads/2014/05/cat-fur-markings-1.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.492973"], ["updated_at", "2016-04-22 14:47:15.492973"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 5"], ["age", 0], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://cbsnews1.cbsistatic.com/hub/i/r/2016/03/23/38e32f54-b910-4612-8852-be9e0fbdbf73/thumbnail/620x350/440a1273973991f75a0ac768f554e37c/cat-istock.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.495820"], ["updated_at", "2016-04-22 14:47:15.495820"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 6"], ["age", 1], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://cdn1.theodysseyonline.com/files/2015/11/19/635835725242453246248519616_cat_1-jpg.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.498652"], ["updated_at", "2016-04-22 14:47:15.498652"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 7"], ["age", 2], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://homepages.uc.edu/~burgesmr/catanddog/Cats/2.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.501471"], ["updated_at", "2016-04-22 14:47:15.501471"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 8"], ["age", 3], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://superbpix.com/files/funzug/imgs/walls/big/cute_cats_wal_03.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.504223"], ["updated_at", "2016-04-22 14:47:15.504223"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 9"], ["age", 0], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.506886"], ["updated_at", "2016-04-22 14:47:15.506886"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "cats"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["species_id", 1], ["name", "cat 10"], ["age", 1], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "https://upload.wikimedia.org/wikipedia/en/3/3a/Freddie4.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.509851"], ["updated_at", "2016-04-22 14:47:15.509851"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpecies Load (0.1ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "dogs"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "dogs"], ["created_at", "2016-04-22 14:47:15.511980"], ["updated_at", "2016-04-22 14:47:15.511980"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 1"], ["age", 0], ["breed", "breed 0"], ["size", 0], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.513726"], ["updated_at", "2016-04-22 14:47:15.513726"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 2"], ["age", 1], ["breed", "breed 1"], ["size", 1], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://az616578.vo.msecnd.net/files/2016/03/13/6359346621543673841267054763_pup.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.516282"], ["updated_at", "2016-04-22 14:47:15.516282"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 3"], ["age", 2], ["breed", "breed 2"], ["size", 2], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://goldenstateservicedogs.com/wp-content/uploads/2015/04/c50bdb2e-95bc-4423-862f-83e949001fbf.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.518874"], ["updated_at", "2016-04-22 14:47:15.518874"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 4"], ["age", 3], ["breed", "breed 3"], ["size", 3], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "https://www.purina.com/media/629192/seo-article-14-list-grid.jpg/372/299/center/middle"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.522192"], ["updated_at", "2016-04-22 14:47:15.522192"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 5"], ["age", 0], ["breed", "breed 4"], ["size", 4], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "https://www.petfinder.com/images/breeds/dog/2330.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.525388"], ["updated_at", "2016-04-22 14:47:15.525388"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 6"], ["age", 1], ["breed", "breed 5"], ["size", 0], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://barkpost.com/wp-content/uploads/2014/07/Emotion-motion-by-Jelly-Dude-via-Flickr.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.528795"], ["updated_at", "2016-04-22 14:47:15.528795"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 7"], ["age", 2], ["breed", "breed 6"], ["size", 1], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://www.pedigree.com/All-Things-Dog/Images/article_img/do-dogs-dream.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.531813"], ["updated_at", "2016-04-22 14:47:15.531813"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 8"], ["age", 3], ["breed", "breed 7"], ["size", 2], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 1], ["image_path", "http://www.petwave.com/~/media/Images/Center/Health/Dog/Oral/oral2/Dog-Close-Up-Mouth.ashx"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.534413"], ["updated_at", "2016-04-22 14:47:15.534413"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 9"], ["age", 0], ["breed", "breed 8"], ["size", 3], ["sex", 0], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 2], ["image_path", "http://blog.petmeds.com/wp-content/uploads/2015/12/Dogs-scoot-for-a-variety-of-reasons.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.536906"], ["updated_at", "2016-04-22 14:47:15.536906"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mSpecies Load (0.1ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "dogs"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 10"], ["age", 1], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://a-z-animals.com/media/animals/images/original/dog5.jpg"], ["description", "\nWell hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.\n\nI am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!\n\nAsk the front desk to meet me today!"], ["created_at", "2016-04-22 14:47:15.539761"], ["updated_at", "2016-04-22 14:47:15.539761"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2016-04-22 08:47:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (1.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (42.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navbar.html.erb (14.1ms)
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 6.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  app/controllers/application_controller.rb:19:in `current_user'
+  app/views/shared/_navbar.html.erb:8:in `_app_views_shared__navbar_html_erb___1759227126102668030_70320170209100'
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3380550754165308157_70320141250560'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.6ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (94.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:47:53 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (1.4ms)
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (6.8ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.9ms)
+  Rendered animals/index.html.erb within layouts/application (43.0ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2016-04-22 08:47:56 -0600
+
+SyntaxError (/Users/drew/turing/2module/little_shop/app/controllers/sessions_helper.rb:2: syntax error, unexpected end-of-input):
+  app/controllers/sessions_helper.rb:2: syntax error, unexpected end-of-input
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.0ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.6ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (82.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:48:08 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (31.0ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 47.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 08:48:08 -0600
+
+
+Started GET "/login" for ::1 at 2016-04-22 08:48:09 -0600
+
+ActionController::RoutingError (Couldn't find SessionsHelper, expected it to be defined in helpers/sessions_helper.rb):
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (84.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.9ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (80.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:48:32 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.6ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (26.4ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 08:48:32 -0600
+
+
+Started GET "/login" for ::1 at 2016-04-22 08:48:33 -0600
+
+ActionController::RoutingError (Couldn't find SessionsHelper, expected it to be defined in helpers/sessions_helper.rb):
+  app/controllers/sessions_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:49:01 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (34.0ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 69ms (Views: 53.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 08:49:01 -0600
+
+
+Started GET "/login" for ::1 at 2016-04-22 08:49:01 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-04-22 08:49:06 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 23.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2016-04-22 08:49:41 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6YFcZhodDeqfc/k+Wcb1/fN3Kc5kLhABF8XaruxuXOfanLtVPYEuBfoSbd1eyKS+rOngn6KhQbb6nhfj8NgTMw==", "user"=>{"first_name"=>"drew", "last_name"=>"t", "email"=>"drew@drew.com", "phone_number"=>"", "password"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'drew@drew.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "drew"], ["last_name", "t"], ["email", "drew@drew.com"], ["password_digest", "$2a$10$rqSwuBVRf1t54euxe0ywL.jTgbDENny2mB9o/DLj0jaW6pVaG86NO"], ["phone_number", ""], ["created_at", "2016-04-22 14:49:41.096037"], ["updated_at", "2016-04-22 14:49:41.096037"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 89ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/dashboard" for ::1 at 2016-04-22 08:49:41 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:50:09 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (11.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (38.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/favorite_animals?animal_id=1" for ::1 at 2016-04-22 08:50:11 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"gRIpNjcZR/qQbXUlqsQ3z5IFdWQh2ahk4JVd3acBoXGyD84FEIVkFfUM4catymaMzZu8NedW+dMNzpCQu7fupQ==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/favorite.rb:19:in `add_animal'
+  app/controllers/favorite_animals_controller.rb:6:in `create'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.9ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:50:41 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (34.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (11.7ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 79ms (Views: 63.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 08:50:41 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 08:50:42 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 08:50:42 -0600
+
+
+Started POST "/favorite_animals?animal_id=1" for ::1 at 2016-04-22 08:50:44 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"SQes7caUPOc7gFPXoMLy4bqGg6ypT/SHfUwt69+gZEB6Gkve4QgfCF7hxzSnzKOi5RhK/W/ApTCQF+CmwxYrlA==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/favorite.rb:19:in `add_animal'
+  app/controllers/favorite_animals_controller.rb:6:in `create'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (35.0ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 08:50:59 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (31.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (10.8ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 70ms (Views: 56.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 08:50:59 -0600
+
+
+Started POST "/favorite_animals?animal_id=1" for ::1 at 2016-04-22 08:51:00 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"5psye6wpVcpQE3vaJ0Sa8q6uXEQHCFKEsyz2uaHx5tLVhtVIi7V2JTVy7zkgSsux8TCVFcGHAzNedzv0vUepBg==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.4ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 946269ms (ActiveRecord: 2.1ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/favorite.rb:20:in `add_animal'
+  app/controllers/favorite_animals_controller.rb:6:in `create'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.9ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 09:06:51 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (1.1ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered animals/index.html.erb within layouts/application (36.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navbar.html.erb (11.3ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 86ms (Views: 69.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 09:06:51 -0600
+
+
+Started POST "/favorite_animals?animal_id=1" for ::1 at 2016-04-22 09:06:55 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"DzOMiP9n4ig7Papu06KqWopvo1ONngX/uBiFReTmFyo8Lmu72PvBx15cPo3UrPsZ1fFqAksRVEhVQ0gI+FBY/g==", "animal_id"=>"1"}
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 698464ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 09:18:34 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (27.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 47ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/favorite_animals?animal_id=1" for ::1 at 2016-04-22 09:18:38 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"authenticity_token"=>"diXRmwdsC9C8tSG5/FINBVU/rT0LTGlsmYJxZKa7VItFODaoIPAoP9nUtVr7XFxGCqFkbM3DONt02bwpug0bXw==", "animal_id"=>"1"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 12263ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-22 09:18:50 -0600
+Processing by FavoriteAnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnimal Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "animals" INNER JOIN "visits" ON "animals"."id" = "visits"."animal_id" WHERE "visits"."user_id" = $1 AND "animals"."id" = $2 LIMIT 1[0m  [["user_id", 1], ["id", 1]]
+  [1m[35mAnimal Exists (0.3ms)[0m  SELECT  1 AS one FROM "animals" INNER JOIN "visits" ON "animals"."id" = "visits"."animal_id" WHERE "visits"."user_id" = $1 LIMIT 1  [["user_id", 1]]
+  Rendered favorite_animals/index.html.erb within layouts/application (12.1ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/favorite_animals/1" for ::1 at 2016-04-22 09:23:35 -0600
+Processing by FavoriteAnimalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iTjrh+I1GMlIiNewHdCTFu8a6l4280OoTIIeJ+9eK/q6JQy0xak7Ji3pQ1Ma3sJVsIQjD/B8Eh+h2dNq8+hkLg==", "id"=>"1"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1mSELECT  "visits".* FROM "visits" WHERE "visits"."user_id" = $1 AND "visits"."animal_id" = 1 LIMIT 1[0m  [["user_id", 1]]
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/favorites" for ::1 at 2016-04-22 09:23:35 -0600
+Processing by FavoriteAnimalsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAnimal Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "animals" INNER JOIN "visits" ON "animals"."id" = "visits"."animal_id" WHERE "visits"."user_id" = $1 LIMIT 1[0m  [["user_id", 1]]
+  Rendered favorite_animals/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSessionColumnToUsers (20160422152722)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "session" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160422152722"]]
+  [1m[36m (42.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'animals'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'species'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'visits'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m

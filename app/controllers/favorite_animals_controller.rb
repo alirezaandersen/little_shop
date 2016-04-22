@@ -3,7 +3,8 @@ class FavoriteAnimalsController < ApplicationController
 
   def create
     animal = Animal.find(params[:animal_id])
-    message = @favorite.add_animal(animal.id)
+    binding.pry
+    message = @favorite.add_animal(animal.id, current_user)
     session[:favorite] = @favorite.contents
     flash[:notice] = message
     redirect_to :back
@@ -20,7 +21,7 @@ class FavoriteAnimalsController < ApplicationController
   def destroy
     animal = Animal.find(params[:id])
     @favorite.remove_item(animal.id, current_user)
-    flash[:notice] = "Removed #{animal.name}"
+    flash[:notice] = "<a href='/animals/" + animal.id.to_s + "'>" + animal.name + "</a>"
     redirect_to :back
   end
 end

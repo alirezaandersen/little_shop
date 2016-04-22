@@ -4,7 +4,7 @@ class VisitAnimalsController < ApplicationController
 
   def create
     visit = Visit.new(animal: @animal, user: current_user)
-    if total < 4
+    if total < 3
       if visit.save
         flash[:notice] = "Added to visit"
       else
@@ -22,7 +22,7 @@ class VisitAnimalsController < ApplicationController
 
   def destroy
     Visit.where(animal_id: @animal.id, user_id: current_user.id).first.destroy
-    flash[:notice] = "#{@animal.name} removed from visit."
+    flash[:notice] = "<a href='/animals/" + @animal.id.to_s + "'>" + @animal.name + "</a>"
     redirect_to '/favorites'
   end
 
