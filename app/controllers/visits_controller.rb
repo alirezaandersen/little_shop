@@ -8,6 +8,10 @@ class VisitsController < ApplicationController
     @visit = Visit.new(visit_params)
   end
 
+  def index
+    binding.pry
+    @visits = current_user.visits
+  end
 
 
 
