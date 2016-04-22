@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :visits, only: [:index, :new, :create]
 
   get "/favorites", to: "favorite_animals#index"
-  get "/animals/:id", to: "animals#show"
+  get "/animals/:id", to: "animals#show", as: :animal
   get "/:type", to: "species#show"
 end
