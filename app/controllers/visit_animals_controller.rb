@@ -22,7 +22,10 @@ class VisitAnimalsController < ApplicationController
 
   def destroy
     Visit.where(animal_id: @animal.id, user_id: current_user.id).first.destroy
-    flash.now[:notice] = "#{@animal.name} removed from visit."
+    # flash.now[:notice] = "#{@animal.name} removed from visit."
+    # flash[:notice] = %Q[Removed <a href="/animals/#{@animal.id}">#{@animal.name}</a>]
+    flash[:notice] = $('<a href="/animals/<%= @animal.id %><span>Remove <%= @animal.name %></span></a>')
+
     redirect_to '/favorites'
   end
 

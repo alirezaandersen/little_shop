@@ -10,7 +10,7 @@
             <p>Breed: <%= animal.breed %> <br>
                Age: <%= animal.age %>
             </p><br />
-            <%= button_to "Remove Pet", favorite_animal_path(animal), method: :delete, class: "btn red " %>
+            <%= link_to "Remove Pet", favorite_animal_path(animal), method: :delete, class: "waves-effect waves-light btn red" %>
             <a href="#!" class="secondary-content"><i class="material-icons">pets</i></a>
             <% if current_user && current_user.visit_animals.include?(animal)  %>
               <%= link_to "Remove Visit", visit_animal_path(animal), method: :delete, class: "waves-effect waves-light btn red" %>
@@ -22,7 +22,10 @@
       </ul>
     </table>
     <% if current_user && current_user.visit_animals.any? %>
-      <%= link_to "Schedule Visit", '/favorites', method: :post, class: "btn waves-effect waves-light" %>
+      <%= link_to "Schedule Visit", new_visit_path, :class => "btn waves-effect waves-light" %>
+    <% elsif current_user %>
+      <a class="btn disabled">Schedule Visit</a>
+      Add some animals to your visit.
     <% else %>
       <%= link_to "Log In or Create Account to schedule visit", login_path %>
     <% end %>

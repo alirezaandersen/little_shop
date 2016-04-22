@@ -1,7 +1,6 @@
 FactoryGirl.define do
-
   factory :species do
-    name {generate(:name)}
+    name { generate(:name) }
   end
 
   factory :animal do

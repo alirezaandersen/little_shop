@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      flash[:notice] = "Welcome #{@user.first_name}"
+      redirect_to "/dashboard"
     else
       flash.now[:error] = "Failed to create account."
       render :new

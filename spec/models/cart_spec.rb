@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Cart, type: :model do
+RSpec.describe Favorite, type: :model do
   it "adds animal to contents" do
-    cart = Cart.new(nil)
+    cart = Favorite.new(nil)
     animal = FactoryGirl.create(:animal)
 
     cart.add_animal(animal.id)
