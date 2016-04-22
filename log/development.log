@@ -13642,3 +13642,63 @@ ORDER BY c.conname
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "animals" ("species_id", "name", "age", "breed", "size", "sex", "house_trained", "available", "spayed_neutered", "activity_level", "image_path", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["species_id", 2], ["name", "dog 10"], ["age", 1], ["breed", "breed 9"], ["size", 4], ["sex", 1], ["house_trained", "t"], ["available", "t"], ["spayed_neutered", "t"], ["activity_level", 0], ["image_path", "http://a-z-animals.com/media/animals/images/original/dog5.jpg"], ["description", "description 10"], ["created_at", "2016-04-21 20:20:10.881374"], ["updated_at", "2016-04-21 20:20:10.881374"]]
   [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/" for ::1 at 2016-04-21 14:20:24 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (1.2ms)[0m  SELECT "animals".* FROM "animals"
+  Rendered shared/_all_pets.html.erb (1.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (47.0ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+Completed 200 OK in 286ms (Views: 254.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-21 14:20:25 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-21 14:20:25 -0600
