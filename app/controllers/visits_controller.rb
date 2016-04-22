@@ -12,8 +12,6 @@ class VisitsController < ApplicationController
     @visits = current_user.visits
   end
 
-
-
 private
 
   def visit_params

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422152722) do
+ActiveRecord::Schema.define(version: 20160422170444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,10 @@ ActiveRecord::Schema.define(version: 20160422152722) do
     t.string   "password_digest"
     t.string   "email"
     t.string   "phone_number"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "role",            default: 0
-    t.text     "session"
+    t.text     "session",         default: "{}"
   end
 
   create_table "visits", force: :cascade do |t|
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20160422152722) do
     t.integer  "animal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "duration"
+    t.integer  "status"
   end
 
   add_index "visits", ["animal_id"], name: "index_visits_on_animal_id", using: :btree

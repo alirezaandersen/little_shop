@@ -12,7 +12,7 @@ class Favorite < ActiveRecord::Base
     @contents = initial_contents || {}
   end
 
-  def add_animal(animal_id, user = nil)
+  def add_animal(animal_id)
     contents[animal_id.to_s] ||= 0
     if contents[animal_id.to_s] == 0
       contents[animal_id.to_s] += 1
@@ -26,12 +26,9 @@ class Favorite < ActiveRecord::Base
     contents.count
   end
 
-  def remove_item(animal_id, user = nil)
+  def remove_item(animal_id, visit)
     contents.delete(animal_id.to_s)
-    if user && user.visits.find_by(animal: animal_id)
-      user.visits.find_by(animal: animal_id).destroy
-      user.favorites.find_by(animal: animal_id).destroy
-    end
+    visit.contents.delete(animal_id.to_s)
   end
 
 

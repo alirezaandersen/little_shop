@@ -8,4 +8,6 @@ class Visit < ActiveRecord::Base
   validates :user_id, presence: true
   # validates :date, presence: true
   # validates :time, presence: true
+
+
 end
