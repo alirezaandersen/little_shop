@@ -23933,3 +23933,5 @@ SyntaxError (/Users/drew/turing/2module/little_shop/app/controllers/visit_animal
   Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mVisit Load (0.4ms)[0m  SELECT "visits".* FROM "visits" WHERE "visits"."user_id" = $1  [["user_id", 1]]

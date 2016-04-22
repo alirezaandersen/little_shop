@@ -16,6 +16,7 @@ FactoryGirl.define do
     available
     description
     image_path "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"
+    species
   end
 
   sequence :name do |n|

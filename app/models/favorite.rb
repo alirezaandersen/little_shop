@@ -1,6 +1,6 @@
 class Favorite < ActiveRecord::Base
 
-  attr_reader :contents
+  attr_accessor :contents
 
   belongs_to :user
   belongs_to :animal

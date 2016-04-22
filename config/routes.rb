@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: "animals#index"
   resources :favorite_animals, only: [:create, :destroy]
   resources :visit_animals, only: [:create, :destroy]
-  resources :visits, only: [:new, :create]
+  resources :visits, only: [:index, :new, :create]
 
   get "/favorites", to: "favorite_animals#index"
   get "/animals/:id", to: "animals#show"
