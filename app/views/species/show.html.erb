@@ -1,6 +1,7 @@
-<div class="center">
+<div class="center pad-top-50">
   <h2><%= @species.name.capitalize %></h2>
-  <div class="row">
+  <div class="divider container"></div>
+  <div class="row section">
     <div class="pad-left-20 pad-right-20">
       <% @animals.each do |animal| %>
         <%= render partial: "shared/all_pets", locals: { element: animal } %>

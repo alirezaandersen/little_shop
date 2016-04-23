@@ -1,0 +1,6 @@
+.collection .collection-item.avatar .circle {
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+}

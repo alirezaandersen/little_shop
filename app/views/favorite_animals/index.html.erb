@@ -1,14 +1,16 @@
 <div class="container">
-  <h2 class="center">Favorites</h2>
+  <h2 class="center pad-top-50">Favorites</h2>
   <table>
     <ul class="collection">
       <% @animals.each do |animal| %>
         <li class="collection-item avatar">
-          <a href="<%= animal_path(animal) %>"><img src="<%= animal.image_path %>" alt="" class="circle"></a>
-          <span class="title"><b><%= link_to animal.name.capitalize, animal_path(animal) %></b></span>
-          <p>Breed: <%= animal.breed %> <br>
-             Age: <%= animal.age %>
-          </p><br />
+          <a href="<%= animal_path(animal) %>"><img id="" src="<%= animal.image_path %>" alt="<%= animal.name %>" class="circle"></a>
+          <div id="favorite-info" class="center">
+            <span class="title"><b><%= link_to animal.name.capitalize, animal_path(animal) %></b></span>
+            <p>Breed: <%= animal.breed %> <br>
+               Age: <%= animal.age %>
+            </p><br />
+          </div>
           <div class="center">
           <%= link_to "Remove Pet", favorite_animal_path(animal), method: :delete, class: "waves-effect waves-light btn red" %>
           <a href="<%= animal_path(animal) %>" class="secondary-content"><i class="material-icons">pets</i></a>
@@ -23,10 +25,13 @@
     </ul>
   </table>
  <% if current_user && @visitation.contents.any? %>
-    <%= link_to "Schedule Visit", new_visit_path, :class => "btn waves-effect waves-light" %>
+   <div class="center pad-top-20">
+     <%= link_to "Schedule Visit", new_visit_path, :class => "btn waves-effect waves-light" %>
+   </div>
   <% elsif current_user %>
-    <a class="btn disabled">Schedule Visit</a>
-    Add some animals to your visit.
+    <div class="center pad-top-20">
+      <a class="btn disabled tooltipped", data-position="top", data-delay='50', data-tooltip="Add an animal to your visit">Schedule Visit</a>
+    </div>
   <% else %>
     <%= link_to "Log In or Create Account to schedule visit", login_path %>
   <% end %>

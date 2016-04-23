@@ -17,7 +17,7 @@ class VisitAnimalsController < ApplicationController
   def destroy
     animal = Animal.find(params[:id])
     @visitation.remove_item(animal.id)
-    flash[:notice] = "Removed <a href='/animals/" + animal.id.to_s + "'>" + animal.name + "</a> from visit!"
+    flash[:notice] = "<a href='/animals/#{animal.id}'>Removed #{animal.name} from visit</a>"
     redirect_to :back
   end
 
