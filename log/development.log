@@ -40039,3 +40039,162 @@ SystemExit (exit):
   Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
   Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
   Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 19:26:16 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.5ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered animals/index.html.erb within layouts/application (37.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_navbar.html.erb (15.8ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+Completed 200 OK in 255ms (Views: 230.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/dashboard" for ::1 at 2016-04-22 19:26:26 -0600
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <p>Hello <%= @user.first_name %> <%= @user.last_name %></p>
+    2: <p><% "Phone #{@user.phone_number}" if @user.phone_number %></p>
+    3: <p>Email Address: <%= @user.email %></p>
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___3473667557519794784_70218485614860'
+
+
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.9ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (41.1ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/drew/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 19:27:05 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (1.2ms)
+  Rendered shared/_all_pets.html.erb (1.0ms)
+  Rendered shared/_all_pets.html.erb (0.8ms)
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (39.6ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+Completed 200 OK in 66ms (Views: 65.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/navbar.self-912066d848aca38a565ea8a74137c23b49f2aab1e08c5c4171eb023f4667881e.css?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/home.self-a5b3400d16cca5da544bec9cda61869ef6032c9b87b17043a62675d5374a667d.css?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/products.self-656a63c3a8eb83c71b18bdcf506df4cd6ab4e8c7bac9c5c7fffbf36dc80e52f8.css?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/padding.self-29bbae8c171f935f9d6f03152f2b10be66ff2fde0300ec2a79c4e90936d7c778.css?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/collection_activator.self-6105e8112a3f1e81dd53d1775d76a091a1fc3815ebf66bcff69bbc5b6feda193.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/date.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/home.self-293ee95635328152df3b7481fc5f52e4c6e01b9ce53a19fd929c84be3833e676.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/navbar.self-80ce0eaee56375935079efd1d4dd0f165221bfa3725713db8d5f53cffb7e46a0.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2016-04-22 19:27:05 -0600
+
+
+Started GET "/login" for ::1 at 2016-04-22 19:27:23 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (11.8ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 38ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-22 19:27:27 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered shared/_all_pets.html.erb (0.4ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (26.6ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.3ms)

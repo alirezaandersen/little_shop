@@ -1,12 +1,16 @@
 <ul class="side-nav fixed">
-  <li><a href="/dashboard">User Dashboard</a></li>
+  <% if current_user %>
+    <li><a href="/dashboard">User Dashboard</a></li>
+  <% end %>
   <li><a href="#">About Us</a></li>
   <li><a href="#">Donate</a></li>
   <li><a href="#">Volunteers</a></li>
   <li><a href="#">Location &amp; Hours</a></li>
 </ul>
 <ul id="sidebar-slider" class="side-nav">
-  <li><a href="/dashboard">User Dashboard</a></li>
+  <% if current_user %>
+    <li><a href="/dashboard">User Dashboard</a></li>
+  <% end %>
   <li><a href="#">About Us</a></li>
   <li><a href="#">Donate</a></li>
   <li><a href="#">Volunteers</a></li>

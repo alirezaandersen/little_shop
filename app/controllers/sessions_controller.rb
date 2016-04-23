@@ -12,10 +12,10 @@ class SessionsController < ApplicationController
       session[:visit] = user_session["visit"] || {}
       session[:user_id] = user.id
       flash[:alert] = "Welcome #{user.first_name}"
-      redirect_to root_path
+      redirect_to '/dashboard'
     else
       flash[:alert] = "Invalid Email or Password"
-      redirect_to login_path
+      render :new
     end
   end
 
