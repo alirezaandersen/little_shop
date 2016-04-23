@@ -1,3 +1,25 @@
-<p>Hello <%= @user.first_name %> <%= @user.last_name %></p>
-<p><% "Phone #{@user.phone_number}" if @user.phone_number %></p>
-<p>Email Address: <%= @user.email %></p>
+<div class="container">
+  <h4 class="center">User Dashboard</h4><br />
+  <table class="striped highlight">
+    <tbody>
+      <tr>
+        <td>First name</td>
+        <td><%= @user.first_name.capitalize %></td>
+      </tr>
+      <tr>
+        <td>Last name</td>
+        <td><%= @user.last_name.capitalize %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @user.email %></td>
+      </tr>
+      <% unless @user.phone_number.empty?  %>
+        <tr>
+          <td>Phone</td>
+          <td><%= @user.phone_number %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
