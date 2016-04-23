@@ -18,8 +18,16 @@ class Visitation
     end
   end
 
-  def update_duration(animal_id, duration)
-    contents[animal_id.to_s] = duration
+  def increase_duration(animal_id)
+    if contents[animal_id.to_s] < 60
+      contents[animal_id.to_s] += 15
+    end
+  end
+
+  def decrease_duration(animal_id)
+    if contents[animal_id.to_s] > 15
+      contents[animal_id.to_s] -= 15
+    end
   end
 
   def total_animals

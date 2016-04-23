@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   get "/animals" => "animals#index"
-
+  patch "/visits/plus" => "visit_animals#plus"
+  patch "/visits/minus" => "visit_animals#minus"
   get "/login" => "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

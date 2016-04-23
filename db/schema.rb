@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422223451) do
+ActiveRecord::Schema.define(version: 20160423160047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160422223451) do
     t.integer  "visit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "duration"
   end
 
   add_index "animal_visits", ["animal_id"], name: "index_animal_visits_on_animal_id", using: :btree
@@ -45,12 +46,6 @@ ActiveRecord::Schema.define(version: 20160422223451) do
   end
 
   add_index "animals", ["species_id"], name: "index_animals_on_species_id", using: :btree
-
-  create_table "durations", force: :cascade do |t|
-    t.integer  "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
@@ -84,13 +79,11 @@ ActiveRecord::Schema.define(version: 20160422223451) do
     t.date     "date"
     t.time     "time"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "status"
-    t.integer  "duration_id"
   end
 
-  add_index "visits", ["duration_id"], name: "index_visits_on_duration_id", using: :btree
   add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
   add_foreign_key "animal_visits", "animals"
@@ -98,6 +91,5 @@ ActiveRecord::Schema.define(version: 20160422223451) do
   add_foreign_key "animals", "species"
   add_foreign_key "favorites", "animals"
   add_foreign_key "favorites", "users"
-  add_foreign_key "visits", "durations"
   add_foreign_key "visits", "users"
 end

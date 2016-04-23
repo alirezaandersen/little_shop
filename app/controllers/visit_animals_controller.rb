@@ -21,6 +21,18 @@ class VisitAnimalsController < ApplicationController
     redirect_to :back
   end
 
+  def plus
+    animal = Animal.find(params[:animal_id])
+    @visitation.increase_duration(animal.id)
+    redirect_to :back
+  end
+
+  def minus
+    animal = Animal.find(params[:animal_id])
+    @visitation.decrease_duration(animal.id)
+    redirect_to :back
+  end
+
 private
 
   def total

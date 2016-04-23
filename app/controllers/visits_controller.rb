@@ -7,7 +7,6 @@ class VisitsController < ApplicationController
   end
 
   def create
-    binding.pry
     @visit = Visit.new(visit_params)
   end
 

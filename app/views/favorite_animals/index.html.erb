@@ -22,7 +22,6 @@
       <% end %>
     </ul>
   </table>
-<%= @visitation.total_duration %>
  <% if current_user && @visitation.contents.any? %>
     <%= link_to "Schedule Visit", new_visit_path, :class => "btn waves-effect waves-light" %>
   <% elsif current_user %>
