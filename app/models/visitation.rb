@@ -18,6 +18,10 @@ class Visitation
     end
   end
 
+  def clear
+    contents = {}
+  end
+
   def increase_duration(animal_id)
     if contents[animal_id.to_s] < 60
       contents[animal_id.to_s] += 15

@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    if URI(request.referer).path == "/favorites"
+      session[:referrer] = "/favorites"
+    end
   end
 
   def create
@@ -9,7 +12,12 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Welcome #{@user.first_name}"
-      redirect_to "/dashboard"
+      if session[:referrer] == "/favorites"
+        session.delete(:referrer)
+        redirect_to "/favorites"
+      else
+        redirect_to "/dashboard"
+      end
     else
       flash.now[:error] = "Failed to create account."
       render :new

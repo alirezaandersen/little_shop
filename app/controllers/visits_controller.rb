@@ -7,16 +7,30 @@ class VisitsController < ApplicationController
   end
 
   def create
-    @visit = Visit.new(visit_params)
+    @visit = current_user.visits.new(visit_params)
+    animal_visits = @visit.create_animal_visits(@visit, @visitation.contents)
+    if @visit.valid?
+      @visitation.contents.clear
+      flash[:notice] = "Visit was successfully scheduled"
+      redirect_to visits_path
+    else
+      flash[:error] = "Failed to schedule visit"
+      redirect_to new_visit_path
+    end
   end
 
   def index
     @visits = current_user.visits
+    @message = Visit.get_message(@visits)
+  end
+
+  def show
+    @visit = Visit.find(params[:id])
   end
 
 private
 
   def visit_params
-    params.require(:visit).permit(:date, :time, :animals, :user)
+    params.require(:visit).permit(:date, :time)
   end
 end

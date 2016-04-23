@@ -11,7 +11,7 @@
     <% end %>
   <%= form_for(@visit) do |f| %>
     <%= @visitation.total_duration %>
-    <%= f.datetime_field(:date) %>
+    <%= f.datetime_field :date, class: "datepicker" %>
     <%= f.submit %>
   <% end %>
 

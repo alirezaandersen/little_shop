@@ -17,9 +17,9 @@ class Animal < ActiveRecord::Base
                         :species_id,
                         :image_path
 
-  enum sex: [:male, :female]
-  enum size: [:toy, :small, :medium, :large, :extra_large]
-  enum age: [:baby, :young, :adult, :senior]
-  enum activity_level: [:couch_potato, :jogger, :sprinter]
+  enum sex: ["Male", "Female"]
+  enum size: ["Toy", "Small", "Medium", "Large", "Extra Large"]
+  enum age: ["Baby", "Young", "Adult", "Senior"]
+  enum activity_level: ["Couch Potato", "Jogger", "Sprinter"]
 
 end
