@@ -5,18 +5,18 @@
     </div>
     <div class="card-content activator">
       <ul class="container center">
-        <li><b><%= element.name %></b></li>
+        <li><b><%= element.name.capitalize %></b></li>
         <div class="divider"></div>
-        <li><%= element.age %></li>
+        <li><%= element.age.capitalize %></li>
         <div class="divider"></div>
-        <li><%= element.breed %></li>
+        <li><%= element.breed.capitalize %></li>
         <div class="divider"></div>
-        <li><%= element.sex %></li>
+        <li><%= element.sex.capitalize %></li>
       </ul>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><%= element.name %><i class="material-icons right">close</i></span>
-      <p>Here is some more information about this animal.</p>
+      <span class="card-title grey-text text-darken-4"><%= element.name.capitalize %><i class="material-icons right">close</i></span>
+      <p class="truncate"><%= element.description %></p>
       <div class="pad-top-50 center">
         <div id="<%= element.id %>" class="pad-left-small inline">
           <%= button_to favorite_animals_path(animal_id: element.id), method: :post, :class => "btn-floating green tooltipped", :'data-position' => "top", :'data-delay' => "50", :'data-tooltip' => "Add to Favorites" do %>
