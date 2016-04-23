@@ -19,7 +19,7 @@ class FavoriteAnimalsController < ApplicationController
 
   def destroy
     animal = Animal.find(params[:id])
-    @favorite.remove_item(animal.id, @visit)
+    @favorite.remove_item(animal.id, @visitation)
     flash[:notice] = "<a href='/animals/" + animal.id.to_s + "'>" + animal.name + "</a>"
     redirect_to :back
   end

@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#show"
   root to: "animals#index"
-
+  resources :durations, only: [:update]
   resources :favorite_animals, only: [:create, :destroy]
   resources :visit_animals, only: [:create, :destroy]
   resources :visits, only: [:index, :new, :create]
 
   get "/favorites", to: "favorite_animals#index"
-  get "/animals/:id", to: "animals#show"
+  get "/animals/:id", to: "animals#show", as: :animal
   get "/:type", to: "species#show"
 end

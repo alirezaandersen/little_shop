@@ -3,20 +3,20 @@ class VisitAnimalsController < ApplicationController
   before_action :set_animal, except: [:index]
 
   def index
-    @animals = Animal.find(@visit.contents.keys)
+    @animals = Animal.find(@visitation.contents.keys)
   end
 
   def create
     animal = Animal.find(params[:animal_id])
-    message = @visit.add_animal(animal.id)
-    session[:visit] = @visit.contents
+    message = @visitation.add_animal(animal.id)
+    session[:visit] = @visitation.contents
     flash[:notice] = message
     redirect_to :back
   end
 
   def destroy
     animal = Animal.find(params[:id])
-    @visit.remove_item(animal.id)
+    @visitation.remove_item(animal.id)
     flash[:notice] = "<a href='/animals/" + animal.id.to_s + "'>" + animal.name + "</a>"
     redirect_to :back
   end

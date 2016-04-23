@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   has_many :favorites
   has_many :visits
-  has_many :visit_animals, through: :visits, source: :animal
+  has_many :animal_visits, through: :visits
   has_many :favorite_animals, through: :favorites, source: :animal
 
   enum role: [:default, :admin]

@@ -1,10 +1,13 @@
 class VisitsController < ApplicationController
 
   def new
+    @visitation
     @visit = Visit.new
+    @animals = Animal.find(@visitation.contents.keys.map(&:to_i))
   end
 
   def create
+    binding.pry
     @visit = Visit.new(visit_params)
   end
 

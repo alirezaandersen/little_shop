@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_visit
-    @visit = Visitation.new(session[:visit])
+    @visitation = Visitation.new(session[:visit])
   end
 
   def current_user

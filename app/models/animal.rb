@@ -2,7 +2,7 @@ class Animal < ActiveRecord::Base
   belongs_to :species
 
   has_many :favorites
-  has_many :visits
+  has_many :animal_visits
 
   validates_presence_of :name,
                         :breed,

@@ -18,12 +18,16 @@ class Visitation
     end
   end
 
-  def change_duration(animal_id)
-
+  def update_duration(animal_id, duration)
+    contents[animal_id.to_s] = duration
   end
 
   def total_animals
     contents.count
+  end
+
+  def total_duration
+    contents.values.sum
   end
 
   def remove_item(animal_id)
