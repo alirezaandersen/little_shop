@@ -1,23 +1,16 @@
 <div class="container">
   <h1> Set an Appointment </h1>
-
-  <%= form_for(@visit) do |f| %>
-    <%= @animals.each_with_index do |animal, index| %>
+    <% @animals.each_with_index do |animal, index| %>
       <%= animal.name %>
       <%= image_tag animal.image_path  %>
+      <%= link_to "+", {controller: "visit_animals", action: "plus", animal_id: animal.id}, method: :patch %>
+      <%= @visitation.contents[animal.id.to_s] %>
+      <%= link_to "-", {controller: "visit_animals", action: "minus", animal_id: animal.id}, method: :patch %>
       <div class="container">
-      <!--
-      <%# f.collection_select( :duration_id, Duration.all, :id, :time, multiple: true, size: @animals.count) + "minutes" %>
-    -->
-      <%# @durations[index] = @visitation.contents[animal.id.to_s] %>
-      <%= f.select(:duration_id) do %>
-        <% Duration.all.each do |d| %>
-          <% byebug %>
-          <%= content_tag(:option, d, value: d) %>
-        <% end %>
-      <% end %>
       </div>
     <% end %>
+  <%= form_for(@visit) do |f| %>
+    <%= @visitation.total_duration %>
     <%= f.datetime_field(:date) %>
     <%= f.submit %>
   <% end %>
