@@ -20,7 +20,7 @@ dogs = [
 
 cats = [
   "https://www.petfinder.com/wp-content/uploads/2013/09/cat-black-superstitious-fcs-cat-myths-162286659.jpg",
-  "https://www.petfinder.com/wp-content/uploads/2012/11/152177319-declawing-cats-632x475-e1354303246526-632x353.jpg",
+  "https://cuteoverload.files.wordpress.com/kitteh_puddle-1312.jpg",
   "http://media4.popsugar-assets.com/files/2014/08/08/878/n/1922507/caef16ec354ca23b_thumb_temp_cover_file32304521407524949.xxxlarge/i/Funny-Cat-GIFs.jpg",
   "http://boredomtherapy.com/wp-content/uploads/2014/05/cat-fur-markings-1.jpg",
   "http://cbsnews1.cbsistatic.com/hub/i/r/2016/03/23/38e32f54-b910-4612-8852-be9e0fbdbf73/thumbnail/620x350/440a1273973991f75a0ac768f554e37c/cat-istock.jpg",
