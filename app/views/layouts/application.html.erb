@@ -17,7 +17,6 @@
     <%= render partial: "shared/sidebar" %>
     <%= render partial: "shared/footer" %>
   </header>
-  <!-- Favorites: <%= @favorite.total %> -->
   <% flash.each do |type, message| %>
     <script>
       $(function() {
@@ -29,8 +28,6 @@
   <main>
     <%= yield %>
   </main>
-
-
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
