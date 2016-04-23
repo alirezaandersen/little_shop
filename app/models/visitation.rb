@@ -11,7 +11,7 @@ class Visitation
         "Can't add #{Animal.find(animal_id).name} twice."
       else
         contents[animal_id.to_s] = 15
-        "#{ Animal.find(animal_id).name} added to visits!"
+        "#{Animal.find(animal_id).name} added to visit!"
       end
     else
       "Can't add more than 3 animals to a visit"
@@ -45,5 +45,4 @@ class Visitation
   def remove_item(animal_id)
     contents.delete(animal_id.to_s)
   end
-
 end

@@ -5,3 +5,11 @@
 td.secondary-content {
   color: black;
 }
+
+img.materialboxed.initialized {
+  width: 400px;
+}
+
+#show-favorite {
+  position: fixed;
+}

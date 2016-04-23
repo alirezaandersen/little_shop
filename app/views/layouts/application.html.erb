@@ -20,7 +20,7 @@
   <% flash.each do |type, message| %>
     <script>
       $(function() {
-        Materialize.toast("<%= message.html_safe %>", 3000);
+        Materialize.toast("<%= message.html_safe %>", 4000);
       });
     </script>
   <% end %>
