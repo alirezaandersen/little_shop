@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Visit, type: :model do
   context "validations" do
-      it { is_expected.to validate_presence_of(:animal_id) }
-      it { is_expected.to validate_presence_of(:user_id) }
+    it {should have_many(:animals)}
+    it {should belong_to(:user)}
     end
   end

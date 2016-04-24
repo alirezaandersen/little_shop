@@ -1,6 +1,8 @@
 <ul class="side-nav fixed">
   <li id="logo" ><%= image_tag "maxfund-logo-text.png" %></li>
-  <% if current_user %>
+  <% if current_user && current_user.admin? %>
+    <li><a href="/admin/dashboard">Admin Dashboard</a></li>
+  <% elsif current_user %>
     <li><a href="/dashboard">User Dashboard</a></li>
   <% end %>
   <li><a href="#">About Us</a></li>
@@ -9,7 +11,9 @@
   <li><a href="#">Location &amp; Hours</a></li>
 </ul>
 <ul id="sidebar-slider" class="side-nav">
-  <% if current_user %>
+  <% if current_user && current_user.admin? %>
+    <li><a href="/admin/dashboard">Admin Dashboard</a></li>
+  <% elsif current_user %>
     <li><a href="/dashboard">User Dashboard</a></li>
   <% end %>
   <li><a href="#">About Us</a></li>

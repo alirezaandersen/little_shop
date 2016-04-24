@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Favorite, type: :model do
-  context "validations" do
-    it { is_expected.to validate_presence_of(:animal_id) }
-    it { is_expected.to validate_presence_of(:user_id) }
 
+
+  context "adds animals to favorites" do
     it "adds animal to contents" do
       cart = Favorite.new(nil)
       animal = FactoryGirl.create(:animal)

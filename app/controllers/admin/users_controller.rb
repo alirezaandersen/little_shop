@@ -1,11 +1,23 @@
 class Admin::UsersController < Admin::BaseController
+  before_action :user_modifies_self
 
   def update
-    @user = User.update(user_params)
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :new
+    end
   end
 
   def edit
-    @user = User.find(params[:id])
+  end
+
+  def user_modifies_self
+    if current_user == User.find(params[:id])
+      @user = User.find(params[:id])
+    else
+      render file: "/public/404"
+    end
   end
 
 
