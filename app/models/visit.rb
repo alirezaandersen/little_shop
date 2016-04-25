@@ -5,7 +5,6 @@ class Visit < ActiveRecord::Base
   has_many :animals, through: :animal_visits
   validates :duration, presence: true
   validates :user_id, presence: true
-  validates :animal_id, presence: true
   validates :date, presence: true
   # validates :time, presence: true
 
@@ -26,8 +25,9 @@ class Visit < ActiveRecord::Base
   end
 
   def create_animal_visits(visit, visit_info)
-    visit_info.each do |animal|
-      AnimalVisit.create(animal_id: animal.first.to_i, visit: visit, duration: animal.last)
+    visit_info.each do |info|
+      binding.pry
+      AnimalVisit.create(animal_id: info.first.to_i, visit: visit, duration: info.last)
     end
   end
 
