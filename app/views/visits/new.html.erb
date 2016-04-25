@@ -4,7 +4,7 @@
     <% @animals.each_with_index do |animal, index| %>
       <li class="collection-item avatar">
         <a href="<%= animal_path(animal) %>"><img src="<%= animal.image_path %>" alt="<%= animal.name %>" class="circle"></a>
-        <div class="center"><b><%= link_to animal.name.capitalize, animal_path(animal) %></b></div>
+        <div class="center"><b><%= link_to animal.name, animal_path(animal) %></b></div>
         <div class="center section">
           <%= link_to "-", {controller: "visit_animals", action: "minus", animal_id: animal.id}, class: "btn waves-effect waves-light", method: :patch %>
           <h5 class="inline-block pad-left-small pad-right-small"><%= @visitation.contents[animal.id.to_s] %></h5>

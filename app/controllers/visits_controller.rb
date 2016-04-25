@@ -14,7 +14,11 @@ class VisitsController < ApplicationController
       flash[:notice] = "Visit was successfully scheduled"
       redirect_to visits_path
     else
-      flash[:error] = "Failed to schedule visit"
+      if @visit.date < Time.new
+        flash[:error] = "Visit must be scheduled a day in advance"
+      else
+        flash[:error] = "Failed to schedule visit"
+      end
       redirect_to new_visit_path
     end
   end

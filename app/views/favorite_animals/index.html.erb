@@ -6,7 +6,7 @@
         <li class="collection-item avatar">
           <a href="<%= animal_path(animal) %>"><img id="" src="<%= animal.image_path %>" alt="<%= animal.name %>" class="circle"></a>
           <div id="favorite-info" class="center">
-            <span class="title"><b><%= link_to animal.name.capitalize, animal_path(animal) %></b></span>
+            <span class="title"><b><%= link_to animal.name, animal_path(animal) %></b></span>
             <p>Breed: <%= animal.breed %> <br>
                Age: <%= animal.age %>
             </p><br />
