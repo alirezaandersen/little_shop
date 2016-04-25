@@ -1,15 +1,17 @@
-<h2><%= "Visit for #{@visit.date}" %></h2>
+<div class="container">
 
-<%= "Visitation Status: #{@visit.status}" %><br>
-<% if @visit.status == "Cancelled" or @visit.status == "Completed" %>
-  <%= "Status changed to #{@visit.status.upcase} at #{@visit.updated_at.localtime.strftime("%B %e at %l:%M %p")}." %><br>
-<% else %>
-  <%= "Scheduled for #{@visit.date.strftime("%A, %b %d, %Y")}." %><br>
-<% end %>
-<%= "Reservation made on #{@visit.created_at.localtime.strftime("%B %e at %l:%M %p")}." %><br>
-  <% @visit.animal_visits.each do |animal_visit| %>
-    <%= link_to "#{Animal.find(animal_visit.animal_id).name}", animal_path(animal_visit.animal_id) %>
-    <div><%= "Meeting duration: #{animal_visit.duration}" %></div><br>
+  <h2><%= "Visit for #{@visit.date}" %></h2>
+
+  <b><%= "Visitation Status: " %></b><%= "#{@visit.status}" %><br>
+  <% if @visit.status == "Cancelled" or @visit.status == "Completed" %>
+    <%= "Status changed to #{@visit.status.upcase} at #{@visit.updated_at.localtime.strftime("%B %e at %l:%M %p")}." %><br>
+  <% else %>
+    <%= "Scheduled for #{@visit.date.strftime("%A, %b %d, %Y")}." %><br>
   <% end %>
-<%= "Total duration of this visit: #{@visit.duration}" %><br>
+  <%= "Reservation made on #{@visit.created_at.localtime.strftime("%B %e at %l:%M %p")}." %><br/><br/>
+    <% @visit.animal_visits.each do |animal_visit| %>
+      <%= link_to "#{Animal.find(animal_visit.animal_id).name}", animal_path(animal_visit.animal_id) %>
+      <div class="pad-left-small"><%= "Meeting duration: #{animal_visit.duration}" %></div><br>
+    <% end %>
+  <b><%= "Total duration of this visit: #{@visit.duration} minutes" %></b><br>
 </div>

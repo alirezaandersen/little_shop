@@ -26,7 +26,6 @@ class Visit < ActiveRecord::Base
 
   def create_animal_visits(visit, visit_info)
     visit_info.each do |info|
-      binding.pry
       AnimalVisit.create(animal_id: info.first.to_i, visit: visit, duration: info.last)
     end
   end
