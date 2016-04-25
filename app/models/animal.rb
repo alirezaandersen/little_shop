@@ -19,10 +19,6 @@ class Animal < ActiveRecord::Base
   enum age: ["Baby", "Young", "Adult", "Senior"]
   enum activity_level: ["Couch Potato", "Jogger", "Sprinter"]
 
-  def capitalize_name
-    self.name = self.name.capitalize
-  end
-
   #Overwriting default accessors
   #http://api.rubyonrails.org/classes/ActiveRecord/Base.html
   #overriding setter methods for default columns accessors because
@@ -43,5 +39,9 @@ class Animal < ActiveRecord::Base
 
   def activity_level=(val)
     val ? super(val.to_i) : super(val)
+  end
+
+  def capitalize_name
+    name.capitalize! if name
   end
 end
