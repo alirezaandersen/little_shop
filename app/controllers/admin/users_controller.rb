@@ -19,8 +19,7 @@ class Admin::UsersController < Admin::BaseController
       render file: "/public/404"
     end
   end
-
-
+  
 private
 
   def user_params
