@@ -47,6 +47,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-rails'
   gem "factory_girl_rails"
+  gem 'capybara-slow_finder_errors'
 end
 
 group :development do
