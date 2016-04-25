@@ -11,7 +11,8 @@ RSpec.feature "User can remove animal from favorites" do
 
     visit favorites_path
     expect(page).to have_content(animal.name)
-    click_on "Remove Pet"
+    find_by_id("fav#{animal.id.to_s}").click
+
     expect(page).to_not have_content(animal.name)
   end
 end

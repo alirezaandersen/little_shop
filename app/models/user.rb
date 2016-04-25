@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  before_validation :capitalize_name
   validates :email, presence: true,
     uniqueness: true
 
@@ -7,10 +8,15 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :password_digest, presence: true
-  validates :role, presence: true
   has_many :favorites
   has_many :visits
+  has_many :animal_visits, through: :visits
   has_many :favorite_animals, through: :favorites, source: :animal
 
   enum role: [:default, :admin]
+
+  def capitalize_name
+    self.first_name = self.first_name.capitalize
+    self.last_name = self.last_name.capitalize
+  end
 end

@@ -1,0 +1,33 @@
+<div class="container">
+  <h4 class="center pad-top-50">User Dashboard</h4><br />
+  <table class="highlight">
+    <tbody>
+      <tr>
+        <td>First name</td>
+        <td><%= @user.first_name %></td>
+      </tr>
+      <tr>
+        <td>Last name</td>
+        <td><%= @user.last_name %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @user.email %></td>
+      </tr>
+      <% unless @user.phone_number.empty?  %>
+        <tr>
+          <td>Phone</td>
+          <td><%= @user.phone_number %></td>
+        </tr>
+      <% end %>
+        <tr>
+          <td>Visits</td>
+          <td><%= link_to "Your Scheduled Visits", visits_path %></td>
+        </tr>
+        <tr>
+          <td>Favorites</td>
+          <td><%= link_to "Your Favorites", favorites_path %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>

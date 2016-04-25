@@ -11,16 +11,19 @@
           <%= link_to "Log In/Create Account", login_path %>
         <% end %>
         <li><a href="#">About Us</a></li>
+        <li><a href="#">Donate</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
         <li><a href="/dogs">Adopt a Dog</a></li>
         <li><a href="/cats">Adopt a Cat</a></li>
-        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/favorites">Favorites (<%= @favorite.total %>)</a></li>
       </ul>
       <ul class="side-nav" id="navbar-slider">
-        <li><a href="/dogs">Adopt a Dog</a></li>
-        <li><a href="/cats">Adopt a Cat</a></li>
-        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/favorites">Favorites (<%= @favorite.total %>)</a></li>
+        <li><a href="#">Adopt a Dog</a></li>
+        <li><a href="#">Adopt a Cat</a></li>
+        <li><a href="#">Volunteers</a></li>
+        <li><a href="#">Location &amp; Hours</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Donate</a></li>
       </ul>

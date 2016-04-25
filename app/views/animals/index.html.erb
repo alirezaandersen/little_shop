@@ -1,9 +1,9 @@
-<h1 class="center">All Pets</h1>
-<div class="row">
-  <div class="container">
-  <% @animals.each do |animals| %>
-      <%= render partial: "shared/all_pets", locals: { element: animals } %>
-  <% end %>
-</div>
+<h2 class="center pad-top-50">All Pets</h2>
+<div class="divider container"></div>
+<div class="row section">
+  <div class="pad-left-20 pad-right-20">
+    <% @animals.each do |animals| %>
+        <%= render partial: "shared/all_pets", locals: { element: animals } %>
+    <% end %>
   </div>
 </div>

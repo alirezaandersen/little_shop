@@ -1,0 +1,38 @@
+<div class="container">
+  <h2 class="center pad-top-50">Favorites</h2>
+  <table>
+    <ul class="collection">
+      <% @animals.each do |animal| %>
+        <li class="collection-item avatar">
+          <a href="<%= animal_path(animal) %>"><img id="" src="<%= animal.image_path %>" alt="<%= animal.name %>" class="circle"></a>
+          <div id="favorite-info" class="center">
+            <span class="title"><b><%= link_to animal.name, animal_path(animal) %></b></span>
+            <p>Breed: <%= animal.breed %> <br>
+               Age: <%= animal.age %>
+            </p><br />
+          </div>
+          <div class="center">
+          <%= link_to "Remove Favorite", favorite_animal_path(animal), method: :delete, class: "waves-effect waves-light btn red", id: "fav#{animal.id}" %>
+          <a href="<%= animal_path(animal) %>" class="secondary-content"><i class="material-icons">pets</i></a>
+          <% if current_user && @visitation.contents.keys.include?(animal.id.to_s)  %>
+            <%= link_to "Remove Visit", visit_animal_path(animal), method: :delete, class: "waves-effect waves-light btn red", id: "visit#{animal.id}" %>
+          <% elsif current_user %>
+            <%= link_to "Add to Visit", visit_animals_path(animal_id: animal.id), method: :post, class: "btn waves-effect waves-light", id: "visit#{animal.id}" %>
+          <% end %><br><br>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </table>
+ <% if current_user && @visitation.contents.any? %>
+   <div class="center pad-top-20">
+     <%= link_to "Schedule Visit", new_visit_path, :class => "btn waves-effect waves-light" %>
+   </div>
+  <% elsif current_user %>
+    <div class="center pad-top-20">
+      <a class="btn disabled tooltipped", data-position="top", data-delay='50', data-tooltip="Add an animal to your visit">Schedule Visit</a>
+    </div>
+  <% else %>
+    <h5 class="center"><%= link_to "Log In", login_path %> or <%= link_to "Create Account", new_user_path %> to schedule visit.</h5>
+  <% end %>
+</div>

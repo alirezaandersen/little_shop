@@ -27,7 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
-
+gem 'rubocop'
+# gem 'hound'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,6 +47,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-rails'
   gem "factory_girl_rails"
+  gem 'capybara-slow_finder_errors'
 end
 
 group :development do
