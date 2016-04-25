@@ -14483,3 +14483,890 @@ Processing by UsersController#show as HTML
   Rendered shared/_footer.html.erb (0.1ms)
 Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
   [1m[35m (5.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 00:59:36.913675"], ["updated_at", "2016-04-25 00:59:36.913675"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 00:59:36.925484"], ["updated_at", "2016-04-25 00:59:36.925484"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 00:59:36.947965"], ["updated_at", "2016-04-25 00:59:36.947965"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 8], ["created_at", "2016-04-25 00:59:36.950712"], ["updated_at", "2016-04-25 00:59:36.950712"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 00:59:36.983126"], ["updated_at", "2016-04-25 00:59:36.983126"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.3ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (9.3ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$/UqjZpDmpGBdBcDG8KA1y.l/bx.JlblDopBpTttUISfOhspvk7Dyi"], ["phone_number", "2"], ["created_at", "2016-04-25 00:59:37.031092"], ["updated_at", "2016-04-25 00:59:37.031092"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 18:59:37 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (3.1ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_sidebar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 265ms (Views: 248.3ms | ActiveRecord: 0.9ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 18:59:37 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (7.3ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 18:59:37 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-04-24 18:59:37 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (3.9ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 01:05:26.635389"], ["updated_at", "2016-04-25 01:05:26.635389"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 01:05:26.649155"], ["updated_at", "2016-04-25 01:05:26.649155"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 01:05:26.665818"], ["updated_at", "2016-04-25 01:05:26.665818"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 10], ["created_at", "2016-04-25 01:05:26.668464"], ["updated_at", "2016-04-25 01:05:26.668464"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 01:05:26.701917"], ["updated_at", "2016-04-25 01:05:26.701917"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (10.1ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$Mxs6ri2qZBpH6kNnqCRDYe8LrQNi5KB3wbs3.1Bc5E2CshL2LI5h6"], ["phone_number", "2"], ["created_at", "2016-04-25 01:05:26.749520"], ["updated_at", "2016-04-25 01:05:26.749520"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:05:26 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (3.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_sidebar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 274ms (Views: 258.6ms | ActiveRecord: 1.1ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:05:27 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:05:27 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-04-24 19:05:27 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (4.9ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 01:06:24.115306"], ["updated_at", "2016-04-25 01:06:24.115306"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 01:06:24.127055"], ["updated_at", "2016-04-25 01:06:24.127055"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 01:06:24.143184"], ["updated_at", "2016-04-25 01:06:24.143184"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 12], ["created_at", "2016-04-25 01:06:24.145765"], ["updated_at", "2016-04-25 01:06:24.145765"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 01:06:24.176886"], ["updated_at", "2016-04-25 01:06:24.176886"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (10.4ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$1DHd.GmjhEeuiXE7VLVdeus1lfi7S0cx7sP0iiUwCo8nLHcUGWJ/i"], ["phone_number", "2"], ["created_at", "2016-04-25 01:06:24.225819"], ["updated_at", "2016-04-25 01:06:24.225819"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:06:24 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (2.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_sidebar.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 263ms (Views: 244.8ms | ActiveRecord: 1.6ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:06:24 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (12.2ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:06:24 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-04-24 19:06:24 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+Started DELETE "/logout" for 127.0.0.1 at 2016-04-24 19:06:24 -0600
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = '2@gmail.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "session" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session", "{\"favorite\":{},\"visit\":{}}"], ["updated_at", "2016-04-25 01:06:24.597348"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:06:24 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (2.7ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 01:08:14.844679"], ["updated_at", "2016-04-25 01:08:14.844679"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 01:08:14.857201"], ["updated_at", "2016-04-25 01:08:14.857201"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 01:08:14.874724"], ["updated_at", "2016-04-25 01:08:14.874724"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 14], ["created_at", "2016-04-25 01:08:14.878412"], ["updated_at", "2016-04-25 01:08:14.878412"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 01:08:14.907713"], ["updated_at", "2016-04-25 01:08:14.907713"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.6ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (12.0ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$s7QX6KbBJbz9u8dau99z7uguXEgorXVlmunfWJ6Hj6pKKMyCJVntC"], ["phone_number", "2"], ["created_at", "2016-04-25 01:08:14.956584"], ["updated_at", "2016-04-25 01:08:14.956584"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = '2@gmail.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "$2a$04$wZv3Mr6hgHU0rpHAZd7tzeJCFuQZ4/m28WuS5oAKyTeSKAFvvobfq"], ["updated_at", "2016-04-25 01:08:14.962737"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:08:14 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.7ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (3.3ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_sidebar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 275ms (Views: 259.7ms | ActiveRecord: 1.5ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:08:15 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:08:15 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (5.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 01:11:38.406136"], ["updated_at", "2016-04-25 01:11:38.406136"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 01:11:38.418893"], ["updated_at", "2016-04-25 01:11:38.418893"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 01:11:38.438961"], ["updated_at", "2016-04-25 01:11:38.438961"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 16], ["created_at", "2016-04-25 01:11:38.441821"], ["updated_at", "2016-04-25 01:11:38.441821"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 01:11:38.469165"], ["updated_at", "2016-04-25 01:11:38.469165"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.1ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.9ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (9.8ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$esc0AkDSm9TQy3Z7pTSz3.8PSBIyRB5Zplxp93slPJbk3jy6eh2S2"], ["phone_number", "2"], ["created_at", "2016-04-25 01:11:38.513709"], ["updated_at", "2016-04-25 01:11:38.513709"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = '2@gmail.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "$2a$04$fImrsbDqqOX1u7/z9iogSeDcgvcwi/kLCW30UWRtsWzwbiHH8spLi"], ["updated_at", "2016-04-25 01:11:38.519459"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:11:38 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_sidebar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 261ms (Views: 238.7ms | ActiveRecord: 1.0ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:11:38 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (6.8ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:11:38 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (6.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 01:13:51.145870"], ["updated_at", "2016-04-25 01:13:51.145870"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 01:13:51.156650"], ["updated_at", "2016-04-25 01:13:51.156650"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 01:13:51.182443"], ["updated_at", "2016-04-25 01:13:51.182443"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 18], ["created_at", "2016-04-25 01:13:51.185688"], ["updated_at", "2016-04-25 01:13:51.185688"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 01:13:51.213504"], ["updated_at", "2016-04-25 01:13:51.213504"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (11.6ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$WJHEiEnfLfxOiGCa/O2pYuCj/vvG/T2/AJaFquBwhhMrJcgZpQO0S"], ["phone_number", "2"], ["created_at", "2016-04-25 01:13:51.262693"], ["updated_at", "2016-04-25 01:13:51.262693"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = '2@gmail.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["password_digest", "$2a$04$q9/cC/9iymX6JZJyRpb5XuNEK84/xK2Ep9lVC/moYkXOglbgox6r2"], ["updated_at", "2016-04-25 01:13:51.267965"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:13:51 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_sidebar.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 261ms (Views: 246.2ms | ActiveRecord: 1.3ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:13:51 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:13:51 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (7.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animal_visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-04-25 01:15:12.382623"], ["updated_at", "2016-04-25 01:15:12.382623"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "1"], ["created_at", "2016-04-25 01:15:12.394734"], ["updated_at", "2016-04-25 01:15:12.394734"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "3"], ["created_at", "2016-04-25 01:15:12.411872"], ["updated_at", "2016-04-25 01:15:12.411872"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "2"], ["breed", "1"], ["age", 0], ["sex", 0], ["size", 0], ["activity_level", 0], ["description", "1"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 20], ["created_at", "2016-04-25 01:15:12.414656"], ["updated_at", "2016-04-25 01:15:12.414656"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "MyPassword1"], ["phone_number", "1"], ["created_at", "2016-04-25 01:15:12.439370"], ["updated_at", "2016-04-25 01:15:12.439370"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.2ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (0.8ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'little_shop_test'[0m
+  [1m[35m (12.9ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "5"], ["created_at", "2016-04-25 01:15:12.485888"], ["updated_at", "2016-04-25 01:15:12.485888"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "4"], ["breed", "2"], ["age", 1], ["sex", 1], ["size", 1], ["activity_level", 1], ["description", "2"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 1], ["created_at", "2016-04-25 01:15:12.488018"], ["updated_at", "2016-04-25 01:15:12.488018"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (1.3ms)
+  Rendered animals/index.html.erb within layouts/application (8.1ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_sidebar.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 276ms (Views: 256.3ms | ActiveRecord: 1.2ms)
+Started POST "/favorite_animals?animal_id=1" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"animal_id"=>"1"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/animals
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+Started GET "/animals" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.7ms)
+  Rendered animals/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+Started GET "/favorites" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by FavoriteAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered favorite_animals/index.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (5.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (14.5ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '2@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["first_name", "2"], ["last_name", "2"], ["email", "2@gmail.com"], ["password_digest", "$2a$04$BjXmqvja5T.yzi1K37.7VO9CxQujyxE3BDlRv/3eXwinEvt0QuN1W"], ["phone_number", "2"], ["created_at", "2016-04-25 01:15:12.872744"], ["updated_at", "2016-04-25 01:15:12.872744"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.5ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.8ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"2@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "2@gmail.com"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (3.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (13.4ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '3@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "3"], ["last_name", "3"], ["email", "3@gmail.com"], ["password_digest", "$2a$04$JFyQ3ax.YkMep06E2xySoewjKQdKjgRiK1b./0RWstlgW9mlRgVs6"], ["phone_number", "3"], ["created_at", "2016-04-25 01:15:12.989044"], ["updated_at", "2016-04-25 01:15:12.989044"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:15:12 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.4ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (1.3ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"3@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "3@gmail.com"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+Started DELETE "/logout" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = '3@gmail.com' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "session" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session", "{\"favorite\":{},\"visit\":{}}"], ["updated_at", "2016-04-25 01:15:13.033209"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (3.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (12.0ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "7"], ["created_at", "2016-04-25 01:15:13.066810"], ["updated_at", "2016-04-25 01:15:13.066810"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "6"], ["breed", "3"], ["age", 2], ["sex", 0], ["size", 2], ["activity_level", 2], ["description", "3"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 1], ["created_at", "2016-04-25 01:15:13.069303"], ["updated_at", "2016-04-25 01:15:13.069303"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/animals" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by AnimalsController#index as HTML
+  [1m[35mAnimal Load (0.4ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."available" = $1  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered animals/index.html.erb within layouts/application (1.8ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+Started POST "/favorite_animals?animal_id=1" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by FavoriteAnimalsController#create as HTML
+  Parameters: {"animal_id"=>"1"}
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://www.example.com/animals
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/animals" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered animals/index.html.erb within layouts/application (1.3ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started GET "/favorites" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by FavoriteAnimalsController#index as HTML
+  [1m[35mAnimal Load (0.3ms)[0m  SELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered favorite_animals/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+Started DELETE "/favorite_animals/1" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by FavoriteAnimalsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Redirected to http://www.example.com/favorites
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/favorites" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by FavoriteAnimalsController#index as HTML
+  Rendered favorite_animals/index.html.erb within layouts/application (0.2ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (2.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (12.6ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "9"], ["created_at", "2016-04-25 01:15:13.136607"], ["updated_at", "2016-04-25 01:15:13.136607"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "8"], ["breed", "4"], ["age", 3], ["sex", 1], ["size", 3], ["activity_level", 0], ["description", "4"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 1], ["created_at", "2016-04-25 01:15:13.140018"], ["updated_at", "2016-04-25 01:15:13.140018"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "11"], ["created_at", "2016-04-25 01:15:13.143797"], ["updated_at", "2016-04-25 01:15:13.143797"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "10"], ["breed", "5"], ["age", 0], ["sex", 0], ["size", 4], ["activity_level", 1], ["description", "5"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 2], ["created_at", "2016-04-25 01:15:13.145803"], ["updated_at", "2016-04-25 01:15:13.145803"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/animals" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered shared/_all_pets.html.erb (0.3ms)
+  Rendered animals/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (2.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (13.4ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "cats"], ["created_at", "2016-04-25 01:15:13.188995"], ["updated_at", "2016-04-25 01:15:13.188995"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "12"], ["breed", "6"], ["age", 1], ["sex", 1], ["size", 0], ["activity_level", 2], ["description", "6"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 1], ["created_at", "2016-04-25 01:15:13.192900"], ["updated_at", "2016-04-25 01:15:13.192900"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/cats" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"cats"}
+  [1m[36mSpecies Load (0.2ms)[0m  [1mSELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1[0m  [["name", "cats"]]
+  [1m[35mAnimal Load (0.2ms)[0m  SELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1 AND "animals"."available" = $2  [["species_id", 1], ["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.5ms)
+  Rendered species/show.html.erb within layouts/application (2.3ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (14.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (13.0ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dogs"], ["created_at", "2016-04-25 01:15:13.270065"], ["updated_at", "2016-04-25 01:15:13.270065"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "13"], ["breed", "7"], ["age", 2], ["sex", 0], ["size", 1], ["activity_level", 0], ["description", "7"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 1], ["created_at", "2016-04-25 01:15:13.273906"], ["updated_at", "2016-04-25 01:15:13.273906"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dogs" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SpeciesController#show as HTML
+  Parameters: {"type"=>"dogs"}
+  [1m[35mSpecies Load (0.3ms)[0m  SELECT  "species".* FROM "species" WHERE "species"."name" = $1 LIMIT 1  [["name", "dogs"]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."species_id" = $1 AND "animals"."available" = $2[0m  [["species_id", 1], ["available", "t"]]
+  Rendered shared/_all_pets.html.erb (0.6ms)
+  Rendered species/show.html.erb within layouts/application (1.8ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (3.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (14.5ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '4@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "4"], ["last_name", "4"], ["email", "4@gmail.com"], ["password_digest", "$2a$04$hA6B5tdRfC4Jua8FRs0m4Oi3YttamId1mUg/g1516avhDIFRCP0ie"], ["phone_number", "4"], ["created_at", "2016-04-25 01:15:13.318489"], ["updated_at", "2016-04-25 01:15:13.318489"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = '4@gmail.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$04$UfzN/rgxMf/y4MlA2coBu.tYGT9JLSQZu/qiB2Rbaa7Rdd8J07CG."], ["updated_at", "2016-04-25 01:15:13.323465"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by AnimalsController#index as HTML
+  [1m[36mAnimal Load (0.5ms)[0m  [1mSELECT "animals".* FROM "animals" WHERE "animals"."available" = $1[0m  [["available", "t"]]
+  Rendered animals/index.html.erb within layouts/application (1.3ms)
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_sidebar.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+Started GET "/login" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navbar.html.erb (0.2ms)
+  Rendered shared/_sidebar.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2016-04-24 19:15:13 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"4@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "4@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+  Rendered shared/_sidebar.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (2.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (12.7ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (13.6ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.9ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (13.0ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (14.0ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (12.3ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (13.2ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (13.6ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (12.7ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (15.6ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (12.9ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (13.2ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (13.5ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (14.9ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.4ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (18.1ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "species" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "15"], ["created_at", "2016-04-25 01:15:13.760047"], ["updated_at", "2016-04-25 01:15:13.760047"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "animals" ("house_trained", "spayed_neutered", "available", "name", "breed", "age", "sex", "size", "activity_level", "description", "image_path", "species_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["house_trained", "t"], ["spayed_neutered", "t"], ["available", "t"], ["name", "14"], ["breed", "8"], ["age", 3], ["sex", 1], ["size", 2], ["activity_level", 1], ["description", "8"], ["image_path", "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"], ["species_id", 1], ["created_at", "2016-04-25 01:15:13.763041"], ["updated_at", "2016-04-25 01:15:13.763041"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAnimal Load (0.2ms)[0m  [1mSELECT  "animals".* FROM "animals" WHERE "animals"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (28.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (15.3ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (14.6ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (2.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (15.4ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (2.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (14.6ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (2.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (12.5ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (2.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (13.3ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$qm2x4ytsgt8pVVAtLYxWS.eurt07jFqk9cJsHK6l44YGJYUcnEBWW"], ["created_at", "2016-04-25 01:15:13.967959"], ["updated_at", "2016-04-25 01:15:13.967959"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "an arbitrary value"], ["updated_at", "2016-04-25 01:15:13.970412"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1
+  [1m[36m (2.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL[0m
+  [1m[35m (16.0ms)[0m  TRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL[0m
+  [1m[35m (2.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "species" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "favorites" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "animals" DISABLE TRIGGER ALL;ALTER TABLE "animal_visits" DISABLE TRIGGER ALL;ALTER TABLE "visits" DISABLE TRIGGER ALL
+  [1m[36m (12.2ms)[0m  [1mTRUNCATE TABLE "public"."species", "public"."favorites", "public"."users", "public"."animals", "public"."animal_visits", "public"."visits" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "species" ENABLE TRIGGER ALL;ALTER TABLE "favorites" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "animals" ENABLE TRIGGER ALL;ALTER TABLE "animal_visits" ENABLE TRIGGER ALL;ALTER TABLE "visits" ENABLE TRIGGER ALL
+  [1m[36m (2.9ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '1@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone_number", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["first_name", "1"], ["last_name", "1"], ["email", "1@gmail.com"], ["password_digest", "$2a$04$G6PTUNiydyuc9ftBEcRsU.M9tg.3ITeyPozj2K8FgmXhsZvlaufZC"], ["phone_number", "1"], ["role", 1], ["created_at", "2016-04-25 01:24:47.444427"], ["updated_at", "2016-04-25 01:24:47.444427"]]
+  [1m[36m (3.2ms)[0m  [1mCOMMIT[0m
