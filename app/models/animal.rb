@@ -10,9 +10,6 @@ class Animal < ActiveRecord::Base
                         :size,
                         :age,
                         :activity_level,
-                        :house_trained,
-                        :spayed_neutered,
-                        :available,
                         :description,
                         :species_id,
                         :image_path

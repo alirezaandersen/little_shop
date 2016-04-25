@@ -44,15 +44,26 @@ cats = [
                   spayed_neutered: true,
                   activity_level: i % 3,
                   image_path: dogs[i],
-                  description: "
-  Well hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds.
-
-  I am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen!
-
-  Ask the front desk to meet me today!"
+                  description: "Well hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds. I am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen! Ask the front desk to meet me today!"
                   )
     puts "Dog #{i + 1} created"
   end
+
+  Animal.create(species: Species.find_or_create_by(name: "dogs"),
+                name: "reggie",
+                age: 2,
+                breed: "Black Lab",
+                size: 2,
+                sex: 0,
+                special_needs: false,
+                house_trained: true,
+                available: false,
+                spayed_neutered: true,
+                activity_level: 2,
+                image_path: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Black_lab.JPG",
+                description: "Well hello! I'm Lucy Goosey, a stunning Lab mix lady born in 2013. I currently weigh in at 56 pounds. I am an intelligent lady who is very food motivated and eager to please. I am well-versed in basic commands such as 'sit' and 'down'. I'd love a home where my family is home a fair amount of the time, so I don't have to entertain myself by getting into the trash. I can be very protective of my food, feel free to ask the front desk for more information about this. If there are any kids in your home, I prefer they be older so they can understand my relationship with food. I'm an active lady who would love to be your new running or hiking buddy! Physical and mental stimulation will be key to keeping me happy and a stand-up canine citizen! Ask the front desk to meet me today!"
+                )
+  puts "reggie created"
 
 10.times do |i|
   Animal.create(species: Species.find_or_create_by(name: "cats"),

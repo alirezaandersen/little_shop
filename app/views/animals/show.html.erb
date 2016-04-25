@@ -1,5 +1,9 @@
 <div id="show-favorite" class="pad-top-50 pad-left-small">
-  <%= link_to "Favorite", favorite_animals_path(animal_id: @animal.id), method: :post, class: "btn waves-effect waves-light" %>
+  <% if @animal.available %>
+    <%= link_to "Favorite", favorite_animals_path(animal_id: @animal.id), method: :post, class: "btn waves-effect waves-light" %>
+  <% else %>
+    <a class="btn disabled tooltipped" data-position="right" data-delay="50" data-tooltip="I've been adopted!">Adopted!</a>
+  <% end %>
 </div>
 <div class="container pad-top-50 pad-bottom-50 center">
   <div class="section">
