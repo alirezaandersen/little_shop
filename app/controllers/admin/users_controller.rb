@@ -1,9 +1,9 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :user_modifies_self
+  before_action :user_modifies_self, only: [:edit, :update]
 
   def update
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to admin_dashboard_path
     else
       render :new
     end
@@ -14,7 +14,7 @@ class Admin::UsersController < Admin::BaseController
 
   def user_modifies_self
     if current_user == User.find(params[:id])
-      @user = User.find(params[:id])
+      @user = current_user
     else
       render file: "/public/404"
     end

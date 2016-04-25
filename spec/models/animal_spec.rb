@@ -10,7 +10,6 @@ RSpec.describe Animal, type: :model do
       it { is_expected.to validate_presence_of(:activity_level) }
       it { is_expected.to validate_presence_of(:house_trained) }
       it { is_expected.to validate_presence_of(:spayed_neutered) }
-      it { is_expected.to validate_presence_of(:available) }
       it { is_expected.to validate_presence_of(:description) }
       it { is_expected.to validate_presence_of(:species_id) }
     end
