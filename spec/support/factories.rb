@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :species do
+    name { generate(:name) }
+  end
+
   factory :animal do
     name
     breed
@@ -12,6 +16,7 @@ FactoryGirl.define do
     available
     description
     image_path "http://alirezaandersen.github.io/images/ziba_gets_dirty.jpg"
+    species
   end
 
   sequence :name do |n|
@@ -62,10 +67,6 @@ FactoryGirl.define do
     FactoryGirl.create(:species)
   end
 
-  factory :species do
-    name {generate(:name)}
-  end
-
   factory :user do
     first_name
     last_name
@@ -88,7 +89,7 @@ FactoryGirl.define do
   end
 
   sequence :password_digest do |pw|
-    "#{pw}"
+    "MyPassword#{pw}"
   end
 
   sequence :phone_number do |pn|

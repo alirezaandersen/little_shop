@@ -1,0 +1,13 @@
+<div class="container">
+  <h3 class="center pad-top-50"><%= @message %></h3>
+  <% @visits.each do |visit| %>
+    <div>
+      <h5><%= link_to "Visit #{visit.id}", visit_path(visit) %></h5><br>
+      <%= "Visitation Status: #{visit.status}" %><br>
+      <%= "Schedule for #{visit.date.strftime("%A, %b %d, %Y")}." %><br>
+        <% visit.animal_visits.each do |animal_visit| %>
+          <%= link_to "#{Animal.find(animal_visit.animal_id).name}", animal_path(animal_visit.animal_id) %><br>
+        <% end %>
+    </div>
+  <% end %>
+</div>

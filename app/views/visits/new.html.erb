@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="center pad-top-50"> Set an Appointment </h2>
+  <ul class="collection">
+    <% @animals.each_with_index do |animal, index| %>
+      <li class="collection-item avatar">
+        <a href="<%= animal_path(animal) %>"><img src="<%= animal.image_path %>" alt="<%= animal.name %>" class="circle"></a>
+        <div class="center"><b><%= link_to animal.name.capitalize, animal_path(animal) %></b></div>
+        <div class="center section">
+          <%= link_to "-", {controller: "visit_animals", action: "minus", animal_id: animal.id}, class: "btn waves-effect waves-light", method: :patch %>
+          <h5 class="inline-block pad-left-small pad-right-small"><%= @visitation.contents[animal.id.to_s] %></h5>
+          <%= link_to "+", {controller: "visit_animals", action: "plus", animal_id: animal.id}, class: "btn waves-effect waves-light", method: :patch %>
+        </div><br/><br/>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= form_for(@visit) do |f| %>
+    <div class="center">
+      <h5>Visit Duration: <%= @visitation.total_duration %> minutes</h5>
+      <br/>
+      <div class="date-form"><%= f.datetime_field :date, placeholder: "select a date", class: "datepicker" %></div>
+      <br/>
+      <%= f.submit class: "btn waves-effect waves-light" %>
+    </div>
+  <% end %>
+
+</div>

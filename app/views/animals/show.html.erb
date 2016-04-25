@@ -1,0 +1,70 @@
+<div id="show-favorite" class="pad-top-50 pad-left-small">
+  <% if @animal.available %>
+    <%= link_to "Favorite", favorite_animals_path(animal_id: @animal.id), method: :post, class: "btn waves-effect waves-light" %>
+  <% else %>
+    <a class="btn disabled tooltipped" data-position="right" data-delay="50" data-tooltip="I've been adopted!">Adopted!</a>
+  <% end %>
+</div>
+<div class="container pad-top-50 pad-bottom-50 center">
+  <div class="section">
+    <div class="center">
+      <img class="materialboxed" src="<%= @animal.image_path %>" alt="<%= @animal.name %>" data-caption="<%= @animal.name %>" />
+    </div>
+    <h4><%= @animal.name %></h4>
+    <p><%= @animal.description %></p>
+    <div class="section">
+      <h5>Info</h5>
+      <div class="container">
+        <div class="container">
+          <div class="divider"></div>
+          <table class="highlight">
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td class="secondary-content"><%= @animal.name.capitalize %></td>
+              </tr>
+              <tr>
+                <td>Age:</td>
+                <td class="secondary-content"><%= @animal.age %></td>
+
+              </tr>
+              <tr>
+                <td>Breed</td>
+                <td class="secondary-content"><%= @animal.breed.capitalize %></td>
+              </tr>
+              <tr>
+                <td>Sex</td>
+                <td class="secondary-content"><%= @animal.sex %></td>
+              </tr>
+              <tr>
+                <td>Size</td>
+                <td class="secondary-content"><%= @animal.size %></td>
+              </tr>
+              <tr>
+                <td>Activity Level</td>
+                <td class="secondary-content"><%= @animal.activity_level %></td>
+
+              </tr>
+              <tr>
+                <td>House Trained</td>
+                <td class="secondary-content"><%= @animal.house_trained ? "Yes" : "No" %></td>
+              </tr>
+              <tr>
+                <td>Spayed/Neutered</td>
+                <td class="secondary-content"><%= @animal.house_trained ? "Yes" : "No" %></td>
+              </tr>
+              <tr>
+                <td>Special Needs</td>
+                <td class="secondary-content"><%= @animal.special_needs ? "Yes" : "No" %></td>
+              </tr>
+              <tr>
+                <td>Available</td>
+                <td class="secondary-content"><%= @animal.available ? "Yes" : "No" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
