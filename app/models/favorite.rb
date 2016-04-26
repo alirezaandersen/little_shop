@@ -1,5 +1,4 @@
 class Favorite
-
   attr_accessor :contents
 
   def initialize(initial_contents)

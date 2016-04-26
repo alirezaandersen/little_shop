@@ -1,14 +1,19 @@
 class VisitsController < ApplicationController
-
   def new
     @visit = Visit.new
     @animals = @visitation.animals
   end
 
   def create
-    @visit = VisitHandler.create_visit(current_user, visit_params, @visitation.contents)
+    @visit = VisitHandler.create_visit(
+      current_user,
+      visit_params,
+      @visitation.contents
+    )
     is_valid, message = VisitHandler.verify(@visit, @visitation)
     if is_valid
+      UserMailer.scheduled_visit_email(@visit.user).deliver_now
+      Text.scheduled_visit_text(current_user, @visit)
       flash[:notice] = message
       redirect_to visits_path
     else

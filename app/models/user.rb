@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   enum role: [:default, :admin]
 
   def capitalize_name
-    first_name = first_name.capitalize if first_name
-    last_name = last_name.capitalize if last_name
+    first_name.capitalize! if first_name
+    last_name.capitalize! if last_name
   end
 end
