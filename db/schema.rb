@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423201004) do
+ActiveRecord::Schema.define(version: 20160426203242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,16 +47,6 @@ ActiveRecord::Schema.define(version: 20160423201004) do
 
   add_index "animals", ["species_id"], name: "index_animals_on_species_id", using: :btree
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "animal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "favorites", ["animal_id"], name: "index_favorites_on_animal_id", using: :btree
-  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
-
   create_table "species", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -89,7 +79,5 @@ ActiveRecord::Schema.define(version: 20160423201004) do
   add_foreign_key "animal_visits", "animals"
   add_foreign_key "animal_visits", "visits"
   add_foreign_key "animals", "species"
-  add_foreign_key "favorites", "animals"
-  add_foreign_key "favorites", "users"
   add_foreign_key "visits", "users"
 end

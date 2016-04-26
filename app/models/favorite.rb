@@ -1,12 +1,5 @@
-class Favorite < ActiveRecord::Base
-
+class Favorite
   attr_accessor :contents
-
-  belongs_to :user
-  belongs_to :animal
-
-  validates :animal_id, presence: true
-  validates :user_id, presence: true
 
   def initialize(initial_contents)
     @contents = initial_contents || {}
