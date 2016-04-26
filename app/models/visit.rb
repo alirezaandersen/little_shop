@@ -19,17 +19,14 @@ class Visit < ActiveRecord::Base
   end
 
   def duration
-    animal_visits.reduce(0) do |sum, visit|
-      sum += visit.duration
-    end
+    animal_visits.sum(:duration)
   end
 
+  def cancelled?
+    status == "Cancelled"
+  end
 
-  def self.get_message(visits)
-    if visits.count == 0
-      "You have not scheduled any visits"
-    else
-      "Your scheduled visits:"
-    end
+  def completed?
+    status == "Completed"
   end
 end
