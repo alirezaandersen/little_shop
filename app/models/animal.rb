@@ -43,4 +43,8 @@ class Animal < ActiveRecord::Base
   def capitalize_name
     name.capitalize! if name
   end
+
+  def self.available?
+    where(available: true)
+  end
 end
