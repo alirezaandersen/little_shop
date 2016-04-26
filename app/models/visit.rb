@@ -24,11 +24,6 @@ class Visit < ActiveRecord::Base
     end
   end
 
-  def create_animal_visits(visit, visit_info)
-    visit_info.each do |info|
-      AnimalVisit.create(animal_id: info.first.to_i, visit: visit, duration: info.last)
-    end
-  end
 
   def self.get_message(visits)
     if visits.count == 0

@@ -31,5 +31,9 @@ class Favorite < ActiveRecord::Base
     visit.contents.delete(animal_id.to_s)
   end
 
+  def animals
+    Animal.find(contents.keys)
+  end
+
 
 end
