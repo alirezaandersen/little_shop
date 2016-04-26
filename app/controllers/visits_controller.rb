@@ -19,7 +19,7 @@ class VisitsController < ApplicationController
 
   def index
     @visits = current_user.visits
-    @message = Visit.get_message(@visits)
+    @message = get_visits_message(@visits)
   end
 
   def show
@@ -31,8 +31,15 @@ class VisitsController < ApplicationController
   end
 
 private
-
   def visit_params
     params.require(:visit).permit(:date, :time)
+  end
+
+  def get_visits_message(visits)
+    if visits.count == 0
+      "You have not scheduled any visits"
+    else
+      "Your scheduled visits:"
+    end
   end
 end
