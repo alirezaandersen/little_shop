@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:edit, :update]
     get "/dashboard", to: "users#show"
-    resources :animals, only: [:new, :create]
+    resources :animals, only: [:new, :create, :edit, :update]
   end
 
   resources :users, only: [:new, :create]

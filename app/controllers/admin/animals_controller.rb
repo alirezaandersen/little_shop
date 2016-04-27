@@ -13,10 +13,26 @@ class Admin::AnimalsController < Admin::BaseController
   # byebug
     if @animal.save
       flash[:success] = "#{@animal.name} has been successfully registered"
-      redirect_to animals_path(@animal)
+      redirect_to animal_path(@animal)
     else
-      flash[:error] = "One or more valid fields are missing!"
+      flash.now[:error] = "One or more valid fields are missing!"
       render :new
+    end
+  end
+
+  def edit
+    @animal = Animal.find(params[:id])
+  end
+
+  def update
+      @animal = Animal.find(params[:id])
+    @animal.update(animal_params)
+    if @animal.save
+      flash[:success] = "Animal Successfully Updated"
+      redirect_to animal_path(@animal)
+    else
+      flash.now[:error] = "One or more valid fields are missing!"
+      render :edit
     end
   end
 

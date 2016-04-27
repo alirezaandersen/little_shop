@@ -1,7 +1,7 @@
-<h1>Register an Animal </h1>
+<h1>Update <%= @animal.name %> </h1>
 
 <div class="row">
-<%= form_for(@animal, url: admin_animals_path) do |f| %>
+<%= form_for(@animal, url: admin_animal_path(@animal)) do |f| %>
 <%= f.label :species_id, 'Species' %><br>
 <%= f.collection_select :species_id, Species.all, :id, :name %><br>
 <%= f.label :name, 'Name' %><br>

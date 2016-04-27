@@ -30,18 +30,18 @@ class Animal < ActiveRecord::Base
   #required
 
   def sex=(val)
-    super(val.to_i)
+    val ? super(val.to_i) : super(val)
   end
 
   def size=(val)
-    super(val.to_i)
+    val ? super(val.to_i) : super(val)
   end
 
   def age=(val)
-    super(val.to_i)
+    val ? super(val.to_i) : super(val)
   end
 
   def activity_level=(val)
-    super(val.to_i)
+    val ? super(val.to_i) : super(val)
   end
 end
