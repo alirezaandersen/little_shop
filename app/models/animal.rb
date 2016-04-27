@@ -1,6 +1,5 @@
 class Animal < ActiveRecord::Base
   belongs_to :species
-  has_many :favorites
   has_many :animal_visits
   before_validation :capitalize_name
 
@@ -19,8 +18,30 @@ class Animal < ActiveRecord::Base
   enum age: ["Baby", "Young", "Adult", "Senior"]
   enum activity_level: ["Couch Potato", "Jogger", "Sprinter"]
 
+  # Overwriting default accessors
+  # http://api.rubyonrails.org/classes/ActiveRecord/Base.html
+  # overriding setter methods for default columns accessors because
+  # f.collection_select returns enum values as strings when integer
+  # required
+
+  def sex=(val)
+    val ? super(val.to_i) : super(val)
+  end
+
+  def size=(val)
+    val ? super(val.to_i) : super(val)
+  end
+
+  def age=(val)
+    val ? super(val.to_i) : super(val)
+  end
+
+  def activity_level=(val)
+    val ? super(val.to_i) : super(val)
+  end
+
   def capitalize_name
-    self.name = self.name.capitalize
+    name.capitalize! if name
   end
 
   def self.available?

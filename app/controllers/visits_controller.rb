@@ -28,7 +28,8 @@ class VisitsController < ApplicationController
   end
 
   def show
-    @visit = current_user.visits.find(params[:id])
+    begin
+      @visit = current_user.visits.find(params[:id])
     rescue
       render file: "/public/404"
     end

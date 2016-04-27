@@ -4,6 +4,9 @@
   <% else %>
     <a class="btn disabled tooltipped" data-position="right" data-delay="50" data-tooltip="I've been adopted!">Adopted!</a>
   <% end %>
+  <% if current_admin? %>
+    <br/><br/><%= link_to "Edit", edit_admin_animal_path(@animal), class: "btn waves-effect waves-light" %>
+  <% end %>
 </div>
 <div class="container pad-top-50 pad-bottom-50 center">
   <div class="section">

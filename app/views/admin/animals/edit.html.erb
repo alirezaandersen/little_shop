@@ -1,0 +1,48 @@
+<h1>Update <%= @animal.name %> </h1>
+
+<div class="row">
+<%= form_for(@animal, url: admin_animal_path(@animal)) do |f| %>
+<%= f.label :species_id, 'Species' %><br>
+<%= f.collection_select :species_id, Species.all, :id, :name %><br>
+<%= f.label :name, 'Name' %><br>
+<%= f.text_field :name, class: 'form-control' %><br>
+<%= f.label :breed, 'Breed' %><br>
+<%= f.text_field :breed, class: 'form-control' %><br>
+
+<%= f.label :sex, 'Sex' %><br>
+<%= f.collection_select :sex, Animal.sexes,:last,:first, include_blank: true %><br>
+<!-- <%= f.label :sex, 'Sex' %><br>
+<%= f.collection_select :sex, Animal.sexes,:last,:first, include_blank: true %><br> -->
+<%= f.label :size, 'Size' %><br>
+<%= f.collection_select :size, Animal.sizes,:last,:first, include_blank: true %><br>
+<!-- <%= f.label :size, 'Size' %><br>
+<%= f.collection_select :size, Animal.sizes,:last,:first, include_blank: true %><br> -->
+<%= f.label :age, 'Age' %><br>
+<%= f.collection_select :age, Animal.ages,:last,:first, include_blank: true %><br>
+<!-- <%= f.label :age, 'Age' %><br>
+<%= f.collection_select :age, Animal.ages,:last,:first, include_blank: true %><br> -->
+<%= f.label :activity_level, 'Activity Level' %><br>
+<%= f.collection_select :activity_level, Animal.activity_levels,:last,:first, include_blank: true %><br>
+<!-- <%= f.label :activity_level, 'Activity Level' %><br>
+<%= f.collection_select :activity_level, Animal.activity_levels,:last,:first, include_blank: true %><br> -->
+
+<%= f.label :house_trained, 'House Trained' %><br>
+<%= f.select :house_trained, [['Yes', true], ['No', false]]%><br>
+<%= f.label :spayed_neutered, 'Spayed or Neutered' %><br>
+<%= f.select :spayed_neutered, [['Yes', true], ['No', false]]%><br>
+<%= f.label :special_needs, 'Special Needs' %><br>
+<%= f.select :special_needs, [['Yes', true], ['No', false]]%><br>
+<%= f.label :available, 'Avaliable' %><br>
+<%= f.select :available, [['Yes', true], ['No', false]]%><br>
+
+<%= f.label :description, 'Description' %><br>
+<%= f.text_field :description%><br>
+<%= f.label :image_path, 'Upload an Image' %><br>
+<%= f.text_field :image_path%><br>
+
+
+
+<%= f.submit "Create Animal" %>
+
+<%end%>
+</div>

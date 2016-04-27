@@ -27,6 +27,4 @@ class Favorite
   def animals
     Animal.find(contents.keys)
   end
-
-
 end
