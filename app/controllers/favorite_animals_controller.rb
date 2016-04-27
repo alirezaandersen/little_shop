@@ -14,7 +14,7 @@ class FavoriteAnimalsController < ApplicationController
   end
 
   def index
-    @animals = Animal.find(@favorite.contents.keys)
+    @animals = @favorite.animals
   end
 
   def destroy

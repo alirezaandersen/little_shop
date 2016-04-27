@@ -1,12 +1,5 @@
-class Favorite < ActiveRecord::Base
-
+class Favorite
   attr_accessor :contents
-
-  belongs_to :user
-  belongs_to :animal
-
-  validates :animal_id, presence: true
-  validates :user_id, presence: true
 
   def initialize(initial_contents)
     @contents = initial_contents || {}
@@ -29,6 +22,10 @@ class Favorite < ActiveRecord::Base
   def remove_item(animal_id, visit)
     contents.delete(animal_id.to_s)
     visit.contents.delete(animal_id.to_s)
+  end
+
+  def animals
+    Animal.find(contents.keys)
   end
 
 

@@ -1,40 +1,49 @@
 class VisitsController < ApplicationController
-
   def new
-    @visitation
     @visit = Visit.new
-    @animals = Animal.find(@visitation.contents.keys.map(&:to_i))
+    @animals = @visitation.animals
   end
 
   def create
-    @visit = current_user.visits.new(visit_params)
-    animal_visits = @visit.create_animal_visits(@visit, @visitation.contents)
-    if @visit.valid?
-      @visitation.contents.clear
-      flash[:notice] = "Visit was successfully scheduled"
+    @visit = VisitHandler.create_visit(
+      current_user,
+      visit_params,
+      @visitation.contents
+    )
+    is_valid, message = VisitHandler.verify(@visit, @visitation)
+    if is_valid
+      UserMailer.scheduled_visit_email(@visit.user).deliver_now
+      Text.scheduled_visit_text(current_user, @visit)
+      flash[:notice] = message
       redirect_to visits_path
     else
-      if @visit.date < Time.new
-        flash[:error] = "Visit must be scheduled a day in advance"
-      else
-        flash[:error] = "Failed to schedule visit"
-      end
+      flash[:error] = message
       redirect_to new_visit_path
     end
   end
 
   def index
     @visits = current_user.visits
-    @message = Visit.get_message(@visits)
+    @message = get_visits_message(@visits)
   end
 
   def show
-    @visit = Visit.find(params[:id])
+    @visit = current_user.visits.find(params[:id])
+    rescue
+      render file: "/public/404"
+    end
   end
 
 private
-
   def visit_params
     params.require(:visit).permit(:date, :time)
+  end
+
+  def get_visits_message(visits)
+    if visits.count == 0
+      "You have not scheduled any visits"
+    else
+      "Your scheduled visits:"
+    end
   end
 end

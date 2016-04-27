@@ -11,8 +11,8 @@
         <li><%= "Schedule for #{visit.date.strftime("%A, %b %d, %Y")}." %></li>
       </ul>
 
-        <% visit.animal_visits.each do |animal_visit| %>
-          <%= link_to "#{Animal.find(animal_visit.animal_id).name}", animal_path(animal_visit.animal_id) %><br>
+        <% visit.animals.each do |animal| %>
+          <%= link_to "#{Animal.find(animal.id).name}", animal_path(animal.id) %><br>
         <% end %>
       </div>
     </div>

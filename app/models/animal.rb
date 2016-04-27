@@ -23,4 +23,7 @@ class Animal < ActiveRecord::Base
     self.name = self.name.capitalize
   end
 
+  def self.available?
+    where(available: true)
+  end
 end

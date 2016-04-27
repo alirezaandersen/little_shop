@@ -18,6 +18,10 @@ class Visitation
     end
   end
 
+  def animals
+    Animal.find(contents.keys.map(&:to_i))
+  end
+
   def clear
     contents = {}
   end
