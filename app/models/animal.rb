@@ -23,4 +23,25 @@ class Animal < ActiveRecord::Base
     self.name = self.name.capitalize
   end
 
+  #Overwriting default accessors
+  #http://api.rubyonrails.org/classes/ActiveRecord/Base.html
+  #overriding setter methods for default columns accessors because
+  #f.collection_select returns enum values as strings when integer
+  #required
+
+  def sex=(val)
+    super(val.to_i)
+  end
+
+  def size=(val)
+    super(val.to_i)
+  end
+
+  def age=(val)
+    super(val.to_i)
+  end
+
+  def activity_level=(val)
+    super(val.to_i)
+  end
 end
