@@ -5,7 +5,11 @@ class VisitsController < ApplicationController
   end
 
   def create
-    @visit = VisitHandler.create_visit(current_user, visit_params, @visitation.contents)
+    @visit = VisitHandler.create_visit(
+      current_user,
+      visit_params,
+      @visitation.contents
+    )
     is_valid, message = VisitHandler.verify(@visit, @visitation)
     if is_valid
       UserMailer.scheduled_visit_email(@visit.user).deliver_now
@@ -24,8 +28,7 @@ class VisitsController < ApplicationController
   end
 
   def show
-    begin
-      @visit = current_user.visits.find(params[:id])
+    @visit = current_user.visits.find(params[:id])
     rescue
       render file: "/public/404"
     end
