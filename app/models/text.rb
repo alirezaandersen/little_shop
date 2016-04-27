@@ -7,11 +7,11 @@ class Text
       end
       @client = Twilio::REST::Client.new
       @client.messages.create(
-      from: "+1#{ENV['twilio_phone_number']}",
-      to: user.phone_number,
-      body: "You have scheduled a visit for " +
-      "#{visit.date.strftime("%A, %b %d, %Y")}.
-The visit will last #{visit.duration} minutes."
+        from: "+1#{ENV['twilio_phone_number']}",
+        to: user.phone_number,
+        body: "You have scheduled a visit for " \
+        "#{visit.date.strftime('%A, %b %d, %Y')}." \
+        "The visit will last #{visit.duration} minutes."
       )
     end
   end

@@ -8,25 +8,23 @@ class VisitHandler
   def self.create_animal_visits(visit, visit_info)
     visit_info.each do |info|
       AnimalVisit.create(
-      animal_id: info.first.to_i,
-      visit: visit,
-      duration: info.last
-    )
+        animal_id: info.first.to_i,
+        visit: visit,
+        duration: info.last
+      )
     end
   end
 
   def self.verify(visit, visitation)
     if visit.valid?
       visitation.contents.clear
-      message = "Visit was successfully scheduled"
-      [true, message]
+      [true, "Visit was successfully scheduled"]
     else
       if visit.date && visit.date < Time.new
         message = "Visit must be scheduled a day in advance"
       else
-        message = "Failed to schedule visit"
+        [false, "Failed to schedule visit"]
       end
-      [false, message]
     end
   end
 end
