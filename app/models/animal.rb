@@ -1,6 +1,5 @@
 class Animal < ActiveRecord::Base
   belongs_to :species
-  has_many :favorites
   has_many :animal_visits
   before_validation :capitalize_name
 

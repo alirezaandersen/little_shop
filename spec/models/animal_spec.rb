@@ -12,7 +12,6 @@ RSpec.describe Animal, type: :model do
       it { is_expected.to validate_presence_of(:species_id) }
     end
 
-  it {should have_many(:favorites)}
   it {should have_many(:animal_visits)}
 
 end

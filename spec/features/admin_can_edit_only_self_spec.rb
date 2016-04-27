@@ -6,7 +6,7 @@ RSpec.feature "Admin can edit their account" do
     user = FactoryGirl.create(:user)
     expect(admin.role).to eq("admin")
 
-    visit
+
 
   end
 end
