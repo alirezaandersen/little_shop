@@ -19,11 +19,11 @@ class Animal < ActiveRecord::Base
   enum age: ["Baby", "Young", "Adult", "Senior"]
   enum activity_level: ["Couch Potato", "Jogger", "Sprinter"]
 
-  #Overwriting default accessors
-  #http://api.rubyonrails.org/classes/ActiveRecord/Base.html
-  #overriding setter methods for default columns accessors because
-  #f.collection_select returns enum values as strings when integer
-  #required
+  # Overwriting default accessors
+  # http://api.rubyonrails.org/classes/ActiveRecord/Base.html
+  # overriding setter methods for default columns accessors because
+  # f.collection_select returns enum values as strings when integer
+  # required
 
   def sex=(val)
     val ? super(val.to_i) : super(val)
