@@ -19,12 +19,10 @@ class VisitHandler
     if visit.valid?
       visitation.contents.clear
       [true, "Visit was successfully scheduled"]
+    elsif visit.date && visit.date < Time.new
+      [false, "Visit must be scheduled a day in advance"]
     else
-      if visit.date && visit.date < Time.new
-        message = "Visit must be scheduled a day in advance"
-      else
-        [false, "Failed to schedule visit"]
-      end
+      [false, "Failed to schedule visit"]
     end
   end
 end
