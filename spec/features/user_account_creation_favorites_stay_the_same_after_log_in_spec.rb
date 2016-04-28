@@ -25,7 +25,5 @@ RSpec.feature "Creating Account/Login does not remove favorites" do
     visit favorites_path
 
     expect(page).to have_content(animal.name)
-
-
   end
 end

@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2><%= "Visit for #{@visit.date}" %></h2>
+  <h2 class="pad-top-50"><%= "Visit for #{@visit.date}" %></h2>
 
   <b><%= "Visitation Status: " %></b><%= "#{@visit.status}" %><br>
   <% if @visit.cancelled? or @visit.completed? %>

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    if URI(request.referer).path == "/favorites"
+    if request.referer && URI(request.referer).path == "/favorites"
       session[:referrer] = "/favorites"
     end
   end

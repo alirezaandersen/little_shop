@@ -11,6 +11,5 @@ RSpec.feature "User can see all animals in index" do
     expect(page).to have_content("All Pets")
     expect(page).to have_content("#{animal_1.name}")
     expect(page).to have_content("#{animal_2.name}")
-
   end
 end

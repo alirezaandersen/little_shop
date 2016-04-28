@@ -17,7 +17,6 @@ RSpec.feature "user logs in" do
       click_on "Log in"
 
       assert dashboard_path, current_path
-
     end
   end
 end

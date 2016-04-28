@@ -6,7 +6,6 @@ RSpec.feature "admin can log in" do
 
       admin = FactoryGirl.create(:user, email: "i@admin.io", password:"admin", role: 1)
 
-      # byebug
       visit root_path
 
       click_on "Log In/Create Account"
@@ -17,7 +16,7 @@ RSpec.feature "admin can log in" do
       fill_in "Password", with: admin.password
       click_on "Log in"
 
-      assert admin_dashboard_path, current_path
+      expect(current_path).to eq admin_dashboard_path
     end
   end
 end

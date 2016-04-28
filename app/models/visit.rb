@@ -6,7 +6,6 @@ class Visit < ActiveRecord::Base
   validates :duration, presence: true
   validates :user_id, presence: true
   validates :date, presence: true
-  # validates :time, presence: true
 
   validate :date_cannot_be_in_the_past
 
