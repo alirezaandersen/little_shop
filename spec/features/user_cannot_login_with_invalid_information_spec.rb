@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "user cannot login with Invalid info" do
 
@@ -14,7 +14,6 @@ RSpec.feature "user cannot login with Invalid info" do
       click_on "Log in"
 
       assert login_path, current_path
-
     end
   end
 end

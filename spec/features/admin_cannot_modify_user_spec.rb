@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "admin cannot modifyuser" do
   context "Admin cannot modify user" do
@@ -6,7 +6,6 @@ RSpec.feature "admin cannot modifyuser" do
 
       admin = FactoryGirl.create(:user, email: "i@admin.io", password:"admin", role: 1)
 
-      # byebug
       visit root_path
 
       click_on "Log In/Create Account"
@@ -17,7 +16,11 @@ RSpec.feature "admin cannot modifyuser" do
       fill_in "Password", with: admin.password
       click_on "Log in"
 
-      assert admin_dashboard_path, current_path
+      expect(current_path).to eq admin_dashboard_path
+      expect(page).to have_link("Edit")
+
+      visit dashboard_path
+      expect(page).to_not have_link("Edit")
     end
   end
 end

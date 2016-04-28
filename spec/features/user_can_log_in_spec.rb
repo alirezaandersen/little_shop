@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "user logs in" do
 
@@ -17,7 +17,6 @@ RSpec.feature "user logs in" do
       click_on "Log in"
 
       assert dashboard_path, current_path
-
     end
   end
 end

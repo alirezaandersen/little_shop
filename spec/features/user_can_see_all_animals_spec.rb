@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User can see all animals in index" do
   scenario "User sees a list of animals" do
@@ -11,6 +11,5 @@ RSpec.feature "User can see all animals in index" do
     expect(page).to have_content("All Pets")
     expect(page).to have_content("#{animal_1.name}")
     expect(page).to have_content("#{animal_2.name}")
-
   end
 end

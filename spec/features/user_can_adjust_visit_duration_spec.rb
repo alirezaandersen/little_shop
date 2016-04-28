@@ -1,10 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User can adjust the duration of visit for animal" do
   scenario "User increases time spent with animal" do
     animal = FactoryGirl.create(:animal)
-    user = FactoryGirl.create(:user, first_name: "jon",
-                              last_name: "liss",
+    user = FactoryGirl.create(:user,
                               email: "jon@example.com",
                               password: "password"
                               )
@@ -26,7 +25,7 @@ RSpec.feature "User can adjust the duration of visit for animal" do
     expect(page).to have_content("Visit Duration: 30 minutes")
 
     click_link "-"
-    
+
     expect(page).to have_content("Visit Duration: 15 minutes")
   end
 end
