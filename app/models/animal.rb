@@ -47,4 +47,20 @@ class Animal < ActiveRecord::Base
   def self.available
     where(available: true)
   end
+
+  def house_trained_presenter
+    house_trained ? "Yes" : "No"
+  end
+
+  def spayed_neutered_presenter
+    spayed_neutered ? "Yes" : "No"
+  end
+
+  def special_needs_presenter
+    special_needs ? "Yes" : "No"
+  end
+
+  def available_presenter
+    available ? "Yes" : "No"
+  end
 end
