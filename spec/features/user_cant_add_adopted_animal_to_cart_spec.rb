@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User can't add adopted animal to cart" do
   scenario "clicking on favorite button doesn't do anything" do

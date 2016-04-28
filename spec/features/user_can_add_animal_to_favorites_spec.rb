@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User can add animal to cart" do
   scenario "user sees add message and cart content" do
