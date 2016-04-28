@@ -12,9 +12,8 @@ class VisitsController < ApplicationController
     )
     is_valid, message = VisitHandler.verify(@visit, @visitation)
     if is_valid
-      # Mailer and texter commented out for testing purposes/ease of use
-      # UserMailer.scheduled_visit_email(@visit.user).deliver_now
-      # Text.scheduled_visit_text(current_user, @visit)
+      UserMailer.scheduled_visit_email(@visit.user).deliver_now
+      Text.scheduled_visit_text(current_user, @visit)
       flash[:notice] = message
       redirect_to visits_path
     else
