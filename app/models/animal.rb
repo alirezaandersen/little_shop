@@ -44,7 +44,7 @@ class Animal < ActiveRecord::Base
     name.capitalize! if name
   end
 
-  def self.available?
+  def self.available
     where(available: true)
   end
 end

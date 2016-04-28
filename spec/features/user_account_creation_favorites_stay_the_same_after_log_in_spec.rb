@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Creating Account/Login does not remove favorites" do
   scenario "guest can add favorites, login, and favorites will persist" do

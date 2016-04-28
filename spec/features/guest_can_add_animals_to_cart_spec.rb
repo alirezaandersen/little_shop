@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Guest can add animals to cart" do
   scenario "animals show up in favorites when they visit favorites path" do

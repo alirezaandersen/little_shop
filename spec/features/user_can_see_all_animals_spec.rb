@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User can see all animals in index" do
   scenario "User sees a list of animals" do

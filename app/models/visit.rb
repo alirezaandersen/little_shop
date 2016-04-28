@@ -3,7 +3,6 @@ class Visit < ActiveRecord::Base
   belongs_to :user
   has_many :animal_visits
   has_many :animals, through: :animal_visits
-  validates :duration, presence: true
   validates :user_id, presence: true
   validates :date, presence: true
 

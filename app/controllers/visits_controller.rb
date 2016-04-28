@@ -12,6 +12,7 @@ class VisitsController < ApplicationController
     )
     is_valid, message = VisitHandler.verify(@visit, @visitation)
     if is_valid
+      # Mailer and texter commented out for testing purposes/ease of use
       # UserMailer.scheduled_visit_email(@visit.user).deliver_now
       # Text.scheduled_visit_text(current_user, @visit)
       flash[:notice] = message
@@ -27,7 +28,7 @@ class VisitsController < ApplicationController
       @visits = current_user.visits
       @message = get_visits_message(@visits)
     else
-      render file: 'public/404'
+      render file: "public/404"
     end
   end
 

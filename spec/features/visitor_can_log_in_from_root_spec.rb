@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "visitor visits root path and sees link to log in" do
   scenario "there is a way to login from route path" do

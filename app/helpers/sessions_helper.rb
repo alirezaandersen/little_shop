@@ -17,7 +17,8 @@ module SessionsHelper
 
   def setup_session(user)
     session[:favorite] ||= {}
-    user_session = JSON.parse(user.session) || {"favorite" => {}, "visit" => {}}
+    user_session =
+      JSON.parse(user.session) || { "favorite" => {}, "visit" => {} }
     user_session["favorite"] ||= {}
     user_session["visit"] ||= {}
     session[:favorite] = user_session["favorite"].merge(session[:favorite])

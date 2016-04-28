@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Unauthenticated user cannot view other user's info" do
   scenario "they cannot view dashboards, visits, admin screens or checkout" do

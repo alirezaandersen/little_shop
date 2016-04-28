@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.feature "Admin sees admin dashboard, user sees user dashboard, visitor sees root path" do
+RSpec.feature "Admin dashboard, user dashboard, visitor redirect" do
   scenario "visitor is redirected to home page" do
     visit dashboard_path
 

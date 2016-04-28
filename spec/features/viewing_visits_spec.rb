@@ -1,14 +1,17 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "viewing visits" do
   scenario "user'scheduled and past visits are available to see" do
-    user = FactoryGirl.create(:user, password: 'password')
+    user = FactoryGirl.create(:user, password: "password")
     user.visits.create(date: "April 30, 2016", time: "1:00", user_id: user.id)
     user.visits.create(date: "May 10, 2016", time: "3:00", user_id: user.id)
 
-    user2 = FactoryGirl.create(:user, password: 'password')
+    user2 = FactoryGirl.create(:user, password: "password")
     user2.visits.create(date: "June 30, 2016", time: "1:00", user_id: user2.id)
-    user2.visits.create(date: "December 10, 2016", time: "3:00", user_id: user2.id)
+    user2.visits.create(
+      date: "December 10, 2016",
+      time: "3:00", user_id: user2.id
+    )
 
     visit login_path
     click_on "Log In"

@@ -1,9 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Visitor must login before checking out" do
   scenario "It prompts visitor to login instead of checking out" do
-    user = FactoryGirl.create(:user, email: "email@email.com",
-                                     password: "password")
+    FactoryGirl.create(
+      :user,
+      email: "email@email.com",
+      password: "password"
+    )
 
     animal = FactoryGirl.create(:animal)
 

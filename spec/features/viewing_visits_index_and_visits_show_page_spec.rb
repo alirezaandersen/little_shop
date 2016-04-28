@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "Viewing visits index and visit showpage" do
   scenario "all necessary info is displayed on show page" do

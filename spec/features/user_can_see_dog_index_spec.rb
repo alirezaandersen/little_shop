@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "user can see page with all dogs" do
   scenario "user can see all dogs" do

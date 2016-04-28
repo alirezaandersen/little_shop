@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "User can adjust the duration of visit for animal" do
   scenario "User increases time spent with animal" do
