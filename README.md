@@ -1,10 +1,11 @@
-# Outdoor Adventures
+# Max-Fund Animal Shelter
+##### Pair Project by [Ali Andersen](https://github.com/alirezaandersen), [Jon Liss](https://github.com/jdliss), [Drew Thompson](https://github.com/drew-t)
 
-## Find local parks around your area based on zip code, and get the information needed to manage your trip, avoid bad weather, and busy traffic times.
+## A redevelopment of a website for Denver-based animal shelter, which added additional features to meet the clients’ needs.(work continuously in progress), Some features allow online reservation to meet an animal your interested in adopting, having a favorites list, and updates of new animals added. Stack: Rails, PostgresSQL, multi-level admin functionality, Heroku, RSpec, Materialize.
 
 ![ScreenShot](app/assets/images/screen-shot.png)
-[Lets Go on an Outdoor Adventure](http://outdooradventuretime.herokuapp.com/)
-#### You will need to provide your own Api keys for AccuWeather, UndergroundWeather and Google
+[Find your Best Friend!](http://max-fund.herokuapp.com//)
+
 
 
 #### To get things started:
